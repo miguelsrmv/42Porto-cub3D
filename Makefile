@@ -6,7 +6,7 @@
 #    By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 09:55:46 by mde-sa--          #+#    #+#              #
-#    Updated: 2024/02/13 21:43:12 by mde-sa--         ###   ########.fr        #
+#    Updated: 2024/02/13 21:55:04 by mde-sa--         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ LIBFTDIR =  src/libft
 
 MLXDIR  = 	minilibx-linux
 
-SRC		=	main.c usage_check.c
+SRC		=	main.c usage_check.c map_parser.c run_cub3d.c
 
 LIBS 	=   -L$(LIBFTDIR) -lft
 

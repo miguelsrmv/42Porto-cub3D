@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map_parser.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/13 18:12:46 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/13 21:54:48 by mde-sa--         ###   ########.fr       */
+/*   Created: 2024/02/13 21:54:14 by mde-sa--          #+#    #+#             */
+/*   Updated: 2024/02/13 21:57:09 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	main(int argc, char **argv)
+/// @brief 			Parses map to check its validity
+/// @param file_fd 	The map file descriptor
+/// @return 		Return array / struct / vector with parsed data?
+void	check_map(int file_fd)
 {
-	int	file_fd;
-
-	check_usage(argc, argv);
-	file_fd = check_file(argv[1]);
-	check_map(file_fd);
-	run_cub3d(argv[1]);
-	return (SUCCESS);
+	(void)file_fd;
+	return ;
 }
