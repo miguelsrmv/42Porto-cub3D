@@ -6,7 +6,7 @@
 #    By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 09:55:46 by mde-sa--          #+#    #+#              #
-#    Updated: 2024/02/13 18:19:21 by mde-sa--         ###   ########.fr        #
+#    Updated: 2024/02/13 21:43:12 by mde-sa--         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ LIBFTDIR =  src/libft
 
 MLXDIR  = 	minilibx-linux
 
-SRC		=	main.c
+SRC		=	main.c usage_check.c
 
 LIBS 	=   -L$(LIBFTDIR) -lft
 
@@ -48,10 +48,10 @@ $(SRCDIR)/%.o: $(SRCDIR)/%.c $(INCDIR)/*.h $(MLXDIR)/*.h
 	@ $(CC) $(CFLAGS) $(INCFLAGS) -c $< -o $@
 
 libft:
-	@ cd $(LIBFTDIR) && make -s
+	@ cd $(LIBFTDIR) && make
 
 minilibx:
-	@ cd minilibx-linux && make -s
+	@ cd minilibx-linux && make
 
 clean:
 	@ $(MAKE) -sC $(LIBFTDIR) clean
