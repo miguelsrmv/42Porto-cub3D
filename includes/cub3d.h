@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/13 18:52:24 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:55:27 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 enum e_ExitStatus {
 	SUCCESS,
 	INVALID_USAGE,
+	INVALID_FILE_TYPE,
 	INVALID_MAP,
 };
 
