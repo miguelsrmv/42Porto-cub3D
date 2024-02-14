@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/13 21:55:53 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/13 21:58:20 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ enum e_ExitStatus {
 	INVALID_FILE,
 	INVALID_MAP,
 };
-
 
 // usage_check.c
 void	check_usage(int argc, char **argv);

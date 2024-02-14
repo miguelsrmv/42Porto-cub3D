@@ -6,7 +6,7 @@
 #    By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 09:55:46 by mde-sa--          #+#    #+#              #
-#    Updated: 2024/02/13 21:55:04 by mde-sa--         ###   ########.fr        #
+#    Updated: 2024/02/13 22:00:31 by mde-sa--         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,32 +42,32 @@ INCFLAGS =  -I $(INCDIR) -I $(LIBFTDIR) -I $(MLXDIR)
 all: libft minilibx $(NAME)
 
 $(NAME): $(OBJS) 
-	@ $(CC) $(CFLAGS) $(OBJS) $(LIBS) $(MLXLIBS) $(MATHLIBS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBS) $(MLXLIBS) $(MATHLIBS) -o $(NAME)
 
 $(SRCDIR)/%.o: $(SRCDIR)/%.c $(INCDIR)/*.h $(MLXDIR)/*.h
-	@ $(CC) $(CFLAGS) $(INCFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCFLAGS) -c $< -o $@
 
 libft:
-	@ cd $(LIBFTDIR) && make
+	cd $(LIBFTDIR) && make
 
 minilibx:
-	@ cd minilibx-linux && make
+	cd minilibx-linux && make
 
 clean:
-	@ $(MAKE) -sC $(LIBFTDIR) clean
-	@ cd minilibx-linux && make clean
-	@ $(RM) $(OBJS)
+	$(MAKE) -sC $(LIBFTDIR) clean
+	cd minilibx-linux && make clean
+	$(RM) $(OBJS)
 
 fclean: clean
-	@ $(MAKE) -sC $(LIBFTDIR) fclean
-	@ cd minilibx-linux && make clean
-	@ $(RM) $(NAME)
+	$(MAKE) -sC $(LIBFTDIR) fclean
+	cd minilibx-linux && make clean
+	$(RM) $(NAME)
 
 re: fclean all
 
 download:
-	@ wget https://cdn.intra.42.fr/document/document/22624/minilibx-linux.tgz
-	@ tar -xzf minilibx-linux.tgz
-	@ rm minilibx-linux.tgz
+	wget https://cdn.intra.42.fr/document/document/22624/minilibx-linux.tgz
+	tar -xzf minilibx-linux.tgz
+	rm minilibx-linux.tgz
 
 .PHONY: all clean fclean re libft minilibx download
