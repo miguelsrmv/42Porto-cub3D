@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/17 13:24:06 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/17 13:30:06 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	check_header(t_map_data **map_data)
 	while (lines_parsed < 6)
 	{
 		line = get_next_line((*map_data)->file_fd);
+		if (!line)
+			exit_cub3(*map_data, HEADER_ERROR_MSG);
 		line_result = check_line(line, map_data);
 		if (line_result == VALID_INFO)
 			lines_parsed++;

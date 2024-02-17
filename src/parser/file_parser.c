@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:54:14 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/17 13:13:07 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/17 13:31:35 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	initialize_map_data(t_map_data **map_data, int file_fd)
 	if (!(*map_data))
 	{
 		close(file_fd);
+		ft_fprintf(STDERR_FILENO, "Error\n");
 		perror(MALLOC_ERROR_MSG);
 		exit(MALLOC_ERROR);
 	}

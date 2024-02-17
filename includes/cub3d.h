@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/17 13:17:42 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/17 13:39:58 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@
 
 // Defines
 /// Error messages
-# define OPEN_ERROR_MSG "Error\nProblem opening file"
-# define USAGE_ERROR_MSG "Error\nUsage: \"./cube3D map_file.cub.\"\n"
-# define MALLOC_ERROR_MSG "Error\nMalloc error.\n"
-# define HEADER_ERROR_MSG "Error\nInvalid header.\n"
-# define OTHER_ERROR_MSG "Error\nUnspecified error.\n"
+# define OPEN_ERROR_MSG "Problem opening file"
+# define USAGE_ERROR_MSG "Usage: \"./cube3D map_file.cub\"\n"
+# define MALLOC_ERROR_MSG "Malloc error\n"
+# define HEADER_ERROR_MSG "Invalid header\n"
+# define OTHER_ERROR_MSG "Unspecified error\n"
 
 // enums
 enum e_ExitStatus {
@@ -95,5 +95,8 @@ void				run_cub3d(t_map_data *map_data);
 void				exit_cub3(t_map_data *map_data,
 						char *message);
 void				clean_map_data(t_map_data *map_data);
+
+/// helper_functions.c
+void				test_map_data(t_map_data *map_data);
 
 #endif
