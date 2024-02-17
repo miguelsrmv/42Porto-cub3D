@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:12:46 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/13 22:01:49 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/17 13:20:14 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 int	main(int argc, char **argv)
 {
-	int	file_fd;
+	int				file_fd;
+	t_map_data		*map_data;
 
 	check_usage(argc, argv);
 	file_fd = check_file(argv[1]);
-	check_map(file_fd);
-	run_cub3d(argv[1]);
-	return (SUCCESS);
+	map_data = check_contents(file_fd);
+	run_cub3d(map_data);
+	clean_map_data(map_data);
+	return (EXIT_SUCCESS);
 }
