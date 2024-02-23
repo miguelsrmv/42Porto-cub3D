@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/17 13:39:58 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/23 14:17:48 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,28 @@
 
 // Defines
 /// Error messages
-# define OPEN_ERROR_MSG "Problem opening file"
+# define FILE_ERROR_MSG "Problem opening file"
+# define TEXTURE_ERROR_MSG "Problem opening texture"
+# define COLOUR_ERROR_MSG "Invalid colour values"
 # define USAGE_ERROR_MSG "Usage: \"./cube3D map_file.cub\"\n"
 # define MALLOC_ERROR_MSG "Malloc error\n"
 # define HEADER_ERROR_MSG "Invalid header\n"
 # define OTHER_ERROR_MSG "Unspecified error\n"
 
 // enums
-enum e_ExitStatus {
+enum e_ExitStatus
+{
 	SUCCESS,
 	INVALID_USAGE,
 	INVALID_FORMAT,
 	INVALID_FILE,
+	INVALID_TEXTURE,
 	INVALID_MAP,
 	MALLOC_ERROR,
 };
 
-enum e_HeaderType {
+enum e_HeaderType
+{
 	VALID_INFO,
 	EMPTY_LINE,
 	INVALID,
@@ -62,7 +67,7 @@ typedef struct s_map_data
 void				check_usage(int argc, char **argv);
 int					check_file(char *file);
 
-/// file_parser.c
+/// main_parser.c
 t_map_data			*check_contents(int file_fd);
 void				initialize_map_data(t_map_data **map_data,
 						int file_fd);
@@ -72,18 +77,20 @@ void				check_header(t_map_data **map_data);
 enum e_HeaderType	check_line(char *line, t_map_data **map_data);
 enum e_HeaderType	check_tab_format(char **line_as_tab,
 						t_map_data **map_data);
-enum e_HeaderType	check_texture_permissions(t_map_data **map_data);
-enum e_HeaderType	check_colour_values(t_map_data **map_data);
 
 /// texture_parser.c
-void				check_wall_texture(char **line_as_tab,
+enum e_HeaderType	check_wall_texture(char **line_as_tab,
 						t_map_data **map_data);
+enum e_HeaderType	check_texture_files(t_map_data **map_data);
 
 /// colour_parser.c
-void				check_floor_ceiling_texture(char **line_as_tab,
+enum e_HeaderType	check_floor_ceiling_texture(char **line_as_tab,
 						t_map_data **map_data);
-enum e_HeaderType	check_colours_tab(char **colours,
+char				**clean_colour_tab(char **line_as_tab,
 						t_map_data **map_data);
+enum e_HeaderType	check_colours_tab(char **colours);
+void				fill_in_colours(int *color, char **colours);
+void				check_colour_values(t_map_data **map_data);
 
 /// map_parser.c
 void				check_map(t_map_data **map_data);

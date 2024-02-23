@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:15:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/17 13:18:43 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/23 16:09:05 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void	exit_cub3(t_map_data *map_data,
 			char *message)
 {
 	clean_map_data(map_data);
-	if (!ft_strcmp(message, MALLOC_ERROR_MSG))
+	get_next_line(-1);
+	if (!ft_strcmp(message, MALLOC_ERROR_MSG)
+		|| !ft_strcmp(message, FILE_ERROR_MSG)
+		|| !ft_strcmp(message, TEXTURE_ERROR_MSG))
 	{
 		ft_fprintf(STDERR_FILENO, "Error\n");
 		perror(message);

@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:42:18 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/17 13:32:18 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/23 09:30:08 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,13 @@ void	check_usage(int argc, char **argv)
 int	check_file(char *file)
 {
 	int		file_fd;
-	char	buffer[0];
-	ssize_t	bytes_read;
 
 	file_fd = open(file, O_RDONLY);
 	if (file_fd == -1)
 	{
 		ft_fprintf(STDERR_FILENO, "Error\n");
-		perror(OPEN_ERROR_MSG);
-		exit(INVALID_FILE);
-	}
-	bytes_read = read(file_fd, &buffer, sizeof(buffer));
-	if (bytes_read == -1)
-	{
-		ft_fprintf(STDERR_FILENO, "Error\n");
-		perror(OTHER_ERROR_MSG);
-		close(file_fd);
+		ft_fprintf(STDERR_FILENO, "(%s) ", file);
+		perror(FILE_ERROR_MSG);
 		exit(INVALID_FILE);
 	}
 	return (file_fd);

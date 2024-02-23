@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:15:57 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/13 17:59:13 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/23 16:06:49 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@
 # include <stdint.h>
 # include <stdarg.h>
 # include <stdbool.h>
+# include <stdio.h>
+
+// GET_NEXT_LINE
+typedef struct s_gnl
+{
+	char	*line;
+	long	size_line;
+	long	index;
+	long	size_buffer;
+}	t_gnl;
 
 /* Part 1: Libc functions */
 int		ft_isalpha(int c);
@@ -125,5 +135,6 @@ int		ft_getppid(void);
 long	ft_atol(const char *str);
 bool	ft_issign(char c);
 char	ft_last_char(const char *string);
+int		ft_tablen(void **tab);
 
 #endif
