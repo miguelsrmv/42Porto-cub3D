@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/23 14:32:45 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/23 17:16:02 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ enum e_HeaderType	check_line(char *line, t_map_data **map_data)
 	}
 	line_as_tab = ft_split(trimmed_line, ' ');
 	free(trimmed_line);
-	if (!line_as_tab || !line_as_tab[1] || ft_tablen((void **)line_as_tab) > 2)
+	if (!line_as_tab || !line_as_tab[1])
 	{
 		ft_free_tabs((void **)line_as_tab);
 		return (INVALID);
@@ -69,11 +69,63 @@ enum e_HeaderType	check_line(char *line, t_map_data **map_data)
 enum e_HeaderType	check_tab_format(char **line_as_tab,
 		t_map_data **map_data)
 {
-	if (!ft_strcmp(line_as_tab[0], "NO") || !ft_strcmp(line_as_tab[0], "SO")
-		|| !ft_strcmp(line_as_tab[0], "WE") || !ft_strcmp(line_as_tab[0], "EA"))
+	if ((!ft_strcmp(line_as_tab[0], "NO")
+			|| !ft_strcmp(line_as_tab[0], "SO")
+			|| !ft_strcmp(line_as_tab[0], "WE")
+			|| !ft_strcmp(line_as_tab[0], "EA"))
+		&& ft_tablen((void **)line_as_tab) == 2)
 		return (check_wall_texture(line_as_tab, map_data));
-	else if (!ft_strcmp(line_as_tab[0], "F") || !ft_strcmp(line_as_tab[0], "C"))
+	else if ((!ft_strcmp(line_as_tab[0], "F")
+			|| !ft_strcmp(line_as_tab[0], "C"))
+		&& ft_tablen((void **)line_as_tab) < 5)
 		return (check_floor_ceiling_texture(line_as_tab, map_data));
 	else
 		return (INVALID);
+}
+
+/// @brief 				Checks if textures exist and are usable
+/// @param map_data		Map data struct
+enum e_HeaderType	check_texture_files(t_map_data **map_data)
+{
+	int		file_fd;
+	int		i;
+	char	*textures[4];
+
+	textures[0] = (*map_data)->north_texture;
+	textures[1] = (*map_data)->south_texture;
+	textures[2] = (*map_data)->west_texture;
+	textures[3] = (*map_data)->east_texture;
+	i = 0;
+	while (i < 4)
+	{
+		file_fd = open(textures[i], O_RDONLY);
+		if (file_fd == -1)
+			exit_cub3(*map_data, TEXTURE_ERROR_MSG);
+		close(file_fd);
+		i++;
+	}
+	return (VALID_INFO);
+}
+
+/// @brief 				Checks if colours are within normal range
+void	check_colour_values(t_map_data **map_data)
+{
+	int	i;
+
+	i = 0;
+	while (i < 3)
+	{
+		if ((*map_data)->ceiling_color[i] < 0
+			|| (*map_data)->ceiling_color[i] > 255)
+			exit_cub3(*map_data, COLOUR_ERROR_MSG);
+		i++;
+	}
+	i = 0;
+	while (i < 3)
+	{
+		if ((*map_data)->floor_color[i] < 0
+			|| (*map_data)->floor_color[i] > 255)
+			exit_cub3(*map_data, COLOUR_ERROR_MSG);
+		i++;
+	}
 }

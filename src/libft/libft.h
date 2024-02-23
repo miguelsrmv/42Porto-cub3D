@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:15:57 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/23 16:06:49 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/23 17:03:20 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,5 +136,6 @@ long	ft_atol(const char *str);
 bool	ft_issign(char c);
 char	ft_last_char(const char *string);
 int		ft_tablen(void **tab);
+char	*ft_strcat(char *dest, const char *src);
 
 #endif

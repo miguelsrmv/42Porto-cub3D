@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 17:05:58 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/23 16:14:05 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/23 17:37:43 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,14 @@ enum e_HeaderType	check_floor_ceiling_texture(char **line_as_tab,
 {
 	char	**colours;
 
-	colours = clean_colour_tab(line_as_tab, map_data);
-
+	if (ft_tablen((void **)line_as_tab) > 2)
+		unite_colours(line_as_tab);
+	colours = ft_split(line_as_tab[1], ',');
+	if (!colours)
+	{
+		ft_free_tabs((void **)line_as_tab);
+		exit_cub3(*map_data, MALLOC_ERROR_MSG);
+	}
 	if (check_colours_tab(colours) == INVALID)
 	{
 		ft_free_tabs((void **)line_as_tab);
@@ -35,36 +41,33 @@ enum e_HeaderType	check_floor_ceiling_texture(char **line_as_tab,
 	return (VALID_INFO);
 }
 
-/// @brief 				Cleans up coloured line for future evaluation
-/// @return				Returns colours in a char **tab
-char	**clean_colour_tab(char **line_as_tab,
-		t_map_data **map_data)
+/// @brief 					Unites all colour values into one single string
+////Format ("R,G,B")
+void	unite_colours(char **line_as_tab)
 {
-	int		i;
+	char	*joined_tab;
 	char	*temp;
-	char	**colours;
+	int		i;
 
-	colours = ft_split(line_as_tab[1], ',');
-	if (!colours)
+	i = 1;
+	joined_tab = (char *)malloc(sizeof(char) * 1);
+	joined_tab[0] = '\0';
+	while (line_as_tab[i])
 	{
-		ft_free_tabs((void **)line_as_tab);
-		exit_cub3(*map_data, MALLOC_ERROR_MSG);
-	}
-	i = 0;
-	while (colours[i])
-	{
-		temp = colours[i];
-		colours[i] = ft_strtrim(colours[i], " \t");
-		if (!colours[i])
-		{
-			ft_free_tabs((void **)colours);
-			ft_free_tabs((void **)line_as_tab);
-			exit_cub3(*map_data, MALLOC_ERROR_MSG);
-		}
-		free(temp);
+		temp = joined_tab;
+		joined_tab = ft_strjoin(joined_tab, line_as_tab[i]);
+		if (temp)
+			free(temp);
 		i++;
 	}
-	return (colours);
+	i = 1;
+	while (line_as_tab[i])
+	{
+		free(line_as_tab[i]);
+		if (i == 1)
+			line_as_tab[i] = joined_tab;
+		i++;
+	}
 }
 
 /// @brief 				Validates colours' format & structure
@@ -99,25 +102,3 @@ void	fill_in_colours(int *color, char **colours)
 	color[2] = ft_atoi(colours[2]);
 }
 
-/// @brief 				Checks if colours are within normal range
-void	check_colour_values(t_map_data **map_data)
-{
-	int	i;
-
-	i = 0;
-	while (i < 3)
-	{
-		if ((*map_data)->ceiling_color[i] < 0
-			|| (*map_data)->ceiling_color[i] > 255)
-			exit_cub3(*map_data, COLOUR_ERROR_MSG);
-		i++;
-	}
-	i = 0;
-	while (i < 3)
-	{
-		if ((*map_data)->floor_color[i] < 0
-			|| (*map_data)->floor_color[i] > 255)
-			exit_cub3(*map_data, COLOUR_ERROR_MSG);
-		i++;
-	}
-}

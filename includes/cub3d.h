@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/23 14:17:48 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/23 18:51:03 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,20 +77,19 @@ void				check_header(t_map_data **map_data);
 enum e_HeaderType	check_line(char *line, t_map_data **map_data);
 enum e_HeaderType	check_tab_format(char **line_as_tab,
 						t_map_data **map_data);
+enum e_HeaderType	check_texture_files(t_map_data **map_data);
+void				check_colour_values(t_map_data **map_data);
 
 /// texture_parser.c
 enum e_HeaderType	check_wall_texture(char **line_as_tab,
 						t_map_data **map_data);
-enum e_HeaderType	check_texture_files(t_map_data **map_data);
 
 /// colour_parser.c
 enum e_HeaderType	check_floor_ceiling_texture(char **line_as_tab,
 						t_map_data **map_data);
-char				**clean_colour_tab(char **line_as_tab,
-						t_map_data **map_data);
+void				unite_colours(char **line_as_tab);
 enum e_HeaderType	check_colours_tab(char **colours);
 void				fill_in_colours(int *color, char **colours);
-void				check_colour_values(t_map_data **map_data);
 
 /// map_parser.c
 void				check_map(t_map_data **map_data);
