@@ -1,0 +1,663 @@
+==445759== Memcheck, a memory error detector
+==445759== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445759== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445759== Command: ./cub3D maps/good/cheese_maze.cub
+==445759== 
+File Fd:	3
+North texture:	textures/simonkraft/wet_sponge.xpm
+South texture:	textures/simonkraft/wet_sponge.xpm
+East texture:	textures/simonkraft/wet_sponge.xpm
+West texture:	textures/simonkraft/wet_sponge.xpm
+Floor:		164,169,20
+Ceiling:	153,204,255
+==445759== 
+==445759== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445759== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445759==    <inherited from parent>
+==445759== 
+==445759== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445759==    <inherited from parent>
+==445759== 
+==445759== Open file descriptor 21: /dev/ptmx
+==445759==    <inherited from parent>
+==445759== 
+==445759== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445759==    <inherited from parent>
+==445759== 
+==445759== Open file descriptor 19: /dev/urandom
+==445759==    <inherited from parent>
+==445759== 
+==445759== 
+==445759== HEAP SUMMARY:
+==445759==     in use at exit: 0 bytes in 0 blocks
+==445759==   total heap usage: 68 allocs, 68 frees, 1,378 bytes allocated
+==445759== 
+==445759== All heap blocks were freed -- no leaks are possible
+==445759== 
+==445759== For lists of detected and suppressed errors, rerun with: -s
+==445759== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445763== Memcheck, a memory error detector
+==445763== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445763== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445763== Command: ./cub3D maps/good/creepy.cub
+==445763== 
+File Fd:	3
+North texture:	textures/simonkraft/respawn_anchor_side0.xpm
+South texture:	textures/simonkraft/respawn_anchor_side4.xpm
+East texture:	textures/simonkraft/respawn_anchor_side2.xpm
+West texture:	textures/simonkraft/respawn_anchor_side3.xpm
+Floor:		15,6,40
+Ceiling:	35,19,73
+==445763== 
+==445763== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445763== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445763==    <inherited from parent>
+==445763== 
+==445763== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445763==    <inherited from parent>
+==445763== 
+==445763== Open file descriptor 21: /dev/ptmx
+==445763==    <inherited from parent>
+==445763== 
+==445763== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445763==    <inherited from parent>
+==445763== 
+==445763== Open file descriptor 19: /dev/urandom
+==445763==    <inherited from parent>
+==445763== 
+==445763== 
+==445763== HEAP SUMMARY:
+==445763==     in use at exit: 0 bytes in 0 blocks
+==445763==   total heap usage: 69 allocs, 69 frees, 1,689 bytes allocated
+==445763== 
+==445763== All heap blocks were freed -- no leaks are possible
+==445763== 
+==445763== For lists of detected and suppressed errors, rerun with: -s
+==445763== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445770== Memcheck, a memory error detector
+==445770== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445770== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445770== Command: ./cub3D maps/good/dungeon.cub
+==445770== 
+File Fd:	3
+North texture:	textures/simonkraft/cobblestone.xpm
+South texture:	textures/simonkraft/cobblestone_01.xpm
+East texture:	textures/simonkraft/cobblestone_02.xpm
+West texture:	textures/simonkraft/mossy_cobblestone1.xpm
+Floor:		76,76,76
+Ceiling:	99,99,99
+==445770== 
+==445770== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445770== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445770==    <inherited from parent>
+==445770== 
+==445770== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445770==    <inherited from parent>
+==445770== 
+==445770== Open file descriptor 21: /dev/ptmx
+==445770==    <inherited from parent>
+==445770== 
+==445770== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445770==    <inherited from parent>
+==445770== 
+==445770== Open file descriptor 19: /dev/urandom
+==445770==    <inherited from parent>
+==445770== 
+==445770== 
+==445770== HEAP SUMMARY:
+==445770==     in use at exit: 0 bytes in 0 blocks
+==445770==   total heap usage: 68 allocs, 68 frees, 1,500 bytes allocated
+==445770== 
+==445770== All heap blocks were freed -- no leaks are possible
+==445770== 
+==445770== For lists of detected and suppressed errors, rerun with: -s
+==445770== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445785== Memcheck, a memory error detector
+==445785== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445785== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445785== Command: ./cub3D maps/good/library.cub
+==445785== 
+File Fd:	3
+North texture:	textures/simonkraft/bookshelf.xpm
+South texture:	textures/simonkraft/bookshelf_01.xpm
+East texture:	textures/simonkraft/bookshelf_03.xpm
+West texture:	textures/simonkraft/bookshelf_02.xpm
+Floor:		139,99,58
+Ceiling:	171,154,137
+==445785== 
+==445785== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445785== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445785==    <inherited from parent>
+==445785== 
+==445785== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445785==    <inherited from parent>
+==445785== 
+==445785== Open file descriptor 21: /dev/ptmx
+==445785==    <inherited from parent>
+==445785== 
+==445785== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445785==    <inherited from parent>
+==445785== 
+==445785== Open file descriptor 19: /dev/urandom
+==445785==    <inherited from parent>
+==445785== 
+==445785== 
+==445785== HEAP SUMMARY:
+==445785==     in use at exit: 0 bytes in 0 blocks
+==445785==   total heap usage: 68 allocs, 68 frees, 1,456 bytes allocated
+==445785== 
+==445785== All heap blocks were freed -- no leaks are possible
+==445785== 
+==445785== For lists of detected and suppressed errors, rerun with: -s
+==445785== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445786== Memcheck, a memory error detector
+==445786== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445786== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445786== Command: ./cub3D maps/good/matrix.cub
+==445786== 
+File Fd:	3
+North texture:	textures/matrix.xpm
+South texture:	textures/matrix.xpm
+East texture:	textures/matrix.xpm
+West texture:	textures/matrix.xpm
+Floor:		0,0,0
+Ceiling:	0,0,0
+==445786== 
+==445786== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445786== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445786==    <inherited from parent>
+==445786== 
+==445786== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445786==    <inherited from parent>
+==445786== 
+==445786== Open file descriptor 21: /dev/ptmx
+==445786==    <inherited from parent>
+==445786== 
+==445786== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445786==    <inherited from parent>
+==445786== 
+==445786== Open file descriptor 19: /dev/urandom
+==445786==    <inherited from parent>
+==445786== 
+==445786== 
+==445786== HEAP SUMMARY:
+==445786==     in use at exit: 0 bytes in 0 blocks
+==445786==   total heap usage: 66 allocs, 66 frees, 947 bytes allocated
+==445786== 
+==445786== All heap blocks were freed -- no leaks are possible
+==445786== 
+==445786== For lists of detected and suppressed errors, rerun with: -s
+==445786== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445793== Memcheck, a memory error detector
+==445793== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445793== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445793== Command: ./cub3D maps/good/sad_face.cub
+==445793== 
+File Fd:	3
+North texture:	textures/simonkraft/soul_sand.xpm
+South texture:	textures/simonkraft/soul_soil_01.xpm
+East texture:	textures/simonkraft/soul_sand.xpm
+West texture:	textures/simonkraft/soul_soil.xpm
+Floor:		45,33,27
+Ceiling:	53,41,34
+==445793== 
+==445793== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445793== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445793==    <inherited from parent>
+==445793== 
+==445793== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445793==    <inherited from parent>
+==445793== 
+==445793== Open file descriptor 21: /dev/ptmx
+==445793==    <inherited from parent>
+==445793== 
+==445793== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445793==    <inherited from parent>
+==445793== 
+==445793== Open file descriptor 19: /dev/urandom
+==445793==    <inherited from parent>
+==445793== 
+==445793== 
+==445793== HEAP SUMMARY:
+==445793==     in use at exit: 0 bytes in 0 blocks
+==445793==   total heap usage: 68 allocs, 68 frees, 1,340 bytes allocated
+==445793== 
+==445793== All heap blocks were freed -- no leaks are possible
+==445793== 
+==445793== For lists of detected and suppressed errors, rerun with: -s
+==445793== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445800== Memcheck, a memory error detector
+==445800== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445800== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445800== Command: ./cub3D maps/good/square_map.cub
+==445800== 
+File Fd:	3
+North texture:	textures/wolfenstein/grey_stone.xpm
+South texture:	textures/wolfenstein/red_brick.xpm
+East texture:	textures/wolfenstein/mossy.xpm
+West texture:	textures/wolfenstein/eagle.xpm
+Floor:		69,222,199
+Ceiling:	235,198,52
+==445800== 
+==445800== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445800== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445800==    <inherited from parent>
+==445800== 
+==445800== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445800==    <inherited from parent>
+==445800== 
+==445800== Open file descriptor 21: /dev/ptmx
+==445800==    <inherited from parent>
+==445800== 
+==445800== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445800==    <inherited from parent>
+==445800== 
+==445800== Open file descriptor 19: /dev/urandom
+==445800==    <inherited from parent>
+==445800== 
+==445800== 
+==445800== HEAP SUMMARY:
+==445800==     in use at exit: 0 bytes in 0 blocks
+==445800==   total heap usage: 96 allocs, 96 frees, 1,629 bytes allocated
+==445800== 
+==445800== All heap blocks were freed -- no leaks are possible
+==445800== 
+==445800== For lists of detected and suppressed errors, rerun with: -s
+==445800== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445801== Memcheck, a memory error detector
+==445801== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445801== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445801== Command: ./cub3D maps/good/subject_map.cub
+==445801== 
+File Fd:	3
+North texture:	textures/wolfenstein/grey_stone.xpm
+South texture:	textures/wolfenstein/purple_stone.xpm
+East texture:	textures/wolfenstein/wood.xpm
+West texture:	textures/wolfenstein/red_brick.xpm
+Floor:		220,100,0
+Ceiling:	225,30,0
+==445801== 
+==445801== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445801== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445801==    <inherited from parent>
+==445801== 
+==445801== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445801==    <inherited from parent>
+==445801== 
+==445801== Open file descriptor 21: /dev/ptmx
+==445801==    <inherited from parent>
+==445801== 
+==445801== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445801==    <inherited from parent>
+==445801== 
+==445801== Open file descriptor 19: /dev/urandom
+==445801==    <inherited from parent>
+==445801== 
+==445801== 
+==445801== HEAP SUMMARY:
+==445801==     in use at exit: 0 bytes in 0 blocks
+==445801==   total heap usage: 68 allocs, 68 frees, 1,337 bytes allocated
+==445801== 
+==445801== All heap blocks were freed -- no leaks are possible
+==445801== 
+==445801== For lists of detected and suppressed errors, rerun with: -s
+==445801== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445813== Memcheck, a memory error detector
+==445813== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445813== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445813== Command: ./cub3D maps/good/test_map.cub
+==445813== 
+File Fd:	3
+North texture:	textures/wolfenstein/grey_stone.xpm
+South texture:	textures/wolfenstein/purple_stone.xpm
+East texture:	textures/wolfenstein/wood.xpm
+West texture:	textures/wolfenstein/red_brick.xpm
+Floor:		18,53,25
+Ceiling:	153,204,255
+==445813== 
+==445813== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445813== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445813==    <inherited from parent>
+==445813== 
+==445813== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445813==    <inherited from parent>
+==445813== 
+==445813== Open file descriptor 21: /dev/ptmx
+==445813==    <inherited from parent>
+==445813== 
+==445813== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445813==    <inherited from parent>
+==445813== 
+==445813== Open file descriptor 19: /dev/urandom
+==445813==    <inherited from parent>
+==445813== 
+==445813== 
+==445813== HEAP SUMMARY:
+==445813==     in use at exit: 0 bytes in 0 blocks
+==445813==   total heap usage: 68 allocs, 68 frees, 1,352 bytes allocated
+==445813== 
+==445813== All heap blocks were freed -- no leaks are possible
+==445813== 
+==445813== For lists of detected and suppressed errors, rerun with: -s
+==445813== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445814== Memcheck, a memory error detector
+==445814== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445814== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445814== Command: ./cub3D maps/good/test_map_hole.cub
+==445814== 
+File Fd:	3
+North texture:	textures/wolfenstein/grey_stone.xpm
+South texture:	textures/wolfenstein/purple_stone.xpm
+East texture:	textures/wolfenstein/wood.xpm
+West texture:	textures/wolfenstein/red_brick.xpm
+Floor:		18,53,25
+Ceiling:	153,204,255
+==445814== 
+==445814== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445814== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445814==    <inherited from parent>
+==445814== 
+==445814== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445814==    <inherited from parent>
+==445814== 
+==445814== Open file descriptor 21: /dev/ptmx
+==445814==    <inherited from parent>
+==445814== 
+==445814== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445814==    <inherited from parent>
+==445814== 
+==445814== Open file descriptor 19: /dev/urandom
+==445814==    <inherited from parent>
+==445814== 
+==445814== 
+==445814== HEAP SUMMARY:
+==445814==     in use at exit: 0 bytes in 0 blocks
+==445814==   total heap usage: 68 allocs, 68 frees, 1,352 bytes allocated
+==445814== 
+==445814== All heap blocks were freed -- no leaks are possible
+==445814== 
+==445814== For lists of detected and suppressed errors, rerun with: -s
+==445814== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445827== Memcheck, a memory error detector
+==445827== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445827== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445827== Command: ./cub3D maps/good/test_pos_bottom.cub
+==445827== 
+File Fd:	3
+North texture:	textures/test/north.xpm
+South texture:	textures/test/south.xpm
+East texture:	textures/test/east.xpm
+West texture:	textures/test/west.xpm
+Floor:		20,20,20
+Ceiling:	200,200,200
+==445827== 
+==445827== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445827== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445827==    <inherited from parent>
+==445827== 
+==445827== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445827==    <inherited from parent>
+==445827== 
+==445827== Open file descriptor 21: /dev/ptmx
+==445827==    <inherited from parent>
+==445827== 
+==445827== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445827==    <inherited from parent>
+==445827== 
+==445827== Open file descriptor 19: /dev/urandom
+==445827==    <inherited from parent>
+==445827== 
+==445827== 
+==445827== HEAP SUMMARY:
+==445827==     in use at exit: 0 bytes in 0 blocks
+==445827==   total heap usage: 67 allocs, 67 frees, 1,088 bytes allocated
+==445827== 
+==445827== All heap blocks were freed -- no leaks are possible
+==445827== 
+==445827== For lists of detected and suppressed errors, rerun with: -s
+==445827== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445828== Memcheck, a memory error detector
+==445828== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445828== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445828== Command: ./cub3D maps/good/test_pos_left.cub
+==445828== 
+File Fd:	3
+North texture:	textures/test/north.xpm
+South texture:	textures/test/south.xpm
+East texture:	textures/test/east.xpm
+West texture:	textures/test/west.xpm
+Floor:		20,20,20
+Ceiling:	200,200,200
+==445828== 
+==445828== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445828== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445828==    <inherited from parent>
+==445828== 
+==445828== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445828==    <inherited from parent>
+==445828== 
+==445828== Open file descriptor 21: /dev/ptmx
+==445828==    <inherited from parent>
+==445828== 
+==445828== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445828==    <inherited from parent>
+==445828== 
+==445828== Open file descriptor 19: /dev/urandom
+==445828==    <inherited from parent>
+==445828== 
+==445828== 
+==445828== HEAP SUMMARY:
+==445828==     in use at exit: 0 bytes in 0 blocks
+==445828==   total heap usage: 67 allocs, 67 frees, 1,088 bytes allocated
+==445828== 
+==445828== All heap blocks were freed -- no leaks are possible
+==445828== 
+==445828== For lists of detected and suppressed errors, rerun with: -s
+==445828== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445829== Memcheck, a memory error detector
+==445829== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445829== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445829== Command: ./cub3D maps/good/test_pos_right.cub
+==445829== 
+File Fd:	3
+North texture:	textures/test/north.xpm
+South texture:	textures/test/south.xpm
+East texture:	textures/test/east.xpm
+West texture:	textures/test/west.xpm
+Floor:		20,20,20
+Ceiling:	200,200,200
+==445829== 
+==445829== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445829== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445829==    <inherited from parent>
+==445829== 
+==445829== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445829==    <inherited from parent>
+==445829== 
+==445829== Open file descriptor 21: /dev/ptmx
+==445829==    <inherited from parent>
+==445829== 
+==445829== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445829==    <inherited from parent>
+==445829== 
+==445829== Open file descriptor 19: /dev/urandom
+==445829==    <inherited from parent>
+==445829== 
+==445829== 
+==445829== HEAP SUMMARY:
+==445829==     in use at exit: 0 bytes in 0 blocks
+==445829==   total heap usage: 67 allocs, 67 frees, 1,088 bytes allocated
+==445829== 
+==445829== All heap blocks were freed -- no leaks are possible
+==445829== 
+==445829== For lists of detected and suppressed errors, rerun with: -s
+==445829== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445830== Memcheck, a memory error detector
+==445830== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445830== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445830== Command: ./cub3D maps/good/test_pos_top.cub
+==445830== 
+File Fd:	3
+North texture:	textures/test/north.xpm
+South texture:	textures/test/south.xpm
+East texture:	textures/test/east.xpm
+West texture:	textures/test/west.xpm
+Floor:		20,20,20
+Ceiling:	200,200,200
+==445830== 
+==445830== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445830== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445830==    <inherited from parent>
+==445830== 
+==445830== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445830==    <inherited from parent>
+==445830== 
+==445830== Open file descriptor 21: /dev/ptmx
+==445830==    <inherited from parent>
+==445830== 
+==445830== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445830==    <inherited from parent>
+==445830== 
+==445830== Open file descriptor 19: /dev/urandom
+==445830==    <inherited from parent>
+==445830== 
+==445830== 
+==445830== HEAP SUMMARY:
+==445830==     in use at exit: 0 bytes in 0 blocks
+==445830==   total heap usage: 67 allocs, 67 frees, 1,088 bytes allocated
+==445830== 
+==445830== All heap blocks were freed -- no leaks are possible
+==445830== 
+==445830== For lists of detected and suppressed errors, rerun with: -s
+==445830== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445837== Memcheck, a memory error detector
+==445837== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445837== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445837== Command: ./cub3D maps/good/test_textures.cub
+==445837== 
+File Fd:	3
+North texture:	textures/test/north.xpm
+South texture:	textures/test/south.xpm
+East texture:	textures/test/east.xpm
+West texture:	textures/test/west.xpm
+Floor:		20,20,20
+Ceiling:	200,200,200
+==445837== 
+==445837== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445837== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445837==    <inherited from parent>
+==445837== 
+==445837== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445837==    <inherited from parent>
+==445837== 
+==445837== Open file descriptor 21: /dev/ptmx
+==445837==    <inherited from parent>
+==445837== 
+==445837== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445837==    <inherited from parent>
+==445837== 
+==445837== Open file descriptor 19: /dev/urandom
+==445837==    <inherited from parent>
+==445837== 
+==445837== 
+==445837== HEAP SUMMARY:
+==445837==     in use at exit: 0 bytes in 0 blocks
+==445837==   total heap usage: 67 allocs, 67 frees, 1,088 bytes allocated
+==445837== 
+==445837== All heap blocks were freed -- no leaks are possible
+==445837== 
+==445837== For lists of detected and suppressed errors, rerun with: -s
+==445837== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445838== Memcheck, a memory error detector
+==445838== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445838== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445838== Command: ./cub3D maps/good/test_whitespace.cub
+==445838== 
+File Fd:	3
+North texture:	textures/test/north.xpm
+South texture:	textures/test/south.xpm
+East texture:	textures/test/east.xpm
+West texture:	textures/test/west.xpm
+Floor:		20,20,20
+Ceiling:	200,200,200
+==445838== 
+==445838== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445838== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445838==    <inherited from parent>
+==445838== 
+==445838== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445838==    <inherited from parent>
+==445838== 
+==445838== Open file descriptor 21: /dev/ptmx
+==445838==    <inherited from parent>
+==445838== 
+==445838== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445838==    <inherited from parent>
+==445838== 
+==445838== Open file descriptor 19: /dev/urandom
+==445838==    <inherited from parent>
+==445838== 
+==445838== 
+==445838== HEAP SUMMARY:
+==445838==     in use at exit: 0 bytes in 0 blocks
+==445838==   total heap usage: 111 allocs, 111 frees, 1,371 bytes allocated
+==445838== 
+==445838== All heap blocks were freed -- no leaks are possible
+==445838== 
+==445838== For lists of detected and suppressed errors, rerun with: -s
+==445838== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==445839== Memcheck, a memory error detector
+==445839== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==445839== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==445839== Command: ./cub3D maps/good/works.cub
+==445839== 
+File Fd:	3
+North texture:	textures/wolfenstein/purple_stone.xpm
+South texture:	textures/wolfenstein/red_brick.xpm
+East texture:	textures/wolfenstein/wood.xpm
+West texture:	textures/wolfenstein/grey_stone.xpm
+Floor:		17,38,64
+Ceiling:	218,234,235
+==445839== 
+==445839== FILE DESCRIPTORS: 8 open (3 std) at exit.
+==445839== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240223T230819/network.log
+==445839==    <inherited from parent>
+==445839== 
+==445839== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240223T230819/remoteagent.log
+==445839==    <inherited from parent>
+==445839== 
+==445839== Open file descriptor 21: /dev/ptmx
+==445839==    <inherited from parent>
+==445839== 
+==445839== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240223T230819/ptyhost.log
+==445839==    <inherited from parent>
+==445839== 
+==445839== Open file descriptor 19: /dev/urandom
+==445839==    <inherited from parent>
+==445839== 
+==445839== 
+==445839== HEAP SUMMARY:
+==445839==     in use at exit: 0 bytes in 0 blocks
+==445839==   total heap usage: 97 allocs, 97 frees, 1,709 bytes allocated
+==445839== 
+==445839== All heap blocks were freed -- no leaks are possible
+==445839== 
+==445839== For lists of detected and suppressed errors, rerun with: -s
+==445839== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+

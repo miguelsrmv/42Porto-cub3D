@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 17:05:58 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/23 20:45:42 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/23 23:31:18 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,9 @@ void	unite_colours(char **line_as_tab)
 			free(temp);
 		i++;
 	}
-	i = 1;
-	while (line_as_tab[i])
-	{
-		free(line_as_tab[i]);
-		if (i == 1)
-			line_as_tab[i] = joined_tab;
-		i++;
-	}
+	free(line_as_tab[1]);
+	line_as_tab[1] = ft_strdup(joined_tab);
+	free(joined_tab);
 }
 
 /// @brief Checks if colours only contain digits
