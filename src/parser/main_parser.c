@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:54:14 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/23 09:08:05 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/23 20:40:12 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ t_map_data	*check_contents(int file_fd)
 
 /// @brief 					Declares and initializes struct t_map_data
 /// @param map_data 		Double_pointer struct
-/// @param file_fd 			Map file descriptor
 void	initialize_map_data(t_map_data **map_data, int file_fd)
 {
 	*map_data = (t_map_data *)ft_calloc(1, sizeof(t_map_data));

@@ -6,14 +6,15 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/23 17:09:58 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/23 20:43:46 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /// @brief Fills map_data depending on the starting characters of line
-enum e_HeaderType	check_wall_texture(char **line_as_tab,
+//// Will exit if duplicate data is found
+void	check_wall_texture(char **line_as_tab,
 		t_map_data **map_data)
 {
 	char	*texture_path;
@@ -36,8 +37,38 @@ enum e_HeaderType	check_wall_texture(char **line_as_tab,
 	{
 		ft_free_tabs((void **)line_as_tab);
 		free(texture_path);
-		return (INVALID);
+		exit_cub3(*map_data, REPEATED_ERROR_MSG);
 	}
 	ft_free_tabs((void **)line_as_tab);
-	return (VALID_INFO);
+}
+
+/// @brief Checks if textures exist, are .xpm, are readable
+//// Will exit in case they're a dir too!
+void	check_texture_files(t_map_data **map_data)
+{
+	int		file_fd;
+	int		i;
+	char	*textures[4];
+	char	*buffer[1];
+
+	textures[0] = (*map_data)->north_texture;
+	textures[1] = (*map_data)->south_texture;
+	textures[2] = (*map_data)->west_texture;
+	textures[3] = (*map_data)->east_texture;
+	i = 0;
+	while (i < 4)
+	{
+		file_fd = open(textures[i], O_RDONLY);
+		if (file_fd == -1)
+			exit_cub3(*map_data, TEXTURE_ERROR_MSG);
+		if (read(file_fd, buffer, 0) == -1 && errno == EISDIR)
+		{
+			close(file_fd);
+			exit_cub3(*map_data, TEXTURE_ERROR_MSG);
+		}
+		close(file_fd);
+		if (ft_checkextension(textures[i], ".xpm"))
+			exit_cub3(*map_data, TEXTURE_WRONG_FORMAT_MSG);
+		i++;
+	}
 }

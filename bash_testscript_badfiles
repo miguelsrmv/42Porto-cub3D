@@ -1,0 +1,24 @@
+#!/bin/bash
+## This file tests all maps from maps/bad and outputs info to output_badfiles.log
+## Don't forget to check permissions after a git pull!
+
+
+# Directory containing files
+directory="maps/bad"
+
+# Output log file for good files
+output_log="output_badfiles.log"
+
+# Delete previous output_log
+rm $output_log
+
+# Iterate over each file in the directory
+for file in "$directory"/*; do
+    # Check if the file is a regular file
+    if [ -f "$file" ]; then
+        echo "Running valgrind on $file..."
+        valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes ./cub3D "$file" >> "$output_log" 2>&1
+		echo "" >> "$output_log" 2>&1
+        echo "Finished running valgrind on $file."
+    fi
+done

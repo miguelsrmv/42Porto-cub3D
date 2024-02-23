@@ -6,25 +6,23 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:42:18 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/23 09:30:08 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/23 20:38:26 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-/// @brief Check proper usage at Command Line Interface, exits if inappropriate
+/// @brief Check proper usage at Command Line Interface; exits if inappropriate
 void	check_usage(int argc, char **argv)
 {
 	if (argc != 2)
 	{
-		ft_fprintf(STDERR_FILENO, "Error\n");
-		ft_fprintf(STDERR_FILENO, USAGE_ERROR_MSG);
+		printf("Error\n%s", USAGE_ERROR_MSG);
 		exit(INVALID_USAGE);
 	}
 	if (ft_checkextension(argv[1], ".cub"))
 	{
-		ft_fprintf(STDERR_FILENO, "Error\n");
-		ft_fprintf(STDERR_FILENO, USAGE_ERROR_MSG);
+		printf("Error\n%s", USAGE_ERROR_MSG);
 		exit(INVALID_FORMAT);
 	}
 }
@@ -35,13 +33,27 @@ void	check_usage(int argc, char **argv)
 int	check_file(char *file)
 {
 	int		file_fd;
+	char	buffer[1];
+	int		bytes_read;
 
 	file_fd = open(file, O_RDONLY);
 	if (file_fd == -1)
 	{
-		ft_fprintf(STDERR_FILENO, "Error\n");
-		ft_fprintf(STDERR_FILENO, "(%s) ", file);
-		perror(FILE_ERROR_MSG);
+		printf("Error\n");
+		perror(file);
+		exit(INVALID_FILE);
+	}
+	bytes_read = read(file_fd, buffer, 0);
+	if (bytes_read == -1)
+	{
+		if (errno == EISDIR)
+		{
+			printf("Error\n");
+			perror(file);
+		}
+		else
+			perror(file);
+		close(file_fd);
 		exit(INVALID_FILE);
 	}
 	return (file_fd);
