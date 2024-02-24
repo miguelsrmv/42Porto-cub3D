@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/23 23:27:59 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/24 11:28:52 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@
 # define HEADER_ERROR_MSG "Invalid header\n"
 # define COLOUR_ERROR_MSG "Invalid header (colour error)\n"
 # define REPEATED_ERROR_MSG "Invalid header (repeated data)\n"
+# define MAP_ERROR_MSG "Invalid map\n"
+# define POS_ERROR_MSG "Invalid map (starting position)\n"
+# define MAP_CHAR_ERROR_MSG "Invalid map (invalid characters)\n"
 # define OTHER_ERROR_MSG "Unspecified error\n"
 
 // enums
@@ -64,6 +67,9 @@ typedef struct s_map_data
 	char		*east_texture;
 	int			floor_color[3];
 	int			ceiling_color[3];
+	int			map_width;
+	int			map_height;
+	char		**map_tab;
 }		t_map_data;
 
 // Function declarations
@@ -98,9 +104,15 @@ enum e_HeaderType	check_colours_tab(char **colours);
 void				fill_in_colours(int *color, char **colours);
 void				check_colour_values(t_map_data **map_data);
 
-
 /// map_parser.c
 void				check_map(t_map_data **map_data);
+char				*get_map_buffer(t_map_data **map_data);
+void				check_map_chars(char *map_buffer,
+						t_map_data **map_data);
+void				get_map_dimensions(char *map_buffer,
+						t_map_data **map_data);
+void				create_map_tab(char *map_buffer,
+						t_map_data **map_data);
 
 /// run_cub3d.c
 void				run_cub3d(t_map_data *map_data);

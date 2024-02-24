@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:15:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/23 16:09:05 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/24 11:29:21 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void	clean_map_data(t_map_data *map_data)
 			free(map_data->west_texture);
 		if (map_data->east_texture)
 			free(map_data->east_texture);
+		if (map_data->map_tab)
+			ft_free_tabs((void **)map_data->map_tab);
 		free(map_data);
 	}
 }
