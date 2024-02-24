@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/24 11:28:52 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/24 11:42:27 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ typedef struct s_map_data
 	int			ceiling_color[3];
 	int			map_width;
 	int			map_height;
+	char		*map_buffer;
 	char		**map_tab;
 }		t_map_data;
 
@@ -106,13 +107,13 @@ void				check_colour_values(t_map_data **map_data);
 
 /// map_parser.c
 void				check_map(t_map_data **map_data);
-char				*get_map_buffer(t_map_data **map_data);
-void				check_map_chars(char *map_buffer,
-						t_map_data **map_data);
-void				get_map_dimensions(char *map_buffer,
-						t_map_data **map_data);
-void				create_map_tab(char *map_buffer,
-						t_map_data **map_data);
+void				get_map_buffer(t_map_data **map_data);
+void				check_map_chars(t_map_data **map_data);
+void				get_map_dimensions(t_map_data **map_data);
+void				create_map_tab(t_map_data **map_data);
+
+/// map_parser_2.c
+void				populate_tab(t_map_data **map_data);
 
 /// run_cub3d.c
 void				run_cub3d(t_map_data *map_data);
