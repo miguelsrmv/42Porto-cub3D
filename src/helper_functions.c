@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:39:16 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/26 16:58:41 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:13:54 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	test_tab_data(t_map_data *map_data)
 
 	x = 0;
 	y = 0;
-
 	printf("Here's the tabbed data:\n\n");
 	while (map_data->map_tab[y])
 	{

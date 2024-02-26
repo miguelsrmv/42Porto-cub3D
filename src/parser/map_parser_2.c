@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 11:41:44 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/26 16:37:39 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:14:03 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	fill_in_rest_of_line(t_map_data **map_data, int *x, int *y)
 		((*map_data)->map_tab)[*y][*x] = '0';
 		(*x)++;
 	}
-	((*map_data)->map_tab)[*y][*x]='\0';
+	((*map_data)->map_tab)[*y][*x] = '\0';
 	*x = -1;
 	(*y)++;
 }
