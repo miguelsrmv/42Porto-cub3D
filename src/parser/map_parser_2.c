@@ -6,12 +6,13 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 11:41:44 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/26 17:14:03 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/26 22:36:59 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/// @brief Fills tab with data from the buffer
 void	populate_tab(t_map_data **map_data)
 {
 	int	x;
@@ -37,6 +38,7 @@ void	populate_tab(t_map_data **map_data)
 	}
 }
 
+/// @brief  Fills lines with "\n" with '0's to make data processing easier
 void	fill_in_rest_of_line(t_map_data **map_data, int *x, int *y)
 {
 	while (*x < (*map_data)->map_width - 1)
@@ -49,10 +51,61 @@ void	fill_in_rest_of_line(t_map_data **map_data, int *x, int *y)
 	(*y)++;
 }
 
+/// @brief Defines starting position from player
 void	define_player_position(t_map_data **map_data, int y, int x, int i)
 {
 	((*map_data)->map_tab)[y][x] = (*map_data)->map_buffer[i];
 	(*map_data)->cardinal_direction = (*map_data)->map_buffer[i];
 	((*map_data)->start_pos[0]) = y;
 	((*map_data)->start_pos[1]) = x;
+}
+
+/// @brief "Flood_fill technique" to check for map limits
+void	flood_fill(t_map_data **map_data, int row, int collumn)
+{
+	if (collumn < 0
+		|| row < 0
+		|| collumn >= (*map_data)->map_width
+		|| row >= (*map_data)->map_height)
+		return ;
+	if (!((*map_data)->map_tab)[row][collumn]
+		|| ((*map_data)->map_tab)[row][collumn] == '1'
+		|| ((*map_data)->map_tab)[row][collumn] == 'X')
+		return ;
+	(*map_data)->map_tab[row][collumn] = 'X';
+	flood_fill(map_data, row -1, collumn);
+	flood_fill(map_data, row +1, collumn);
+	flood_fill(map_data, row, collumn - 1);
+	flood_fill(map_data, row, collumn + 1);
+}
+
+/// @brief Checks if there are Xs in outer borders of map
+//// Note: corners don't count?!
+void	check_limit_overflow(t_map_data **map_data)
+{
+	int	row;
+	int	collumn;
+
+	row = 0;
+	while ((*map_data)->map_tab[row])
+	{
+		if (row == 0 || row == ((*map_data)->map_height - 1))
+		{
+			collumn = 1;
+			while ((*map_data)->map_tab[row][collumn])
+			{
+				if (((*map_data)->map_tab[row][collumn++]) == 'X' &&
+					collumn != (*map_data)->map_width - 2)
+					exit_cub3((*map_data), MAP_LIMIT_ERROR_MSG);
+			}
+		}
+		else
+		{
+			if ((*map_data)->map_tab[row][0] == 'X'
+				|| ((*map_data)->map_tab[row][(*map_data)->map_width - 2])
+					== 'X')
+				exit_cub3((*map_data), MAP_LIMIT_ERROR_MSG);
+		}
+		row++;
+	}
 }

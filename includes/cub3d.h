@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/26 16:58:43 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/26 22:30:56 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 # define MAP_ERROR_MSG "Invalid map\n"
 # define POS_ERROR_MSG "Invalid map (starting position)\n"
 # define MAP_CHAR_ERROR_MSG "Invalid map (invalid characters)\n"
+# define MAP_LIMIT_ERROR_MSG "Invalid map (no closed border)\n"
 # define OTHER_ERROR_MSG "Unspecified error\n"
 
 // enums
@@ -67,9 +68,11 @@ typedef struct s_map_data
 	char		*east_texture;
 	int			floor_color[3];
 	int			ceiling_color[3];
+
 	int			map_width;
 	int			map_height;
 	char		*map_buffer;
+
 	char		**map_tab;
 	int			start_pos[2];
 	char		cardinal_direction;
@@ -120,6 +123,9 @@ void				fill_in_rest_of_line(t_map_data **map_data,
 						int *x, int *y);
 void				define_player_position(t_map_data **map_data,
 						int y, int x, int i);
+void				flood_fill(t_map_data **map_data,
+						int row, int collumn);
+void				check_limit_overflow(t_map_data **map_data);
 
 /// run_cub3d.c
 void				run_cub3d(t_map_data *map_data);

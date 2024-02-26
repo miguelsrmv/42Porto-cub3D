@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:54:14 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/26 16:48:46 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/26 22:37:47 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_map_data	*check_contents(int file_fd)
 	initialize_map_data(&map_data, file_fd);
 	check_header(&map_data);
 	check_map(&map_data);
-	test_tab_data(map_data);
 	return (map_data);
 }
 
