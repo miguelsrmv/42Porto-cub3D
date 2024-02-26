@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:13:49 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/24 11:42:53 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:11:39 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,26 @@ void	check_map(t_map_data **map_data)
 void	get_map_buffer(t_map_data **map_data)
 {
 	char	*map_buffer;
+	char	*new_buffer;
 	char	*temp;
 
-	map_buffer = "";
+	map_buffer = ft_strdup("");
+	if (!map_buffer)
+		exit_cub3(*map_data, MALLOC_ERROR_MSG);
 	while (true)
 	{
 		temp = get_next_line((*map_data)->file_fd);
-		if (temp == NULL)
+		if (!temp)
 			break ;
-		map_buffer = ft_strjoin(map_buffer, temp);
-		if (!map_buffer)
-		{
-			free(temp);
-			exit_cub3((*map_data), MALLOC_ERROR_MSG);
-		}
+		new_buffer = ft_strjoin(map_buffer, temp);
 		free(temp);
+		if (!new_buffer)
+		{
+			free(map_buffer);
+			exit_cub3(*map_data, MALLOC_ERROR_MSG);
+		}
+		free(map_buffer);
+		map_buffer = new_buffer;
 	}
 	(*map_data)->map_buffer = map_buffer;
 }
@@ -104,7 +109,7 @@ void	create_map_tab(t_map_data **map_data)
 	int	i;
 
 	(*map_data)->map_tab
-		= (char **)malloc(sizeof(char *) * (*map_data)->map_height);
+		= (char **)malloc(sizeof(char *) * ((*map_data)->map_height + 1));
 	if (!((*map_data)->map_tab))
 		exit_cub3((*map_data), MALLOC_ERROR_MSG);
 	i = 0;
@@ -116,4 +121,5 @@ void	create_map_tab(t_map_data **map_data)
 			exit_cub3((*map_data), MALLOC_ERROR_MSG);
 		i++;
 	}
+	(*map_data)->map_tab[i] = NULL;
 }

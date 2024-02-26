@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/24 11:42:27 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:58:43 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ typedef struct s_map_data
 	int			map_height;
 	char		*map_buffer;
 	char		**map_tab;
+	int			start_pos[2];
+	char		cardinal_direction;
 }		t_map_data;
 
 // Function declarations
@@ -114,6 +116,10 @@ void				create_map_tab(t_map_data **map_data);
 
 /// map_parser_2.c
 void				populate_tab(t_map_data **map_data);
+void				fill_in_rest_of_line(t_map_data **map_data,
+						int *x, int *y);
+void				define_player_position(t_map_data **map_data,
+						int y, int x, int i);
 
 /// run_cub3d.c
 void				run_cub3d(t_map_data *map_data);
@@ -125,5 +131,6 @@ void				clean_map_data(t_map_data *map_data);
 
 /// helper_functions.c
 void				test_map_data(t_map_data *map_data);
+void				test_tab_data(t_map_data *map_data);
 
 #endif
