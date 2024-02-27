@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/26 22:30:56 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/27 18:56:33 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,14 @@ typedef struct s_map_data
 	char		cardinal_direction;
 }		t_map_data;
 
+typedef struct s_filler_data
+{
+	int			top_filler;
+	int			bottom_filler;
+	int			left_filler;
+	int			right_filler;
+}	t_filler_data;
+
 // Function declarations
 /// main.c
 int					main(int argc, char **argv);
@@ -126,6 +134,23 @@ void				define_player_position(t_map_data **map_data,
 void				flood_fill(t_map_data **map_data,
 						int row, int collumn);
 void				check_limit_overflow(t_map_data **map_data);
+
+/// map_cleaner.c
+void				map_cleaner(t_map_data **map_data);
+void				recreate_leaner_tab(t_map_data **map_data,
+						t_filler_data filler_data);
+void				refill_with_0s(t_map_data **map_data);
+void				update_starting_position(t_map_data **map_data,
+						t_filler_data filler_data);
+
+/// get_map_filler_data.c
+t_filler_data		get_filler_data(t_map_data **map_data);
+int					detect_top_filler(t_map_data **map_data);
+int					detect_bottom_filler(t_map_data **map_data);
+int					detect_left_filler(t_map_data **map_data,
+						t_filler_data filler_data);
+int					detect_right_filler(t_map_data **map_data,
+						t_filler_data filler_data);
 
 /// run_cub3d.c
 void				run_cub3d(t_map_data *map_data);

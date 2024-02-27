@@ -6,7 +6,7 @@
 #    By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 09:55:46 by mde-sa--          #+#    #+#              #
-#    Updated: 2024/02/26 12:02:10 by mde-sa--         ###   ########.fr        #
+#    Updated: 2024/02/27 18:41:05 by mde-sa--         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ MLXDIR  = 	minilibx-linux
 SRC		=	main.c usage_check.c \
 			parser/main_parser.c parser/header_parser.c parser/texture_parser.c \
 			parser/colour_parser.c parser/map_parser.c parser/map_parser_2.c\
+			parser/map_cleaner.c parser/get_map_filler_data.c \
 			run_cub3d.c \
 			clean_memory.c \
 			helper_functions.c
