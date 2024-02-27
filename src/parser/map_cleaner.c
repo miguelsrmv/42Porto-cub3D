@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 12:20:13 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/27 18:58:37 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/27 19:52:43 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	recreate_leaner_tab(t_map_data **map_data, t_filler_data filler_data)
 	ft_free_tabs((void **)old_map);
 }
 
+/// @brief Takes out the 'X's and fills them again with '0's
 void	refill_with_0s(t_map_data **map_data)
 {
 	int	x;
@@ -73,6 +74,7 @@ void	refill_with_0s(t_map_data **map_data)
 	}
 }
 
+/// @brief Updates starting position, as well as character on map
 void	update_starting_position(t_map_data **map_data,
 			t_filler_data filler_data)
 {
