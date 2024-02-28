@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:13:49 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/28 10:59:09 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/28 11:04:07 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ void	check_map_chars(t_map_data **map_data)
 			|| (*map_data)->map_buffer[i] == '\n')
 			i++;
 		else if ((*map_data)->map_buffer[i] == 'N'
-			|| (*map_data)->map_buffer[i] == 'E'
-			|| (*map_data)->map_buffer[i] == 'O'
-			|| (*map_data)->map_buffer[i] == 'W')
+			|| (*map_data)->map_buffer[i] == 'S'
+			|| (*map_data)->map_buffer[i] == 'W'
+			|| (*map_data)->map_buffer[i] == 'E')
 		{
 			if (start_pos_flag)
 				exit_cub3((*map_data), POS_ERROR_MSG);
