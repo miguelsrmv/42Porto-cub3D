@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:13:49 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/27 18:44:53 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/02/28 10:59:09 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,8 @@ void	check_map(t_map_data **map_data)
 	get_map_dimensions(map_data);
 	create_map_tab(map_data);
 	populate_tab(map_data);
-	test_tab_data(*map_data);
 	flood_fill(map_data, (*map_data)->start_pos[0], (*map_data)->start_pos[1]);
 	check_limit_overflow(map_data);
-	test_tab_data(*map_data);
 	map_cleaner(map_data);
 	test_tab_data(*map_data);
 }
@@ -89,6 +87,7 @@ void	check_map_chars(t_map_data **map_data)
 
 /// @brief Gets height and width of map.
 //// For simplicity, empty lines will be given the same width as filled ones
+//// In the end, checks if map is at least 3x3
 void	get_map_dimensions(t_map_data **map_data)
 {
 	int		i;
@@ -107,6 +106,8 @@ void	get_map_dimensions(t_map_data **map_data)
 		}
 		i++;
 	}
+	if ((*map_data)->map_width <= 2 || (*map_data)->map_height <= 2)
+		exit_cub3(*map_data, MAP_ERROR_MSG);
 }
 
 /// @brief Creates a map_tab given map_height and map_width
