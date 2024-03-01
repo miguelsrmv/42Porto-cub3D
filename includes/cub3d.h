@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/27 18:56:33 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/03/01 14:34:32 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <errno.h>
 # include <sys/types.h>
 # include <sys/stat.h>
+# include <mlx.h>
 
 // Defines
 /// Error messages
@@ -38,6 +39,10 @@
 # define MAP_CHAR_ERROR_MSG "Invalid map (invalid characters)\n"
 # define MAP_LIMIT_ERROR_MSG "Invalid map (no closed border)\n"
 # define OTHER_ERROR_MSG "Unspecified error\n"
+
+/// Magic numbers
+# define SCREEN_WIDTH 1280
+# define SCREEN_HEIGHT 720
 
 // enums
 enum e_ExitStatus
@@ -159,6 +164,7 @@ void				run_cub3d(t_map_data *map_data);
 void				exit_cub3(t_map_data *map_data,
 						char *message);
 void				clean_map_data(t_map_data *map_data);
+void				clean_mlx(void	*mlx, void	*mlx_window, void *mlx_img);
 
 /// helper_functions.c
 void				test_map_data(t_map_data *map_data);
