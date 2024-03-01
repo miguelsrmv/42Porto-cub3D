@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/03/01 14:34:32 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/03/01 19:31:45 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,16 @@ typedef struct s_filler_data
 	int			left_filler;
 	int			right_filler;
 }	t_filler_data;
+
+typedef struct s_mlx_img
+{
+	void		*img;
+	char		*addr;
+	int			bits_per_pixel;
+	int			line_length;
+	int			endian;
+}				t_mlx_img;
+
 
 // Function declarations
 /// main.c
