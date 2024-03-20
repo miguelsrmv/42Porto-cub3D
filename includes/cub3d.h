@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/03/20 13:21:33 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:33:20 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,6 @@ typedef struct s_mlx_img
 	int			endian;
 }				t_mlx_img;
 
-void	ft_test(void **tab);
-
 // Function declarations
 /// main.c
 int					main(int argc, char **argv);
@@ -165,12 +163,17 @@ void				trim_map_buffer(t_map_data **map_data);
 
 /// get_map_lean_limits.c
 t_lean_limits		get_lean_limits(t_map_data **map_data);
+t_lean_limits		get_max_values(t_map_data **map_data);
+void				update_lean_limits(t_lean_limits *lean_limits,
+						int x, int y);
+
+/* t_lean_limits		get_lean_limits(t_map_data **map_data);
 int					detect_top_limit(t_map_data **map_data);
 int					detect_bottom_limit(t_map_data **map_data);
 int					detect_left_limit(t_map_data **map_data,
 						t_lean_limits lean_limits);
 int					detect_right_limit(t_map_data **map_data,
-						t_lean_limits lean_limits);
+						t_lean_limits lean_limits); */
 
 /// run_cub3d.c
 void				run_cub3d(t_map_data *map_data);

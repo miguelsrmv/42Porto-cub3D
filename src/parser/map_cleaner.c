@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 12:20:13 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/03/20 14:00:01 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:51:03 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 //// Then, updates player position after cutting down "fat" data
 void	map_cleaner(t_map_data **map_data)
 {
-//	t_lean_limits	lean_limits;
+	t_lean_limits	lean_limits;
 
-//	lean_limits = get_lean_limits(map_data);
-//	recreate_leaner_tab(map_data, lean_limits);
-//	update_starting_position(map_data, lean_limits);
+	lean_limits = get_lean_limits(map_data);
+	recreate_leaner_tab(map_data, lean_limits);
+	update_starting_position(map_data, lean_limits);
 	refill_with_0s(map_data);
 }
 
