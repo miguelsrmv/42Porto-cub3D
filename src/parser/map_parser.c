@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:13:49 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/03/20 13:57:05 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/03/20 18:12:30 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,29 @@ void	get_map_buffer(t_map_data **map_data)
 		map_buffer = new_buffer;
 	}
 	(*map_data)->map_buffer = map_buffer;
+}
+
+/// @brief Trims initial and final '\n's, thus checking if there is a map
+void	trim_map_buffer(t_map_data **map_data)
+{
+	int		start;
+	int		end;
+	char	*leaner_buffer;
+
+	start = 0;
+	end = ft_strlen((*map_data)->map_buffer);
+	while ((*map_data)->map_buffer[start] == '\n')
+		start++;
+	if (start == end)
+		exit_cub3(*map_data, MAP_MISS_ERROR_MSG);
+	while ((*map_data)->map_buffer[end - 1] == '\n')
+		end--;
+	leaner_buffer = ft_strndup(&(*map_data)->map_buffer[start],
+			end - start);
+	if (!leaner_buffer)
+		exit_cub3(*map_data, MALLOC_ERROR_MSG);
+	free((*map_data)->map_buffer);
+	(*map_data)->map_buffer = leaner_buffer;
 }
 
 /// @brief Gets height and width of map.
@@ -110,25 +133,4 @@ void	check_map_chars(t_map_data **map_data)
 	}
 	if (!start_pos_flag)
 		exit_cub3(*map_data, NO_START_POS);
-}
-
-/// @brief Creates a map_tab given map_height and map_width
-void	create_map_tab(t_map_data **map_data)
-{
-	int	i;
-
-	(*map_data)->map_tab
-		= (char **)malloc(sizeof(char *) * ((*map_data)->map_height + 1));
-	if (!((*map_data)->map_tab))
-		exit_cub3((*map_data), MALLOC_ERROR_MSG);
-	i = 0;
-	while (i < (*map_data)->map_height)
-	{
-		(*map_data)->map_tab[i]
-			= (char *)malloc(sizeof(char) * ((*map_data)->map_width + 1));
-		if (!((*map_data)->map_tab[i]))
-			exit_cub3((*map_data), MALLOC_ERROR_MSG);
-		i++;
-	}
-	(*map_data)->map_tab[(*map_data)->map_height] = NULL;
 }

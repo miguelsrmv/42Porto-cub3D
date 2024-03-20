@@ -29,6 +29,26 @@ X: 1
 Y: 19
 Orientation: N
 
+==303117== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303117== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303117==    <inherited from parent>
+==303117== 
+==303117== Open file descriptor 24: /dev/ptmx
+==303117==    <inherited from parent>
+==303117== 
+==303117== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303117==    <inherited from parent>
+==303117== 
+==303117== Open file descriptor 21: /dev/ptmx
+==303117==    <inherited from parent>
+==303117== 
+==303117== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303117==    <inherited from parent>
+==303117== 
+==303117== Open file descriptor 19: /dev/urandom
+==303117==    <inherited from parent>
+==303117== 
+==303117== 
 
 
 
@@ -55,6 +75,26 @@ X: 7
 Y: 3
 Orientation: N
 
+==303120== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303120== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303120==    <inherited from parent>
+==303120== 
+==303120== Open file descriptor 24: /dev/ptmx
+==303120==    <inherited from parent>
+==303120== 
+==303120== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303120==    <inherited from parent>
+==303120== 
+==303120== Open file descriptor 21: /dev/ptmx
+==303120==    <inherited from parent>
+==303120== 
+==303120== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303120==    <inherited from parent>
+==303120== 
+==303120== Open file descriptor 19: /dev/urandom
+==303120==    <inherited from parent>
+==303120== 
+==303120== 
 
 
 
@@ -78,6 +118,26 @@ X: 2
 Y: 1
 Orientation: W
 
+==303131== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303131== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303131==    <inherited from parent>
+==303131== 
+==303131== Open file descriptor 24: /dev/ptmx
+==303131==    <inherited from parent>
+==303131== 
+==303131== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303131==    <inherited from parent>
+==303131== 
+==303131== Open file descriptor 21: /dev/ptmx
+==303131==    <inherited from parent>
+==303131== 
+==303131== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303131==    <inherited from parent>
+==303131== 
+==303131== Open file descriptor 19: /dev/urandom
+==303131==    <inherited from parent>
+==303131== 
+==303131== 
 
 
 
@@ -101,6 +161,26 @@ X: 9
 Y: 5
 Orientation: S
 
+==303136== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303136== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303136==    <inherited from parent>
+==303136== 
+==303136== Open file descriptor 24: /dev/ptmx
+==303136==    <inherited from parent>
+==303136== 
+==303136== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303136==    <inherited from parent>
+==303136== 
+==303136== Open file descriptor 21: /dev/ptmx
+==303136==    <inherited from parent>
+==303136== 
+==303136== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303136==    <inherited from parent>
+==303136== 
+==303136== Open file descriptor 19: /dev/urandom
+==303136==    <inherited from parent>
+==303136== 
+==303136== 
 
 
 
@@ -135,6 +215,26 @@ X: 1
 Y: 19
 Orientation: N
 
+==303149== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303149== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303149==    <inherited from parent>
+==303149== 
+==303149== Open file descriptor 24: /dev/ptmx
+==303149==    <inherited from parent>
+==303149== 
+==303149== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303149==    <inherited from parent>
+==303149== 
+==303149== Open file descriptor 21: /dev/ptmx
+==303149==    <inherited from parent>
+==303149== 
+==303149== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303149==    <inherited from parent>
+==303149== 
+==303149== Open file descriptor 19: /dev/urandom
+==303149==    <inherited from parent>
+==303149== 
+==303149== 
 
 
 
@@ -161,6 +261,26 @@ X: 7
 Y: 3
 Orientation: N
 
+==303155== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303155== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303155==    <inherited from parent>
+==303155== 
+==303155== Open file descriptor 24: /dev/ptmx
+==303155==    <inherited from parent>
+==303155== 
+==303155== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303155==    <inherited from parent>
+==303155== 
+==303155== Open file descriptor 21: /dev/ptmx
+==303155==    <inherited from parent>
+==303155== 
+==303155== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303155==    <inherited from parent>
+==303155== 
+==303155== Open file descriptor 19: /dev/urandom
+==303155==    <inherited from parent>
+==303155== 
+==303155== 
 
 
 
@@ -177,6 +297,26 @@ X: 2
 Y: 1
 Orientation: W
 
+==303158== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303158== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303158==    <inherited from parent>
+==303158== 
+==303158== Open file descriptor 24: /dev/ptmx
+==303158==    <inherited from parent>
+==303158== 
+==303158== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303158==    <inherited from parent>
+==303158== 
+==303158== Open file descriptor 21: /dev/ptmx
+==303158==    <inherited from parent>
+==303158== 
+==303158== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303158==    <inherited from parent>
+==303158== 
+==303158== Open file descriptor 19: /dev/urandom
+==303158==    <inherited from parent>
+==303158== 
+==303158== 
 
 
 
@@ -217,6 +357,26 @@ X: 9
 Y: 3
 Orientation: N
 
+==303172== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303172== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303172==    <inherited from parent>
+==303172== 
+==303172== Open file descriptor 24: /dev/ptmx
+==303172==    <inherited from parent>
+==303172== 
+==303172== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303172==    <inherited from parent>
+==303172== 
+==303172== Open file descriptor 21: /dev/ptmx
+==303172==    <inherited from parent>
+==303172== 
+==303172== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303172==    <inherited from parent>
+==303172== 
+==303172== Open file descriptor 19: /dev/urandom
+==303172==    <inherited from parent>
+==303172== 
+==303172== 
 
 
 
@@ -239,6 +399,26 @@ X: 2
 Y: 6
 Orientation: N
 
+==303174== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303174== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303174==    <inherited from parent>
+==303174== 
+==303174== Open file descriptor 24: /dev/ptmx
+==303174==    <inherited from parent>
+==303174== 
+==303174== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303174==    <inherited from parent>
+==303174== 
+==303174== Open file descriptor 21: /dev/ptmx
+==303174==    <inherited from parent>
+==303174== 
+==303174== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303174==    <inherited from parent>
+==303174== 
+==303174== Open file descriptor 19: /dev/urandom
+==303174==    <inherited from parent>
+==303174== 
+==303174== 
 
 
 
@@ -255,6 +435,26 @@ X: 2
 Y: 1
 Orientation: S
 
+==303178== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303178== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303178==    <inherited from parent>
+==303178== 
+==303178== Open file descriptor 24: /dev/ptmx
+==303178==    <inherited from parent>
+==303178== 
+==303178== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303178==    <inherited from parent>
+==303178== 
+==303178== Open file descriptor 21: /dev/ptmx
+==303178==    <inherited from parent>
+==303178== 
+==303178== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303178==    <inherited from parent>
+==303178== 
+==303178== Open file descriptor 19: /dev/urandom
+==303178==    <inherited from parent>
+==303178== 
+==303178== 
 
 
 
@@ -274,6 +474,26 @@ X: 2
 Y: 4
 Orientation: S
 
+==303192== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303192== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303192==    <inherited from parent>
+==303192== 
+==303192== Open file descriptor 24: /dev/ptmx
+==303192==    <inherited from parent>
+==303192== 
+==303192== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303192==    <inherited from parent>
+==303192== 
+==303192== Open file descriptor 21: /dev/ptmx
+==303192==    <inherited from parent>
+==303192== 
+==303192== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303192==    <inherited from parent>
+==303192== 
+==303192== Open file descriptor 19: /dev/urandom
+==303192==    <inherited from parent>
+==303192== 
+==303192== 
 
 
 
@@ -300,6 +520,26 @@ X: 1
 Y: 11
 Orientation: S
 
+==303195== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303195== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303195==    <inherited from parent>
+==303195== 
+==303195== Open file descriptor 24: /dev/ptmx
+==303195==    <inherited from parent>
+==303195== 
+==303195== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303195==    <inherited from parent>
+==303195== 
+==303195== Open file descriptor 21: /dev/ptmx
+==303195==    <inherited from parent>
+==303195== 
+==303195== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303195==    <inherited from parent>
+==303195== 
+==303195== Open file descriptor 19: /dev/urandom
+==303195==    <inherited from parent>
+==303195== 
+==303195== 
 
 
 
@@ -316,6 +556,26 @@ X: 1
 Y: 1
 Orientation: W
 
+==303198== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303198== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303198==    <inherited from parent>
+==303198== 
+==303198== Open file descriptor 24: /dev/ptmx
+==303198==    <inherited from parent>
+==303198== 
+==303198== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303198==    <inherited from parent>
+==303198== 
+==303198== Open file descriptor 21: /dev/ptmx
+==303198==    <inherited from parent>
+==303198== 
+==303198== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303198==    <inherited from parent>
+==303198== 
+==303198== Open file descriptor 19: /dev/urandom
+==303198==    <inherited from parent>
+==303198== 
+==303198== 
 
 
 
@@ -332,6 +592,26 @@ X: 19
 Y: 1
 Orientation: E
 
+==303201== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303201== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303201==    <inherited from parent>
+==303201== 
+==303201== Open file descriptor 24: /dev/ptmx
+==303201==    <inherited from parent>
+==303201== 
+==303201== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303201==    <inherited from parent>
+==303201== 
+==303201== Open file descriptor 21: /dev/ptmx
+==303201==    <inherited from parent>
+==303201== 
+==303201== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303201==    <inherited from parent>
+==303201== 
+==303201== Open file descriptor 19: /dev/urandom
+==303201==    <inherited from parent>
+==303201== 
+==303201== 
 
 
 
@@ -358,6 +638,26 @@ X: 1
 Y: 1
 Orientation: N
 
+==303204== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303204== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303204==    <inherited from parent>
+==303204== 
+==303204== Open file descriptor 24: /dev/ptmx
+==303204==    <inherited from parent>
+==303204== 
+==303204== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303204==    <inherited from parent>
+==303204== 
+==303204== Open file descriptor 21: /dev/ptmx
+==303204==    <inherited from parent>
+==303204== 
+==303204== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303204==    <inherited from parent>
+==303204== 
+==303204== Open file descriptor 19: /dev/urandom
+==303204==    <inherited from parent>
+==303204== 
+==303204== 
 
 
 
@@ -384,6 +684,26 @@ X: 2
 Y: 2
 Orientation: S
 
+==303213== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303213== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303213==    <inherited from parent>
+==303213== 
+==303213== Open file descriptor 24: /dev/ptmx
+==303213==    <inherited from parent>
+==303213== 
+==303213== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303213==    <inherited from parent>
+==303213== 
+==303213== Open file descriptor 21: /dev/ptmx
+==303213==    <inherited from parent>
+==303213== 
+==303213== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303213==    <inherited from parent>
+==303213== 
+==303213== Open file descriptor 19: /dev/urandom
+==303213==    <inherited from parent>
+==303213== 
+==303213== 
 
 
 
@@ -410,6 +730,26 @@ X: 2
 Y: 2
 Orientation: S
 
+==303216== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303216== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303216==    <inherited from parent>
+==303216== 
+==303216== Open file descriptor 24: /dev/ptmx
+==303216==    <inherited from parent>
+==303216== 
+==303216== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303216==    <inherited from parent>
+==303216== 
+==303216== Open file descriptor 21: /dev/ptmx
+==303216==    <inherited from parent>
+==303216== 
+==303216== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303216==    <inherited from parent>
+==303216== 
+==303216== Open file descriptor 19: /dev/urandom
+==303216==    <inherited from parent>
+==303216== 
+==303216== 
 
 
 
@@ -429,6 +769,26 @@ X: 2
 Y: 1
 Orientation: S
 
+==303219== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==303219== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
+==303219==    <inherited from parent>
+==303219== 
+==303219== Open file descriptor 24: /dev/ptmx
+==303219==    <inherited from parent>
+==303219== 
+==303219== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
+==303219==    <inherited from parent>
+==303219== 
+==303219== Open file descriptor 21: /dev/ptmx
+==303219==    <inherited from parent>
+==303219== 
+==303219== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
+==303219==    <inherited from parent>
+==303219== 
+==303219== Open file descriptor 19: /dev/urandom
+==303219==    <inherited from parent>
+==303219== 
+==303219== 
 
 
 

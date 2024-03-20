@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/03/20 17:33:20 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/03/20 18:23:26 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,16 +138,18 @@ void				check_colour_values(t_map_data **map_data);
 /// map_parser.c
 void				check_map(t_map_data **map_data);
 void				get_map_buffer(t_map_data **map_data);
-void				check_map_chars(t_map_data **map_data);
+void				trim_map_buffer(t_map_data **map_data);
 void				get_map_dimensions(t_map_data **map_data);
-void				create_map_tab(t_map_data **map_data);
+void				check_map_chars(t_map_data **map_data);
 
-/// map_parser_2.c
+/// create_map_tab.c
+void				create_map_tab(t_map_data **map_data);
 void				populate_tab(t_map_data **map_data);
 void				fill_in_rest_of_line(t_map_data **map_data,
 						int *x, int *y);
 void				define_player_position(t_map_data **map_data,
-						int y, int x, int i);
+						int y, int x, int i);		
+/// check_map_boundaries.c
 void				flood_fill(t_map_data **map_data,
 						int row, int collumn);
 void				check_limit_overflow(t_map_data **map_data);
@@ -156,10 +158,9 @@ void				check_limit_overflow(t_map_data **map_data);
 void				map_cleaner(t_map_data **map_data);
 void				recreate_leaner_tab(t_map_data **map_data,
 						t_lean_limits lean_limits);
-void				refill_with_0s(t_map_data **map_data);
 void				update_starting_position(t_map_data **map_data,
 						t_lean_limits lean_limits);
-void				trim_map_buffer(t_map_data **map_data);
+void				restore_with_0s(t_map_data **map_data);
 
 /// get_map_lean_limits.c
 t_lean_limits		get_lean_limits(t_map_data **map_data);
