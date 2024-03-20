@@ -6,42 +6,42 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 12:20:13 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/27 19:52:43 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:00:01 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-/// @brief Detects "filler" data on the map; creates leaner map tab without it
+/// @brief Detects "limit" data on the map; creates leaner map tab without it
 //// Then, updates player position after cutting down "fat" data
 void	map_cleaner(t_map_data **map_data)
 {
-	t_filler_data	filler_data;
+//	t_lean_limits	lean_limits;
 
-	filler_data = get_filler_data(map_data);
-	recreate_leaner_tab(map_data, filler_data);
+//	lean_limits = get_lean_limits(map_data);
+//	recreate_leaner_tab(map_data, lean_limits);
+//	update_starting_position(map_data, lean_limits);
 	refill_with_0s(map_data);
-	update_starting_position(map_data, filler_data);
 }
 
 /// @brief Creates "lean tab", a copy of map_tab without the "fat" data
-void	recreate_leaner_tab(t_map_data **map_data, t_filler_data filler_data)
+void	recreate_leaner_tab(t_map_data **map_data, t_lean_limits lean_limits)
 {
 	char			**lean_map;
 	char			**old_map;
 	int				index;
 
 	lean_map = (char **)malloc(sizeof(char *)
-			* (filler_data.bottom_filler - filler_data.top_filler + 2));
+			* (lean_limits.bottom_limit - lean_limits.top_limit + 2));
 	if (!lean_map)
 		exit_cub3(*map_data, MALLOC_ERROR_MSG);
 	index = 0;
-	while (index <= (filler_data.bottom_filler - filler_data.top_filler))
+	while (index <= (lean_limits.bottom_limit - lean_limits.top_limit))
 	{
 		lean_map[index]
 			= ft_strndup(&(*map_data)->map_tab
-			[index + filler_data.top_filler][filler_data.left_filler],
-				filler_data.right_filler - filler_data.left_filler + 1);
+			[index + lean_limits.top_limit][lean_limits.left_limit],
+				lean_limits.right_limit - lean_limits.left_limit + 1);
 		if (!lean_map[index++])
 		{
 			ft_free_tabs((void **)lean_map);
@@ -76,11 +76,34 @@ void	refill_with_0s(t_map_data **map_data)
 
 /// @brief Updates starting position, as well as character on map
 void	update_starting_position(t_map_data **map_data,
-			t_filler_data filler_data)
+			t_lean_limits lean_limits)
 {
-	((*map_data)->start_pos[0]) -= filler_data.top_filler;
-	((*map_data)->start_pos[1]) -= filler_data.left_filler;
+	((*map_data)->start_pos[0]) -= lean_limits.top_limit;
+	((*map_data)->start_pos[1]) -= lean_limits.left_limit;
 	((*map_data)->map_tab
 		[(*map_data)->start_pos[0]][(*map_data)->start_pos[1]])
 		= (*map_data)->cardinal_direction;
+}
+
+/// @brief Trims initial and final '\n's, thus checking if there is a map
+void	trim_map_buffer(t_map_data **map_data)
+{
+	int		start;
+	int		end;
+	char	*leaner_buffer;
+
+	start = 0;
+	end = ft_strlen((*map_data)->map_buffer);
+	while ((*map_data)->map_buffer[start] == '\n')
+		start++;
+	if (start == end)
+		exit_cub3(*map_data, MAP_MISS_ERROR_MSG);
+	while ((*map_data)->map_buffer[end - 1] == '\n')
+		end--;
+	leaner_buffer = ft_strndup(&(*map_data)->map_buffer[start],
+			end - start);
+	if (!leaner_buffer)
+		exit_cub3(*map_data, MALLOC_ERROR_MSG);
+	free((*map_data)->map_buffer);
+	(*map_data)->map_buffer = leaner_buffer;
 }

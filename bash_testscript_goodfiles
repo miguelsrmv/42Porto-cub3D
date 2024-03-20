@@ -12,12 +12,13 @@ output_log="output_goodfiles.log"
 rm $output_log
 
 # Iterate over each file in the directory
+echo "Running good maps tester..."
 for file in "$directory"/*; do
     # Check if the file is a regular file
     if [ -f "$file" ]; then
-        echo "Running valgrind on $file..."
-        valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes ./cub3D "$file" >> "$output_log" 2>&1
-		echo "" >> "$output_log" 2>&1
-        echo "Finished running valgrind on $file."
+        echo "Running valgrind on $file..." >> "$output_log" 2>&1
+        valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes -q ./cub3D "$file" >> "$output_log" 2>&1
+		echo -e "\n\n" >> "$output_log" 2>&1
     fi
 done
+echo "Done!"

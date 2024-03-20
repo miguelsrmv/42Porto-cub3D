@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/03/01 19:31:45 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/03/20 13:21:33 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,13 @@
 # define COLOUR_ERROR_MSG "Invalid header (colour error)\n"
 # define REPEATED_ERROR_MSG "Invalid header (repeated data)\n"
 # define MAP_ERROR_MSG "Invalid map\n"
+# define MAP_MISS_ERROR_MSG "Invalid map (missing map)\n"
+# define MAP_SIZE_ERROR_MSG "Invalid map (map too small)\n"
 # define POS_ERROR_MSG "Invalid map (starting position)\n"
 # define MAP_CHAR_ERROR_MSG "Invalid map (invalid characters)\n"
 # define MAP_LIMIT_ERROR_MSG "Invalid map (no closed border)\n"
 # define OTHER_ERROR_MSG "Unspecified error\n"
+# define NO_START_POS "No starting position\n"
 
 /// Magic numbers
 # define SCREEN_WIDTH 1280
@@ -83,13 +86,13 @@ typedef struct s_map_data
 	char		cardinal_direction;
 }		t_map_data;
 
-typedef struct s_filler_data
+typedef struct s_lean_limits
 {
-	int			top_filler;
-	int			bottom_filler;
-	int			left_filler;
-	int			right_filler;
-}	t_filler_data;
+	int			top_limit;
+	int			bottom_limit;
+	int			left_limit;
+	int			right_limit;
+}	t_lean_limits;
 
 typedef struct s_mlx_img
 {
@@ -100,6 +103,7 @@ typedef struct s_mlx_img
 	int			endian;
 }				t_mlx_img;
 
+void	ft_test(void **tab);
 
 // Function declarations
 /// main.c
@@ -153,19 +157,20 @@ void				check_limit_overflow(t_map_data **map_data);
 /// map_cleaner.c
 void				map_cleaner(t_map_data **map_data);
 void				recreate_leaner_tab(t_map_data **map_data,
-						t_filler_data filler_data);
+						t_lean_limits lean_limits);
 void				refill_with_0s(t_map_data **map_data);
 void				update_starting_position(t_map_data **map_data,
-						t_filler_data filler_data);
+						t_lean_limits lean_limits);
+void				trim_map_buffer(t_map_data **map_data);
 
-/// get_map_filler_data.c
-t_filler_data		get_filler_data(t_map_data **map_data);
-int					detect_top_filler(t_map_data **map_data);
-int					detect_bottom_filler(t_map_data **map_data);
-int					detect_left_filler(t_map_data **map_data,
-						t_filler_data filler_data);
-int					detect_right_filler(t_map_data **map_data,
-						t_filler_data filler_data);
+/// get_map_lean_limits.c
+t_lean_limits		get_lean_limits(t_map_data **map_data);
+int					detect_top_limit(t_map_data **map_data);
+int					detect_bottom_limit(t_map_data **map_data);
+int					detect_left_limit(t_map_data **map_data,
+						t_lean_limits lean_limits);
+int					detect_right_limit(t_map_data **map_data,
+						t_lean_limits lean_limits);
 
 /// run_cub3d.c
 void				run_cub3d(t_map_data *map_data);
