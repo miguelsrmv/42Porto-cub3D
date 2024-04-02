@@ -3,69 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jhogonca <jhogonca@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/23 21:50:30 by jhogonca          #+#    #+#             */
-/*   Updated: 2023/04/23 21:50:30 by jhogonca         ###   ########.fr       */
+/*   Created: 2023/05/12 14:09:07 by mde-sa--          #+#    #+#             */
+/*   Updated: 2023/08/23 21:44:33 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
 #include "libft.h"
 
-static char	*get_line(char *line, char *buffer, long size_buffer, long *sz_line)
+char	*ft_gnl_get_text(int fd, char *buffer)
 {
-	t_gnl	st;
+	char		*temp_buffer;
+	ssize_t		read_len;
 
-	st.size_line = -1;
-	st.index = -1;
-	st.size_buffer = -1;
-	st.line = line;
-	*sz_line += size_buffer;
-	line = malloc(*sz_line + 1 * sizeof(char));
-	if (line)
+	temp_buffer = malloc(BUFFER_SIZE * sizeof(char) + 1);
+	if (!temp_buffer)
+		return (NULL);
+	read_len = 1;
+	while (!ft_gnl_strchr(buffer, '\n') && read_len != 0)
 	{
-		line[*sz_line] = 0;
-		while (st.line && st.line[++st.size_line])
-			line[++st.index] = st.line[st.size_line];
-		st.size_line = -1;
-		while (buffer && buffer[++st.size_line])
+		read_len = read(fd, temp_buffer, BUFFER_SIZE);
+		if (read_len == -1)
 		{
-			if (st.size_line < size_buffer)
-				line[++st.index] = buffer[st.size_line];
-			else
-				buffer[++st.size_buffer] = buffer[st.size_line];
-			buffer[st.size_line] = 0;
+			free(temp_buffer);
+			free(buffer);
+			return (NULL);
 		}
+		temp_buffer[read_len] = '\0';
+		buffer = ft_gnl_strjoin(buffer, temp_buffer);
 	}
-	free(st.line);
-	return (line);
+	free(temp_buffer);
+	return (buffer);
 }
 
 char	*get_next_line(int fd)
 {
-	t_gnl		st;
-	static char	buf[FOPEN_MAX][BUFFER_SIZE + 1];
+	static char	*buffer[FOPEN_MAX];
+	char		*line;
 
-	st.line = NULL;
-	st.size_line = 0;
-	st.size_buffer = 0;
-	while (buf[fd][st.size_buffer] && fd >= 0 && fd < FOPEN_MAX)
-		st.size_buffer++;
-	st.index = 1;
-	while (fd >= 0 && fd < FOPEN_MAX && st.index > 0)
-	{
-		if (!buf[fd][0] || !st.size_buffer)
-			st.size_buffer = read(fd, buf[fd], BUFFER_SIZE);
-		st.index = st.size_buffer;
-		if (st.size_buffer > 0)
-		{
-			st.size_buffer = 0;
-			while (buf[fd][st.size_buffer] && buf[fd][st.size_buffer] != '\n')
-				st.size_buffer++;
-			st.index = (st.index == st.size_buffer);
-			st.size_buffer += buf[fd][st.size_buffer] == '\n';
-			st.line = get_line(st.line, buf[fd], st.size_buffer, &st.size_line);
-		}
-	}
-	return (st.line);
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > FOPEN_MAX)
+		return (NULL);
+	buffer[fd] = ft_gnl_get_text(fd, buffer[fd]);
+	if (!buffer[fd])
+		return (NULL);
+	line = ft_gnl_strtrim_left(buffer[fd]);
+	buffer[fd] = ft_gnl_strtrim_right(buffer[fd]);
+	return (line);
 }

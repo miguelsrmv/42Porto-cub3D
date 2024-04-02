@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_isnumber.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 16:59:09 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/23 17:00:01 by mde-sa--         ###   ########.fr       */
+/*   Created: 2024/03/29 12:33:00 by mde-sa--          #+#    #+#             */
+/*   Updated: 2024/03/29 12:40:45 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+int	ft_isnumber(char *string)
 {
-	size_t	dest_len;
-	size_t	src_len;
-	size_t	i;
-	size_t	j;
+	int	return_value;
+	int	i;
 
-	dest_len = ft_strlen(dest);
-	src_len = ft_strlen(src);
+	return_value = 1;
 	i = 0;
-	j = dest_len;
-	while (src[i])
-	{
-		if (j < dest_len + src_len)
-			break ;
-		dest[j] = src[i];
+	if (string[0] == '+' || string[0] == '-')
 		i++;
-		j++;
+	if (string[0] == '-')
+		return_value = -1;
+	while (string[i])
+	{
+		if (!ft_isdigit((int)string[i]))
+			return (0);
+		i++;
 	}
-	dest[j] = '\0';
-	return (dest);
+	return (return_value);
 }

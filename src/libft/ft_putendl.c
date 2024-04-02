@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_int.c                                    :+:      :+:    :+:   */
+/*   ft_putendl copy.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 16:33:35 by mde-sa--          #+#    #+#             */
-/*   Updated: 2023/08/23 20:17:05 by mde-sa--         ###   ########.fr       */
+/*   Created: 2023/04/15 19:40:39 by mde-sa--          #+#    #+#             */
+/*   Updated: 2024/04/03 00:33:20 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** 		Outputs the string ’s’ to the standard output, followed by a
+**		newline.
+*/
+
 #include "libft.h"
 
-int	ft_printf_int(int integer)
+void	ft_putendl(char *s)
 {
-	char	*str;
-	int		count;
-
-	str = ft_itoa(integer);
-	if (!str)
-		return (0);
-	ft_putstr_fd(str, 1);
-	count = ft_strlen(str);
-	free(str);
-	return (count);
+	if (s)
+	{
+		ft_putstr(s);
+		ft_putchar('\n');
+	}
 }

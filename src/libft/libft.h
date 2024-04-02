@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:15:57 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/23 17:03:20 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/03 00:43:47 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,6 @@
 # include <stdint.h>
 # include <stdarg.h>
 # include <stdbool.h>
-# include <stdio.h>
-
-// GET_NEXT_LINE
-typedef struct s_gnl
-{
-	char	*line;
-	long	size_line;
-	long	index;
-	long	size_buffer;
-}	t_gnl;
 
 /* Part 1: Libc functions */
 int		ft_isalpha(int c);
@@ -115,6 +105,7 @@ char	*ft_gnl_strtrim_right(char *buffer);
 /* Part 6: extra functions */
 int		ft_isspace(int c);
 int		ft_isquote(int c);
+int		ft_isnumber(char *string);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strcmp_input(const char *input, const char *limiter);
 int		ft_fprintf(int fd, const char *string, ...);
@@ -135,7 +126,10 @@ int		ft_getppid(void);
 long	ft_atol(const char *str);
 bool	ft_issign(char c);
 char	ft_last_char(const char *string);
+void	ft_putchar(char c);
+void	ft_putstr(char *s);
+void	ft_putendl(char *s);
+void	ft_putnbr(int n);
 int		ft_tablen(void **tab);
-char	*ft_strcat(char *dest, const char *src);
 
 #endif
