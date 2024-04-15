@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/23 20:43:46 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/15 11:12:42 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,11 @@ void	check_texture_files(t_map_data **map_data)
 	textures[1] = (*map_data)->south_texture;
 	textures[2] = (*map_data)->west_texture;
 	textures[3] = (*map_data)->east_texture;
-	i = 0;
-	while (i < 4)
+	i = -1;
+	while (++i < 4)
 	{
+		if (ft_checkextension(textures[i], ".xpm"))
+			exit_cub3(*map_data, TEXTURE_WRONG_FORMAT_MSG);
 		file_fd = open(textures[i], O_RDONLY);
 		if (file_fd == -1)
 			exit_cub3(*map_data, TEXTURE_ERROR_MSG);
@@ -66,9 +68,15 @@ void	check_texture_files(t_map_data **map_data)
 			close(file_fd);
 			exit_cub3(*map_data, TEXTURE_ERROR_MSG);
 		}
+		parse_texture(file_fd);
 		close(file_fd);
-		if (ft_checkextension(textures[i], ".xpm"))
-			exit_cub3(*map_data, TEXTURE_WRONG_FORMAT_MSG);
-		i++;
 	}
+}
+
+/// @brief Checks inner format of each texture
+/// @param texture 
+void	parse_texture(int texture_fd)
+{
+	(void)texture_fd;
+	return ;
 }

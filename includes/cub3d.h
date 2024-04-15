@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/03/20 18:23:26 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/15 11:11:52 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@
 /// Magic numbers
 # define SCREEN_WIDTH 1280
 # define SCREEN_HEIGHT 720
+# define FOV 66
 
 // enums
 enum e_ExitStatus
@@ -85,6 +86,16 @@ typedef struct s_map_data
 	int			start_pos[2];
 	char		cardinal_direction;
 }		t_map_data;
+
+typedef struct s_vector_data
+{
+	double		pos_x;
+	double		pos_y;
+	double		vector_dir_x;
+	double		vector_dir_y;
+	double		camera_plane_x;
+	double		camera_plane_y;
+}		t_vector_data;
 
 typedef struct s_lean_limits
 {
@@ -126,6 +137,7 @@ void				check_tab_format(char **line_as_tab,
 void				check_wall_texture(char **line_as_tab,
 						t_map_data **map_data);
 void				check_texture_files(t_map_data **map_data);
+void				parse_texture(int texture_fd);
 
 /// colour_parser.c
 void				check_floor_ceiling_texture(char **line_as_tab,
@@ -168,16 +180,14 @@ t_lean_limits		get_max_values(t_map_data **map_data);
 void				update_lean_limits(t_lean_limits *lean_limits,
 						int x, int y);
 
-/* t_lean_limits		get_lean_limits(t_map_data **map_data);
-int					detect_top_limit(t_map_data **map_data);
-int					detect_bottom_limit(t_map_data **map_data);
-int					detect_left_limit(t_map_data **map_data,
-						t_lean_limits lean_limits);
-int					detect_right_limit(t_map_data **map_data,
-						t_lean_limits lean_limits); */
-
 /// run_cub3d.c
 void				run_cub3d(t_map_data *map_data);
+
+/// run_simulation.c
+void				run_simulation(t_map_data *map_data,
+						t_mlx_img *img);
+void				initialize_vector_data(t_vector_data *vector_data,
+						t_map_data *map_data);
 
 /// clean_memory.c
 void				exit_cub3(t_map_data *map_data,
