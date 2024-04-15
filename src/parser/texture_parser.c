@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/15 18:58:01 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/15 19:38:27 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ void	check_texture_files(t_map_data **map_data)
 	textures[1] = (*map_data)->south_texture;
 	textures[2] = (*map_data)->west_texture;
 	textures[3] = (*map_data)->east_texture;
-	i = 0;
-	while (i < 4)
+	i = -1;
+	while (++i < 4)
 	{
 		if (ft_checkextension(textures[i], ".xpm"))
 			exit_cub3(*map_data, TEXTURE_WRONG_FORMAT_MSG);
@@ -69,6 +69,29 @@ void	check_texture_files(t_map_data **map_data)
 			exit_cub3(*map_data, TEXTURE_ERROR_MSG);
 		}
 		close(file_fd);
-		i++;
+		check_texture_validity(map_data, textures[i]);
+	}
+}
+
+void	check_texture_validity(t_map_data **map_data, char *file_path)
+{
+	void	*mlx;
+	void	*img;
+	int		img_width;
+	int		img_height;
+
+	mlx = mlx_init();
+	img = mlx_xpm_file_to_image(mlx, file_path, &img_width, &img_height);
+	if (img == NULL)
+	{
+		mlx_destroy_display(mlx);
+		free (mlx);
+		exit_cub3(*map_data, TEXTURE_WRONG_FORMAT_MSG);
+	}
+	else
+	{
+		mlx_destroy_image(mlx, img);
+		mlx_destroy_display(mlx);
+		free(mlx);
 	}
 }

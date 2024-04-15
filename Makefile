@@ -6,7 +6,7 @@
 #    By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 09:55:46 by mde-sa--          #+#    #+#              #
-#    Updated: 2024/04/11 21:30:11 by mde-sa--         ###   ########.fr        #
+#    Updated: 2024/04/15 22:10:58 by mde-sa--         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRC		=	main.c usage_check.c \
 			simulation/run_simulation.c \
 			run_cub3d.c \
 			clean_memory.c \
-			helper_functions.c
+			helper_functions.c \
 
 LIBS 	=   -L$(LIBFTDIR) -lft
 
