@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/15 12:15:25 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:58:52 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,47 +96,6 @@ typedef struct s_vector_data
 	double		camera_plane_x;
 	double		camera_plane_y;
 }		t_vector_data;
-
-typedef struct s_xpm_define
-{
-	char			*symbolic_constant;
-	char			*value;
-	struct s_define	*next;
-}		t_xpm_define;
-
-typedef struct s_xpm_extension
-{
-	char					*extension;
-	struct s_xpm_extension	*next;
-}	t_xpm_extension;
-
-typedef struct s_xpm_colours
-{
-	char					*key;
-	char					colour_type;
-	char					*colour;
-	struct s_xpm_colours	*next;	
-}	t_xpm_colours;
-
-typedef struct s_xpm_pixels
-{
-	char				*string;
-	struct s_xpm_pixels	*next;
-}	t_xpm_pixels;
-
-typedef struct s_xpm_data
-{
-	char				*variable_name;
-	int					width;
-	int					height;
-	int					number_of_colours;
-	int					number_of_chars_per_pixel;
-	t_xpm_colours		*colours;
-	t_xpm_pixels		*pixels;
-	t_xpm_define		*defines;
-	t_xpm_extension		*extensions;
-	int					hotspot_coordinates[2];
-}		t_xpm_data;
 
 typedef struct s_lean_limits
 {
