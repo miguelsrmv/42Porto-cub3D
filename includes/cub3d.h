@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/17 08:51:45 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/17 11:52:01 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <mlx.h>
+# include <math.h>
 
 // Defines
 /// Error messages
@@ -47,6 +48,7 @@
 # define SCREEN_WIDTH 1280
 # define SCREEN_HEIGHT 720
 # define FOV 66
+# define TILE_SIZE 4
 
 // enums
 enum e_ExitStatus
@@ -91,8 +93,18 @@ typedef struct s_vector_data
 {
 	double		pos_x;
 	double		pos_y;
+
 	double		vector_dir_x;
 	double		vector_dir_y;
+	double		player_angle;
+
+	double		ray_dir_x;
+	double		ray_dir_y;
+	double		ray_angle;
+
+	double		delta_dist_x;
+	double		delta_dist_y;
+
 	double		camera_plane_x;
 	double		camera_plane_y;
 }		t_vector_data;
@@ -191,8 +203,24 @@ void				initialize_vector_data(t_vector_data *vector_data,
 						t_map_data *map_data);
 
 /// create_image.c
-void				create_image(t_map_data map_data, t_vector_data vector_data,
-						t_mlx_img *img);
+void				create_image(t_map_data map_data,
+						t_vector_data *vector_data, t_mlx_img *img);
+void				cast_ray(t_map_data map_data, t_vector_data *vector_data,
+						t_mlx_img *img, int ray_angle);
+double				get_horizontal_intersection(t_map_data map_data,
+						t_vector_data vector_data, int ray_angle);
+double				get_vertical_intersection(t_map_data map_data,
+						t_vector_data vector_data, int ray_angle);
+
+/// calculate_vectors.c
+void				calculate_deltas(t_vector_data *vector_data,
+						double fov_angle);
+void				calculate_player_angle(t_vector_data *vector_data);
+void				calculate_camera_plane(t_vector_data *vector_data);
+
+/// math_helpers.c
+double				degrees_to_radians(int degrees);
+int					radians_to_degrees(double radians);
 
 /// clean_memory.c
 void				exit_cub3(t_map_data *map_data,

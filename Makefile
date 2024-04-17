@@ -6,7 +6,7 @@
 #    By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 09:55:46 by mde-sa--          #+#    #+#              #
-#    Updated: 2024/04/17 08:49:33 by mde-sa--         ###   ########.fr        #
+#    Updated: 2024/04/17 11:47:02 by mde-sa--         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRC		=	main.c usage_check.c \
 			parser/colour_parser.c parser/map_parser.c parser/create_map_tab.c \
 			parser/check_map_boundaries.c parser/map_cleaner.c parser/trim_map.c \
 			simulation/run_simulation.c image_create/create_image.c \
+			image_create/calculate_vectors.c image_create/math_helpers.c \
 			run_cub3d.c \
 			clean_memory.c \
 			helper_functions.c \
