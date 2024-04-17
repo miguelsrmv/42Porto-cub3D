@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/15 19:38:27 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/15 22:14:34 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	check_texture_files(t_map_data **map_data)
 	}
 }
 
+/// @brief Checks if the provided .xpm file is valid
 void	check_texture_validity(t_map_data **map_data, char *file_path)
 {
 	void	*mlx;

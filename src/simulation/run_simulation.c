@@ -12,15 +12,27 @@
 
 #include "cub3d.h"
 
+/// @brief Runs simulation on cube
 void	run_simulation(t_map_data *map_data, t_mlx_img *img)
 {
 	t_vector_data	vector_data;
 
 	initialize_vector_data(&vector_data, map_data);
+	// Very first image, with vectors' data pos_x and pos_y
+	create_image(*map_data, vector_data, img);
+/* 	
+	Endless loop that will run as key_hooks update vectors_data's pos_x and pos_y
+	while (true)
+	{
+		#1 delete_previously_created_image
+		#2 create_image (with now-updated vectors_data pos_x and pos_y)
+		#3 mlx_put_image_to_window
+	} */
 	(void)img;
 	return ;
 }
 
+/// @brief Starts vector parameters for vector_data
 void	initialize_vector_data(t_vector_data *vector_data, t_map_data *map_data)
 {
 	vector_data->pos_x = (double)map_data->start_pos[1];

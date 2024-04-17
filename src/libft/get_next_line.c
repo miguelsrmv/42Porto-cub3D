@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:09:07 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/15 19:57:51 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/17 08:41:47 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,29 @@ char	*ft_gnl_get_text(int fd, char *buffer)
 	return (buffer);
 }
 
+static void	clean_buffer(char **buffer)
+{
+	int	i;
+
+	i = 0;
+	while (i < FOPEN_MAX)
+	{
+		if (buffer[i])
+			free(buffer[i]);
+		i++;
+	}
+}
+
 char	*get_next_line(int fd)
 {
 	static char	*buffer[FOPEN_MAX];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd > FOPEN_MAX)
+	{
+		clean_buffer(buffer);
 		return (NULL);
+	}
 	buffer[fd] = ft_gnl_get_text(fd, buffer[fd]);
 	if (!buffer[fd])
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/15 20:02:57 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/17 08:51:45 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,6 +190,10 @@ void				run_simulation(t_map_data *map_data,
 void				initialize_vector_data(t_vector_data *vector_data,
 						t_map_data *map_data);
 
+/// create_image.c
+void				create_image(t_map_data map_data, t_vector_data vector_data,
+						t_mlx_img *img);
+
 /// clean_memory.c
 void				exit_cub3(t_map_data *map_data,
 						char *message);
@@ -199,14 +203,5 @@ void				clean_mlx(void	*mlx, void	*mlx_window, void *mlx_img);
 /// helper_functions.c
 void				test_map_data(t_map_data *map_data);
 void				test_tab_data(t_map_data *map_data);
-
-
-char	*get_next_line2(int fd);
-char	*ft_gnl_get_text2(int fd, char *buffer);
-char	*ft_gnl_strtrim_right2(char *buffer);
-char	*ft_gnl_strtrim_left2(char *buffer);
-char	*ft_gnl_strjoin2(char *buffer, char *temp);
-char	*ft_gnl_strchr2(const char *s, int c);
-size_t	ft_gnl_strlen2(const char *str);
 
 #endif
