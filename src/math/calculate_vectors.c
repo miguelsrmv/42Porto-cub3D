@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:14:06 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/18 13:59:35 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:27:08 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ void	calculate_deltas(t_vector_data *vector_data, double fov_angle)
 
 	camera_target = fov_angle / (FOV / 2);
 	vector_data->ray_dir_x = vector_data->vector_dir_x
-		+ vector_data->camera_plane_x * camera_target;
+		+ vector_data->camera_plane_x * camera_target / 2;
 	vector_data->ray_dir_y = vector_data->vector_dir_y
-		+ vector_data->camera_plane_y * camera_target;
+		+ vector_data->camera_plane_y * camera_target / 2;
 	vector_data->ray_angle = vector_data->player_angle + fov_angle;
 	calculate_big_delta(vector_data);
 	calculate_small_delta(vector_data);
@@ -77,10 +77,22 @@ void	calculate_small_delta(t_vector_data *vector_data)
 {
 	if (vector_data->ray_dir_x == 0)
 		vector_data->small_delta_dist_x = DBL_MAX;
+	else if (vector_data->ray_dir_x < 0)
+		vector_data->small_delta_dist_x
+			= vector_data->pos_x
+			- previous_multiple(vector_data->pos_x, TILE_SIZE);
 	else
-		vector_data->delta_dist_x = fabs(1 / vector_data->ray_dir_x);
+		vector_data->small_delta_dist_x
+			= next_multiple(vector_data->pos_x, TILE_SIZE)
+			- vector_data->pos_x;
 	if (vector_data->ray_dir_y == 0)
 		vector_data->small_delta_dist_y = DBL_MAX;
+	else if (vector_data->ray_dir_y < 0)
+		vector_data->small_delta_dist_y
+			= vector_data->pos_y
+			- previous_multiple(vector_data->pos_y, TILE_SIZE);
 	else
-		vector_data->delta_dist_y = fabs(1 / vector_data->ray_dir_y);
+		vector_data->small_delta_dist_y
+			= next_multiple(vector_data->pos_y, TILE_SIZE)
+			- vector_data->pos_y;
 }

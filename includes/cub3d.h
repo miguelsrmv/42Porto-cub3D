@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/18 13:56:32 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:30:10 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,7 +232,9 @@ void				calculate_small_delta(t_vector_data *vector_data);
 
 /// math_helpers.c
 double				degrees_to_radians(int degrees);
-int					radians_to_degrees(double radians);
+double				radians_to_degrees(double radians);
+double				next_multiple(double value, int multiple);
+double				previous_multiple(double value, int multiple);
 
 /// clean_memory.c
 void				exit_cub3(t_map_data *map_data,
