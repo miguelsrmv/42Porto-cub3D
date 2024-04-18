@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/17 11:52:01 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:56:32 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 // Includes
 # include "../src/libft/libft.h"
+# include <float.h>
 # include <stdio.h>
 # include <fcntl.h>
 # include <errno.h>
@@ -91,20 +92,29 @@ typedef struct s_map_data
 
 typedef struct s_vector_data
 {
+	// Player position on the grid, considering TILE_SIZE
 	double		pos_x;
 	double		pos_y;
 
+	// Main direction the player is looking at
 	double		vector_dir_x;
 	double		vector_dir_y;
 	double		player_angle;
 
+	// Direction each ray is pointing at
 	double		ray_dir_x;
 	double		ray_dir_y;
 	double		ray_angle;
 
+	// Data for each ray
+	// Delta_dist is for checking each tile at a time
+	// Small_delta_dist is for checking very first tile
 	double		delta_dist_x;
 	double		delta_dist_y;
+	double		small_delta_dist_x;
+	double		small_delta_dist_y;
 
+	// Data regarding camera's plane
 	double		camera_plane_x;
 	double		camera_plane_y;
 }		t_vector_data;
@@ -213,10 +223,12 @@ double				get_vertical_intersection(t_map_data map_data,
 						t_vector_data vector_data, int ray_angle);
 
 /// calculate_vectors.c
-void				calculate_deltas(t_vector_data *vector_data,
-						double fov_angle);
 void				calculate_player_angle(t_vector_data *vector_data);
 void				calculate_camera_plane(t_vector_data *vector_data);
+void				calculate_deltas(t_vector_data *vector_data,
+						double fov_angle);
+void				calculate_big_delta(t_vector_data *vector_data);
+void				calculate_small_delta(t_vector_data *vector_data);
 
 /// math_helpers.c
 double				degrees_to_radians(int degrees);
