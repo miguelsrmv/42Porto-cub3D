@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/18 16:30:10 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:54:20 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,20 @@ enum e_HeaderType
 	INVALID,
 };
 
+enum e_Coordinates
+{
+	Y,
+	X,
+};
+
+enum e_WallSide
+{
+	NORTH,
+	SOUTH,
+	WEST,
+	EAST,
+};
+
 // Structs
 typedef struct s_map_data
 {
@@ -109,15 +123,26 @@ typedef struct s_vector_data
 	// Data for each ray
 	// Delta_dist is for checking each tile at a time
 	// Small_delta_dist is for checking very first tile
+	// Step represents positive or negative direction
 	double		delta_dist_x;
 	double		delta_dist_y;
 	double		small_delta_dist_x;
 	double		small_delta_dist_y;
+	int			step_x;
+	int			step_y;
 
 	// Data regarding camera's plane
 	double		camera_plane_x;
 	double		camera_plane_y;
 }		t_vector_data;
+
+typedef struct s_target
+{
+	double			x_position;
+	double			y_position;
+	double			distance;
+	enum e_WallSide wall_side;
+}	t_target;
 
 typedef struct s_lean_limits
 {
@@ -213,20 +238,21 @@ void				initialize_vector_data(t_vector_data *vector_data,
 						t_map_data *map_data);
 
 /// create_image.c
-void				create_image(t_map_data map_data,
-						t_vector_data *vector_data, t_mlx_img *img);
-void				cast_ray(t_map_data map_data, t_vector_data *vector_data,
-						t_mlx_img *img, int ray_angle);
-double				get_horizontal_intersection(t_map_data map_data,
+t_target			*create_image(t_map_data map_data,
+						t_vector_data *vector_data);
+t_target			cast_ray(t_map_data map_data, t_vector_data *vector_data, int ray_angle);
+double				get_intersection(t_map_data map_data,
 						t_vector_data vector_data, int ray_angle);
-double				get_vertical_intersection(t_map_data map_data,
-						t_vector_data vector_data, int ray_angle);
+bool				got_a_hit(double x_position, double y_position,
+						t_map_data map_data);
 
-/// calculate_vectors.c
+/// calculate_planes.c
 void				calculate_player_angle(t_vector_data *vector_data);
 void				calculate_camera_plane(t_vector_data *vector_data);
-void				calculate_deltas(t_vector_data *vector_data,
-						double fov_angle);
+
+/// calculate_deltas.c
+void				calculate_steps(t_vector_data *vector_data);
+void				calculate_deltas(t_vector_data *vector_data, double fov_angle);
 void				calculate_big_delta(t_vector_data *vector_data);
 void				calculate_small_delta(t_vector_data *vector_data);
 

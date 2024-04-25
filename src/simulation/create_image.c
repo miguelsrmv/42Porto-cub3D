@@ -6,64 +6,87 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:49:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/17 11:11:53 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:55:35 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /// @brief Creates image by casting rays throughout all FOV
-void	create_image(t_map_data map_data, t_vector_data *vector_data,
-			t_mlx_img *img)
+t_target	*create_image(t_map_data map_data, t_vector_data *vector_data)
 {
-	int	fov_angle;
+	t_target	target_array[SCREEN_WIDTH];
+	int			i;
+	int			fov_angle;
 
-	fov_angle = -FOV / 2;
-	while (fov_angle <= (+FOV / 2))
+	i = 0;
+	while (i <= FOV)
 	{
-		cast_ray(map_data, vector_data, img, fov_angle);
-		fov_angle++;
+		fov_angle = i - (FOV / 2);
+		target_array[i] = cast_ray(map_data, vector_data, fov_angle);
+		i++;
 	}
-	return ;
+	return (target_array);
 }
 
 /// @brief Casts ray for each angle (player_angle + fov_angle)
-void	cast_ray(t_map_data map_data, t_vector_data *vector_data,
-			t_mlx_img *img, int fov_angle)
+t_target	cast_ray(t_map_data map_data, t_vector_data *vector_data, int fov_angle)
 {
-	double	x_distance;
-	double	y_distance;
+	t_target	target;
 
 	calculate_deltas(vector_data, fov_angle);
-	x_distance = get_horizontal_intersection(map_data, *vector_data, fov_angle);
-	y_distance = get_vertical_intersection(map_data, *vector_data, fov_angle);
-	(void)x_distance;
-	(void)y_distance;
-	(void)img;
+	get_intersection(map_data, *vector_data, fov_angle, &target);
 }
 
 /// @brief Gets horizontal intersection
-double	get_horizontal_intersection(t_map_data map_data,
-			t_vector_data vector_data, int ray_angle)
+void	get_intersection(t_map_data map_data,
+			t_vector_data vector_data, int ray_angle, t_target *target)
 {
-	float	x_step;
-	float	y_step;
+	bool	x_hit_flag;
+	bool	y_hit_flag;
+	double	x_target;
+	double	y_target;
 
-	y_step = TILE_SIZE;
-	x_step = TILE_SIZE / tan(ray_angle);
-	(void)map_data;
-	(void)vector_data;
+	x_hit_flag = false;
+	y_hit_flag = false;
+	check_quick_intersection(map_data, vector_data, )
+	while (true) //Falta a condicao se for impossivel X/Y hit
+	{
+		if (!x_hit_flag)
+		if (!y_hit_flag)
+		
+	}
 	(void)ray_angle;
-	(void)y_step;
-	(void)x_step;
 	return (0);
 }
-/// @brief Gets vertical intersection
-double	get_vertical_intersection(t_map_data map_data,
-			t_vector_data vector_data, int ray_angle)
+
+void	check_quick_intersection(t_map_data map_data,
+			t_vector_data vector_data, int ray_angle, t_target *target)
 {
-	(void)map_data;
-	(void)vector_data;
-	(void)ray_angle;
-	return (0);
+	if (got_a_hit(vector_data.pos_x + (vector_data.step_x
+		* vector_data.small_delta_dist_x), vector_data.pos_y, map_data))
+	{
+		x_target = vector_data.pos_x + (vector_data.step_x
+		* vector_data.small_delta_dist_x);
+		x_hit_flag = true;
+	}
+	if (got_a_hit(vector_data.pos_y + (vector_data.step_y
+		* vector_data.small_delta_dist_y), vector_data.pos_x, map_data))
+	{
+		y_target = vector_data.pos_y + (vector_data.step_y
+		* vector_data.small_delta_dist_y);
+		y_hit_flag = true;
+	}
+}
+
+bool	got_a_hit(double x_position, double y_position, t_map_data map_data)
+{
+	int		x_coordinate;
+	int		y_coordinate;
+
+	x_coordinate = (int)(x_position / TILE_SIZE);
+	y_coordinate = (int)(y_position / TILE_SIZE);
+	if (map_data.map_tab[y_coordinate][x_coordinate] == '1')
+		return (true);
+	return (true);
 }
