@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:54:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 13:52:37 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/26 17:41:56 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	run_cub3d(t_map_data	*map_data)
 	image.img = mlx_new_image(mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
 	image.addr = mlx_get_data_addr(image.img, &image.bits_per_pixel,
 			&image.line_length, &image.endian);
-	run_simulation(map_data, &image);
+	run_simulation(map_data, &image, mlx, mlx_window);
 	//set_hooks(mlx_window, mlx);
 	mlx_loop(mlx);
 	clean_mlx(mlx, mlx_window, image.img);
@@ -34,13 +34,15 @@ void	run_cub3d(t_map_data	*map_data)
 }
 
 /// @brief Runs simulation on cube
-void	run_simulation(t_map_data *map_data, t_mlx_img *img)
+void	run_simulation(t_map_data *map_data, t_mlx_img *img,
+			void *mlx, void *mlx_window)
 {
 	t_vector_data	vector_data;
 
 	initialize_vector_data(&vector_data, map_data);
 	// Very first image, with vectors' data pos_x and pos_y
 	create_image(*map_data, &vector_data, img);
+	mlx_put_image_to_window(mlx, mlx_window, img->img, 0, 0);
 /* 	
 	Endless loop that will run as key_hooks update vectors_data's values
 	while (true)
@@ -60,9 +62,11 @@ void	run_simulation(t_map_data *map_data, t_mlx_img *img)
 /// Camera plane is perpendicular to vector_dir.
 void	initialize_vector_data(t_vector_data *vector_data, t_map_data *map_data)
 {
-	vector_data->pos_x = (double)map_data->start_pos[1]
+	vector_data->map_x = map_data->start_pos[X];
+	vector_data->map_y = map_data->start_pos[Y];
+	vector_data->pos_x = map_data->start_pos[X]
 		* TILE_SIZE + TILE_SIZE / 2;
-	vector_data->pos_y = (double)map_data->start_pos[0]
+	vector_data->pos_y = map_data->start_pos[Y]
 		* TILE_SIZE + TILE_SIZE / 2;
 	vector_data->vector_dir_x = 0;
 	vector_data->vector_dir_y = 0;

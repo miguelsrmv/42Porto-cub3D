@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 13:56:45 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/26 19:13:52 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,12 @@
 # define SCREEN_HEIGHT 720
 # define FOV 66
 # define TILE_SIZE 4
+
+/// TEMPORARY INTS
+# define GREEN 65280
+# define RED 16711680
+# define BLUE 255
+# define WHITE 16777215
 
 // enums
 enum e_ExitStatus
@@ -106,9 +112,13 @@ typedef struct s_map_data
 
 typedef struct s_vector_data
 {
+	// Player position on the grid
+	int			map_x;
+	int			map_y;
+
 	// Player position on the grid, considering TILE_SIZE
-	double		pos_x;
-	double		pos_y;
+	int			pos_x;
+	int			pos_y;
 
 	// Main direction the player is looking at
 	double		vector_dir_x;
@@ -134,6 +144,7 @@ typedef struct s_vector_data
 	// Data regarding camera's plane
 	double		camera_plane_x;
 	double		camera_plane_y;
+
 }		t_vector_data;
 
 typedef struct s_target
@@ -141,6 +152,7 @@ typedef struct s_target
 	double					x_position;
 	double					y_position;
 	double					distance;
+	int						wall_height;
 	enum e_CardinalPoint	wall_facing_direction;
 }	t_target;
 
@@ -233,20 +245,18 @@ void				run_cub3d(t_map_data *map_data);
 
 /// run_simulation.c
 void				run_simulation(t_map_data *map_data,
-						t_mlx_img *img);
+						t_mlx_img *img, void *mlx, void *mlx_window);
 void				initialize_vector_data(t_vector_data *vector_data,
 						t_map_data *map_data);
 
 /// create_image.c
 void				create_image(t_map_data map_data,
 						t_vector_data *vector_data, t_mlx_img *img);
+void				draw_background(t_map_data map_data, t_mlx_img *img);
+void				draw_obstacles(t_map_data map_data, t_vector_data *vector_data,
+						t_mlx_img *img);
 t_target			cast_ray(t_map_data map_data, t_vector_data *vector_data, int ray_angle);
-void				get_intersection(t_map_data map_data,
-						t_vector_data vector_data, int ray_angle, t_target *hit_point);
-bool				check_first_intersection(t_map_data map_data,
-						t_vector_data vector_data, int ray_angle, t_target *hit_point);
-bool				got_a_hit(double x_position, double y_position,
-						t_map_data map_data);
+void				put_walls_on_image(t_target *target_array, int pixels_per_ray, t_mlx_img *img);
 
 /// calculate_planes.c
 void				calculate_player_angle(t_vector_data *vector_data);
@@ -258,11 +268,33 @@ void				calculate_deltas(t_vector_data *vector_data, double fov_angle);
 void				calculate_big_delta(t_vector_data *vector_data);
 void				calculate_small_delta(t_vector_data *vector_data);
 
+/// calculate_intersections.c
+void				get_intersection(t_map_data map_data,
+						t_vector_data vector_data, int ray_angle, t_target *hit_point);
+bool				got_a_hit(double x_position, double y_position,
+						t_map_data map_data);
+
+/// calculate_first_intersection.c
+bool				check_first_intersection(t_map_data map_data,
+						t_vector_data vector_data, int ray_angle, t_target *hit_point);
+bool				check_first_horizontal_intersection(t_map_data map_data,
+						t_vector_data vector_data, int angle, t_target *hit_point);
+bool				check_first_vertical_intersection(t_map_data map_data,
+						t_vector_data vector_data, int angle, t_target *hit_point);
+bool				check_first_corner_intersection(t_map_data map_data,
+						t_vector_data vector_data, t_target *hit_point);
+
+/// calculate_wall_data.c
+void				check_wall_side_horizontal(int step, t_target *hit_point);
+void				check_wall_side_vertical(int step, t_target *hit_point);
+void				calc_wall_distance_and_height(t_vector_data vector_data, t_target *hit_point);
+
 /// math_helpers.c
 double				degrees_to_radians(int degrees);
 double				radians_to_degrees(double radians);
 double				next_multiple(double value, int multiple);
 double				previous_multiple(double value, int multiple);
+int					int_abs_difference(int value_1, int value_2);
 
 /// clean_memory.c
 void				exit_cub3(t_map_data *map_data,
@@ -273,5 +305,10 @@ void				clean_mlx(void	*mlx, void	*mlx_window, void *mlx_img);
 /// helper_functions.c
 void				test_map_data(t_map_data *map_data);
 void				test_tab_data(t_map_data *map_data);
+
+/// my_pixel_put.c
+void   				my_pixel_put(t_mlx_img *img, int x, int y, int color);
+int					convert_rgb_to_int(int *RGB);
+int					temp_colour(enum e_CardinalPoint direction);
 
 #endif

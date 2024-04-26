@@ -6,7 +6,7 @@
 #    By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 09:55:46 by mde-sa--          #+#    #+#              #
-#    Updated: 2024/04/25 16:01:42 by mde-sa--         ###   ########.fr        #
+#    Updated: 2024/04/26 17:35:04 by mde-sa--         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,9 @@ SRC		=	main.c misc/usage_check.c misc/clean_memory.c \
 			parser/check_map_boundaries.c parser/map_cleaner.c parser/trim_map.c \
 			simulation/run_cub3d.c simulation/create_image.c \
 			math/calculate_planes.c math/calculate_deltas.c math/math_helpers.c \
-			misc/helper_functions.c \
+			math/calculate_intersection.c math/calculate_first_intersection.c \
+			math/calculate_wall_data.c \
+			math/dda_algorithm.c misc/helper_functions.c misc/my_pixel_put.c \
 
 LIBS 	=   -L$(LIBFTDIR) -lft
 

@@ -6,22 +6,54 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:49:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 13:58:51 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/26 19:16:21 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-/// @brief Creates image by casting rays throughout all FOV
-/// TODO: Separate this into create floor/ceiling, create walls, etc
+/// @brief Creates image
 void	create_image(t_map_data map_data, t_vector_data *vector_data,
+				t_mlx_img *img)
+{
+	draw_background(map_data, img);
+	draw_obstacles(map_data, vector_data, img);
+}
+
+/// @brief Draws ceiling and floor
+void	draw_background(t_map_data map_data, t_mlx_img *img)
+{
+	int	width;
+	int height;
+	int colour;
+
+	height = 0;
+	colour = convert_rgb_to_int(map_data.ceiling_color);
+	while (height < SCREEN_HEIGHT / 2)
+	{
+		width = 0;
+		while (width < SCREEN_WIDTH)
+			my_pixel_put(img, width++, height, colour);
+		height++;
+	}
+	colour = convert_rgb_to_int(map_data.floor_color);
+	while (height < SCREEN_HEIGHT)
+	{
+		width = 0;
+		while (width < SCREEN_WIDTH)
+			my_pixel_put(img, width++, height, colour);
+		height++;
+	}
+}
+
+/// @brief Gets the obstacles from each ray and then sends the array to be put on image
+void	draw_obstacles(t_map_data map_data, t_vector_data *vector_data,
 				t_mlx_img *img)
 {
 	t_target	target_array[FOV + 1];
 	int			i;
 	int			fov_angle;
 
-	// Draw floor and ceiling "canvas"
 	i = 0;
 	while (i <= FOV)
 	{
@@ -29,9 +61,39 @@ void	create_image(t_map_data map_data, t_vector_data *vector_data,
 		target_array[i] = cast_ray(map_data, vector_data, fov_angle);
 		i++;
 	}
-	(void)img;
-	(void)target_array;
-	// Draw using target_array
+	put_walls_on_image(target_array, SCREEN_WIDTH / FOV, img);
+}
+
+/// @brief Draws the walls
+/// TODO: Replace colour by textures!
+void	put_walls_on_image(t_target *target_array, int pixels_per_ray,
+				t_mlx_img *img)
+{
+	int	array_index;
+	int	pixels_width;
+	int	pixels_height;
+	int	starting_height;
+	int colour;
+
+	array_index = 0;
+	while (array_index <= FOV)
+	{
+		pixels_width = 0;
+		starting_height = (SCREEN_HEIGHT - target_array[array_index].wall_height) / 2;
+		colour = temp_colour(target_array[array_index].wall_facing_direction);
+		while (pixels_width <= pixels_per_ray)
+		{
+			pixels_height = 0;
+			while (pixels_height <= target_array[array_index].wall_height)
+			{
+				my_pixel_put(img, (array_index * pixels_per_ray) + pixels_width,
+					starting_height + pixels_height, colour);
+				pixels_height++;
+			}
+			pixels_width++;
+		}
+		array_index++;
+	}
 }
 
 /// @brief Casts ray for each angle (player_angle + fov_angle)
@@ -43,45 +105,4 @@ t_target	cast_ray(t_map_data map_data, t_vector_data *vector_data,
 	calculate_deltas(vector_data, fov_angle);
 	get_intersection(map_data, *vector_data, fov_angle, &hit_point);
 	return(hit_point);
-}
-
-/// @brief Gets intersection with first wall
-void	get_intersection(t_map_data map_data,
-			t_vector_data vector_data, int ray_angle, t_target *hit_point)
-{
-	bool		hit_flag;
-
-	hit_flag = check_first_intersection(map_data, vector_data, ray_angle, hit_point);
-	while (!hit_flag) //Falta a condicao se for impossivel X/Y hit
-	{
-		continue ;
-	}
-}
-
-/// @brief Checks if the very first wall gets intersected or not
-bool	check_first_intersection(t_map_data map_data,
-			t_vector_data vector_data, int ray_angle, t_target *hit_point)
-{
-	double	horizontal_hit;
-	double	vertical_hit;
-	
-	(void)map_data;
-	(void)vector_data;
-	(void)ray_angle;
-	(void)horizontal_hit;
-	(void)vertical_hit;
-	(void)hit_point;
-	return (false);
-}
-
-bool	got_a_hit(double x_position, double y_position, t_map_data map_data)
-{
-	int		x_coordinate;
-	int		y_coordinate;
-
-	x_coordinate = (int)(x_position / TILE_SIZE);
-	y_coordinate = (int)(y_position / TILE_SIZE);
-	if (map_data.map_tab[y_coordinate][x_coordinate] == '1')
-		return (true);
-	return (true);
 }
