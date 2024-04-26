@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:19:31 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 19:16:39 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/26 19:34:51 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 /// @brief Gets first intersection given a ray angle
 /// Fills hit_point with that data
+/// TODO: Check it's working properly ???
 void	get_intersection(t_map_data map_data,
 			t_vector_data vector_data, int ray_angle, t_target *hit_point)
 {
@@ -34,6 +35,8 @@ void	get_intersection(t_map_data map_data,
 			hit_point->y_position += vector_data.step_y;
 			check_wall_side_horizontal(vector_data.step_y, hit_point);
 		}
+		if (hit_point->y_position == 51)
+			printf("YAY!");
 		if (got_a_hit(hit_point->x_position, hit_point->y_position, map_data))
 			hit_flag = true;
 	}

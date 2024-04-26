@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:49:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 19:16:21 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/26 19:40:29 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ void	put_walls_on_image(t_target *target_array, int pixels_per_ray,
 		pixels_width = 0;
 		starting_height = (SCREEN_HEIGHT - target_array[array_index].wall_height) / 2;
 		colour = temp_colour(target_array[array_index].wall_facing_direction);
-		while (pixels_width <= pixels_per_ray)
+		while (pixels_width < pixels_per_ray
+			&& (array_index * pixels_per_ray) + pixels_width < SCREEN_WIDTH)
 		{
 			pixels_height = 0;
 			while (pixels_height <= target_array[array_index].wall_height)
@@ -102,6 +103,8 @@ t_target	cast_ray(t_map_data map_data, t_vector_data *vector_data,
 {
 	t_target	hit_point;
 
+	if (fov_angle == 0)
+		printf("Yay!");
 	calculate_deltas(vector_data, fov_angle);
 	get_intersection(map_data, *vector_data, fov_angle, &hit_point);
 	return(hit_point);

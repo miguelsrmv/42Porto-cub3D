@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 17:05:49 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 17:25:34 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/26 19:38:45 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	check_wall_side_vertical(int step, t_target *hit_point)
 void	calc_wall_distance_and_height(t_vector_data vector_data, t_target *hit_point)
 {
 	if (hit_point->wall_facing_direction == NORTH || hit_point->wall_facing_direction == SOUTH)
-		hit_point->distance = vector_data.small_delta_dist_x - vector_data.delta_dist_x;
-	else
 		hit_point->distance = vector_data.small_delta_dist_y - vector_data.delta_dist_y;
+	else
+		hit_point->distance = vector_data.small_delta_dist_x - vector_data.delta_dist_x;
 	hit_point->wall_height = (int)(SCREEN_HEIGHT / hit_point->distance);
 	
 }
