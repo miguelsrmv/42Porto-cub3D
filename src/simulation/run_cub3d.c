@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:54:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 17:41:56 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/26 21:53:16 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,9 @@ void	run_simulation(t_map_data *map_data, t_mlx_img *img,
 	t_vector_data	vector_data;
 
 	initialize_vector_data(&vector_data, map_data);
-	// Very first image, with vectors' data pos_x and pos_y
 	create_image(*map_data, &vector_data, img);
 	mlx_put_image_to_window(mlx, mlx_window, img->img, 0, 0);
-/* 	
-	Endless loop that will run as key_hooks update vectors_data's values
-	while (true)
-	{
-		#1 delete_previously_created_image
-		#2 create_image (with now-updated vector_data)
-		#3 mlx_put_image_to_window
-	} */
-	(void)img;
+	// create a "while true loop ?"
 	return ;
 }
 
@@ -64,10 +55,8 @@ void	initialize_vector_data(t_vector_data *vector_data, t_map_data *map_data)
 {
 	vector_data->map_x = map_data->start_pos[X];
 	vector_data->map_y = map_data->start_pos[Y];
-	vector_data->pos_x = map_data->start_pos[X]
-		* TILE_SIZE + TILE_SIZE / 2;
-	vector_data->pos_y = map_data->start_pos[Y]
-		* TILE_SIZE + TILE_SIZE / 2;
+	vector_data->pos_x = map_data->start_pos[X];
+	vector_data->pos_y = map_data->start_pos[Y];
 	vector_data->vector_dir_x = 0;
 	vector_data->vector_dir_y = 0;
 	if (map_data->cardinal_direction == 'N')

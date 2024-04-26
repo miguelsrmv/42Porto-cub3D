@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 19:40:50 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/26 22:56:11 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <sys/stat.h>
 # include <mlx.h>
 # include <math.h>
+# include <limits.h>
 
 // Defines
 /// Error messages
@@ -153,6 +154,8 @@ typedef struct s_target
 	double					y_position;
 	double					distance;
 	int						wall_height;
+	int						wall_max_height_pixel;
+	int						wall_min_height_pixel;
 	enum e_CardinalPoint	wall_facing_direction;
 }	t_target;
 
@@ -256,23 +259,23 @@ void				draw_background(t_map_data map_data, t_mlx_img *img);
 void				draw_obstacles(t_map_data map_data, t_vector_data *vector_data,
 						t_mlx_img *img);
 t_target			cast_ray(t_map_data map_data, t_vector_data *vector_data, int ray_angle);
-void				put_walls_on_image(t_target *target_array, int pixels_per_ray, t_mlx_img *img);
+void				put_walls_on_image(t_target *target_array, t_mlx_img *img);
 
 /// calculate_planes.c
 void				calculate_player_angle(t_vector_data *vector_data);
+void 				normalize_vector(double *x, double *y);
 void				calculate_camera_plane(t_vector_data *vector_data);
 
 /// calculate_deltas.c
 void				calculate_steps(t_vector_data *vector_data);
-void				calculate_deltas(t_vector_data *vector_data, double fov_angle);
+void				calculate_deltas(t_vector_data *vector_data, int ray_number);
 void				calculate_big_delta(t_vector_data *vector_data);
 void				calculate_small_delta(t_vector_data *vector_data);
 
 /// calculate_intersections.c
 void				get_intersection(t_map_data map_data,
-						t_vector_data vector_data, int ray_angle, t_target *hit_point);
-bool				got_a_hit(double x_position, double y_position,
-						t_map_data map_data);
+						t_vector_data vector_data, t_target *hit_point);
+bool				got_a_hit(int x, int y, t_map_data map_data);
 
 /// calculate_first_intersection.c
 bool				check_first_intersection(t_map_data map_data,

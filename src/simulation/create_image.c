@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:49:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 19:40:29 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/26 23:04:23 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,62 +50,47 @@ void	draw_background(t_map_data map_data, t_mlx_img *img)
 void	draw_obstacles(t_map_data map_data, t_vector_data *vector_data,
 				t_mlx_img *img)
 {
-	t_target	target_array[FOV + 1];
+	t_target	target_array[SCREEN_WIDTH];
 	int			i;
-	int			fov_angle;
 
 	i = 0;
-	while (i <= FOV)
+	while (i < SCREEN_WIDTH)
 	{
-		fov_angle = i - (FOV / 2);
-		target_array[i] = cast_ray(map_data, vector_data, fov_angle);
+		target_array[i] = cast_ray(map_data, vector_data, i);
 		i++;
 	}
-	put_walls_on_image(target_array, SCREEN_WIDTH / FOV, img);
-}
-
-/// @brief Draws the walls
-/// TODO: Replace colour by textures!
-void	put_walls_on_image(t_target *target_array, int pixels_per_ray,
-				t_mlx_img *img)
-{
-	int	array_index;
-	int	pixels_width;
-	int	pixels_height;
-	int	starting_height;
-	int colour;
-
-	array_index = 0;
-	while (array_index <= FOV)
-	{
-		pixels_width = 0;
-		starting_height = (SCREEN_HEIGHT - target_array[array_index].wall_height) / 2;
-		colour = temp_colour(target_array[array_index].wall_facing_direction);
-		while (pixels_width < pixels_per_ray
-			&& (array_index * pixels_per_ray) + pixels_width < SCREEN_WIDTH)
-		{
-			pixels_height = 0;
-			while (pixels_height <= target_array[array_index].wall_height)
-			{
-				my_pixel_put(img, (array_index * pixels_per_ray) + pixels_width,
-					starting_height + pixels_height, colour);
-				pixels_height++;
-			}
-			pixels_width++;
-		}
-		array_index++;
-	}
+	put_walls_on_image(target_array, img);
 }
 
 /// @brief Casts ray for each angle (player_angle + fov_angle)
 t_target	cast_ray(t_map_data map_data, t_vector_data *vector_data,
-				int fov_angle)
+				int ray_number)
 {
 	t_target	hit_point;
 
-	if (fov_angle == 0)
-		printf("Yay!");
-	calculate_deltas(vector_data, fov_angle);
-	get_intersection(map_data, *vector_data, fov_angle, &hit_point);
+	calculate_deltas(vector_data, ray_number);
+	get_intersection(map_data, *vector_data, &hit_point);
 	return(hit_point);
+}
+
+/// @brief Draws the walls
+/// TODO: Replace colour by textures!
+void	put_walls_on_image(t_target *target_array, t_mlx_img *img)
+{
+	int	array_index;
+	int	pixels_height;
+	int colour;
+
+	array_index = 0;
+	while (array_index < SCREEN_WIDTH)
+	{
+		pixels_height = target_array[array_index].wall_min_height_pixel;
+		colour = temp_colour(target_array[array_index].wall_facing_direction);
+		while (pixels_height <= target_array[array_index].wall_max_height_pixel)
+		{
+			my_pixel_put(img, array_index, pixels_height, colour);
+			pixels_height++;
+		}
+		array_index++;
+	}
 }

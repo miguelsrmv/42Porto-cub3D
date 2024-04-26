@@ -6,15 +6,15 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:19:49 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 17:22:02 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/26 21:03:04 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-/// @brief Checks if the very first wall gets intersected or not
+/* /// @brief Checks if the very first wall gets intersected or not
 bool	check_first_intersection(t_map_data map_data,
-			t_vector_data vector_data, int ray_angle, t_target *hit_point)
+			t_vector_data vector_data, int ray_number, t_target *hit_point)
 {
 	int		angle;
 	double	y_distance;
@@ -92,3 +92,4 @@ bool	check_first_corner_intersection(t_map_data map_data,
 	(void)vector_data;
 	return (false);
 }
+ */

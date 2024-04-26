@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 09:50:12 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 16:59:06 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/26 22:37:03 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,37 +17,47 @@
 /// and then adds its deviation on the camera plane. 
 /// Ray_angle is player angles' + each ray's deviation.
 /// After that, we calculate the deltas for each ray.
-void	calculate_deltas(t_vector_data *vector_data, double fov_angle)
+void	calculate_deltas(t_vector_data *vector_data, int ray_number)
 {
 	double	camera_target;
 
-	camera_target = fov_angle / (FOV / 2);
+	camera_target = 2 * ray_number / (double)SCREEN_WIDTH - 1;
 	vector_data->ray_dir_x = vector_data->vector_dir_x
-		+ vector_data->camera_plane_x * camera_target / 2;
+		+ vector_data->camera_plane_x * camera_target;
 	vector_data->ray_dir_y = vector_data->vector_dir_y
-		+ vector_data->camera_plane_y * camera_target / 2;
-	vector_data->ray_angle = vector_data->player_angle + fov_angle;
-	calculate_steps(vector_data);
-	calculate_big_delta(vector_data);
+		+ vector_data->camera_plane_y * camera_target;
 	calculate_small_delta(vector_data);
+	calculate_big_delta(vector_data);
 }
 
-/// @brief Attributes step for delta calculation
-/// Step indicates direction for X or Y travel
-void	calculate_steps(t_vector_data *vector_data)
+/// @brief Calculates how much a certain ray has to go in a direction
+/// to hit the very first tile. Also calculates direction of step
+void	calculate_small_delta(t_vector_data *vector_data)
 {
 	if (vector_data->ray_dir_x < 0)
+	{
 		vector_data->step_x = -1;
-	else if (vector_data->ray_dir_x == 0)
-		vector_data->step_x = 0;
+		vector_data->small_delta_dist_x = (vector_data->pos_x
+			- vector_data->map_x) * vector_data->delta_dist_x;
+	}
 	else
+	{
 		vector_data->step_x = 1;
+		vector_data->small_delta_dist_x = (vector_data->map_x + 1
+			- vector_data->pos_x) * vector_data->delta_dist_x;
+	}
 	if (vector_data->ray_dir_y < 0)
+	{
 		vector_data->step_y = -1;
-	else if (vector_data->ray_dir_y == 0)
-		vector_data->step_y = 0;
+		vector_data->small_delta_dist_y = (vector_data->pos_y
+			- vector_data->map_y) * vector_data->delta_dist_y;
+	}
 	else
+	{
 		vector_data->step_y = 1;
+		vector_data->small_delta_dist_y = (vector_data->map_y + 1
+			- vector_data->pos_y) * vector_data->delta_dist_y;
+	}
 }
 
 /// @brief Calculates how much a certain ray has to go in a direction for every
@@ -55,39 +65,12 @@ void	calculate_steps(t_vector_data *vector_data)
 /// Delta_Dist_x and y are "DBL_MAX" (similar to infinity) if undefined
 void	calculate_big_delta(t_vector_data *vector_data)
 {
-	if (vector_data->step_x == 0)
+	if (vector_data->ray_dir_x == 0)
 		vector_data->delta_dist_x = DBL_MAX;
 	else
 		vector_data->delta_dist_x = fabs(1 / vector_data->ray_dir_x);
-	if (vector_data->step_y == 0)
+	if (vector_data->ray_dir_y == 0)
 		vector_data->delta_dist_y = DBL_MAX;
 	else
 		vector_data->delta_dist_y = fabs(1 / vector_data->ray_dir_y);
-}
-
-/// @brief Calculates how much a certain ray has to go in a direction
-/// to hit the very first tile.
-/// Small_Delta_Dist_x and y are "DBL_MAX" (similar to infinity) if undefined
-void	calculate_small_delta(t_vector_data *vector_data)
-{
-	if (vector_data->step_x == -1)
-		vector_data->small_delta_dist_x
-			= vector_data->pos_x
-			- previous_multiple(vector_data->pos_x, TILE_SIZE);
-	else if (vector_data->step_x == 1)
-		vector_data->small_delta_dist_x
-			= next_multiple(vector_data->pos_x, TILE_SIZE)
-			- vector_data->pos_x;
-	else
-		vector_data->small_delta_dist_x = DBL_MAX;
-	if (vector_data->step_y == -1)
-		vector_data->small_delta_dist_y
-		= vector_data->pos_y
-		- previous_multiple(vector_data->pos_y, TILE_SIZE);
-	else if (vector_data->step_y == 1)
-		vector_data->small_delta_dist_y
-		= next_multiple(vector_data->pos_y, TILE_SIZE)
-		- vector_data->pos_y;
-	else
-		vector_data->small_delta_dist_y = DBL_MAX;
 }
