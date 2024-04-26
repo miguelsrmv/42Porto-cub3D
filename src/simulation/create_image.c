@@ -6,19 +6,22 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:49:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/25 15:55:35 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:58:51 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /// @brief Creates image by casting rays throughout all FOV
-t_target	*create_image(t_map_data map_data, t_vector_data *vector_data)
+/// TODO: Separate this into create floor/ceiling, create walls, etc
+void	create_image(t_map_data map_data, t_vector_data *vector_data,
+				t_mlx_img *img)
 {
-	t_target	target_array[SCREEN_WIDTH];
+	t_target	target_array[FOV + 1];
 	int			i;
 	int			fov_angle;
 
+	// Draw floor and ceiling "canvas"
 	i = 0;
 	while (i <= FOV)
 	{
@@ -26,57 +29,49 @@ t_target	*create_image(t_map_data map_data, t_vector_data *vector_data)
 		target_array[i] = cast_ray(map_data, vector_data, fov_angle);
 		i++;
 	}
-	return (target_array);
+	(void)img;
+	(void)target_array;
+	// Draw using target_array
 }
 
 /// @brief Casts ray for each angle (player_angle + fov_angle)
-t_target	cast_ray(t_map_data map_data, t_vector_data *vector_data, int fov_angle)
+t_target	cast_ray(t_map_data map_data, t_vector_data *vector_data,
+				int fov_angle)
 {
-	t_target	target;
+	t_target	hit_point;
 
 	calculate_deltas(vector_data, fov_angle);
-	get_intersection(map_data, *vector_data, fov_angle, &target);
+	get_intersection(map_data, *vector_data, fov_angle, &hit_point);
+	return(hit_point);
 }
 
-/// @brief Gets horizontal intersection
+/// @brief Gets intersection with first wall
 void	get_intersection(t_map_data map_data,
-			t_vector_data vector_data, int ray_angle, t_target *target)
+			t_vector_data vector_data, int ray_angle, t_target *hit_point)
 {
-	bool	x_hit_flag;
-	bool	y_hit_flag;
-	double	x_target;
-	double	y_target;
+	bool		hit_flag;
 
-	x_hit_flag = false;
-	y_hit_flag = false;
-	check_quick_intersection(map_data, vector_data, )
-	while (true) //Falta a condicao se for impossivel X/Y hit
+	hit_flag = check_first_intersection(map_data, vector_data, ray_angle, hit_point);
+	while (!hit_flag) //Falta a condicao se for impossivel X/Y hit
 	{
-		if (!x_hit_flag)
-		if (!y_hit_flag)
-		
+		continue ;
 	}
-	(void)ray_angle;
-	return (0);
 }
 
-void	check_quick_intersection(t_map_data map_data,
-			t_vector_data vector_data, int ray_angle, t_target *target)
+/// @brief Checks if the very first wall gets intersected or not
+bool	check_first_intersection(t_map_data map_data,
+			t_vector_data vector_data, int ray_angle, t_target *hit_point)
 {
-	if (got_a_hit(vector_data.pos_x + (vector_data.step_x
-		* vector_data.small_delta_dist_x), vector_data.pos_y, map_data))
-	{
-		x_target = vector_data.pos_x + (vector_data.step_x
-		* vector_data.small_delta_dist_x);
-		x_hit_flag = true;
-	}
-	if (got_a_hit(vector_data.pos_y + (vector_data.step_y
-		* vector_data.small_delta_dist_y), vector_data.pos_x, map_data))
-	{
-		y_target = vector_data.pos_y + (vector_data.step_y
-		* vector_data.small_delta_dist_y);
-		y_hit_flag = true;
-	}
+	double	horizontal_hit;
+	double	vertical_hit;
+	
+	(void)map_data;
+	(void)vector_data;
+	(void)ray_angle;
+	(void)horizontal_hit;
+	(void)vertical_hit;
+	(void)hit_point;
+	return (false);
 }
 
 bool	got_a_hit(double x_position, double y_position, t_map_data map_data)

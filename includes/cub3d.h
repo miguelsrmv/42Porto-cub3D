@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/25 15:54:20 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:56:45 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ enum e_Coordinates
 	X,
 };
 
-enum e_WallSide
+enum e_CardinalPoint
 {
 	NORTH,
 	SOUTH,
@@ -138,10 +138,10 @@ typedef struct s_vector_data
 
 typedef struct s_target
 {
-	double			x_position;
-	double			y_position;
-	double			distance;
-	enum e_WallSide wall_side;
+	double					x_position;
+	double					y_position;
+	double					distance;
+	enum e_CardinalPoint	wall_facing_direction;
 }	t_target;
 
 typedef struct s_lean_limits
@@ -238,11 +238,13 @@ void				initialize_vector_data(t_vector_data *vector_data,
 						t_map_data *map_data);
 
 /// create_image.c
-t_target			*create_image(t_map_data map_data,
-						t_vector_data *vector_data);
+void				create_image(t_map_data map_data,
+						t_vector_data *vector_data, t_mlx_img *img);
 t_target			cast_ray(t_map_data map_data, t_vector_data *vector_data, int ray_angle);
-double				get_intersection(t_map_data map_data,
-						t_vector_data vector_data, int ray_angle);
+void				get_intersection(t_map_data map_data,
+						t_vector_data vector_data, int ray_angle, t_target *hit_point);
+bool				check_first_intersection(t_map_data map_data,
+						t_vector_data vector_data, int ray_angle, t_target *hit_point);
 bool				got_a_hit(double x_position, double y_position,
 						t_map_data map_data);
 
