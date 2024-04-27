@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate_deltas.c                                 :+:      :+:    :+:   */
+/*   compute_vector_data.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 09:50:12 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 22:37:03 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/27 10:08:49 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 /// and then adds its deviation on the camera plane. 
 /// Ray_angle is player angles' + each ray's deviation.
 /// After that, we calculate the deltas for each ray.
-void	calculate_deltas(t_vector_data *vector_data, int ray_number)
+void	compute_vector_data(t_vector_data *vector_data, int ray_number)
 {
 	double	camera_target;
 

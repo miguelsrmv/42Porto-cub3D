@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 22:56:11 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/27 10:13:10 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,12 +124,12 @@ typedef struct s_vector_data
 	// Main direction the player is looking at
 	double		vector_dir_x;
 	double		vector_dir_y;
-	double		player_angle;
+	//double		player_angle;
 
 	// Direction each ray is pointing at
 	double		ray_dir_x;
 	double		ray_dir_y;
-	double		ray_angle;
+	//double		ray_angle;
 
 	// Data for each ray
 	// Delta_dist is for checking each tile at a time
@@ -261,43 +261,22 @@ void				draw_obstacles(t_map_data map_data, t_vector_data *vector_data,
 t_target			cast_ray(t_map_data map_data, t_vector_data *vector_data, int ray_angle);
 void				put_walls_on_image(t_target *target_array, t_mlx_img *img);
 
-/// calculate_planes.c
-void				calculate_player_angle(t_vector_data *vector_data);
+/// camera_plane.c
 void 				normalize_vector(double *x, double *y);
 void				calculate_camera_plane(t_vector_data *vector_data);
 
-/// calculate_deltas.c
-void				calculate_steps(t_vector_data *vector_data);
-void				calculate_deltas(t_vector_data *vector_data, int ray_number);
-void				calculate_big_delta(t_vector_data *vector_data);
+/// compute_vector_data.c
+void				compute_vector_data(t_vector_data *vector_data, int ray_number);
 void				calculate_small_delta(t_vector_data *vector_data);
+void				calculate_big_delta(t_vector_data *vector_data);
 
-/// calculate_intersections.c
+/// check_intersections.c
 void				get_intersection(t_map_data map_data,
 						t_vector_data vector_data, t_target *hit_point);
-bool				got_a_hit(int x, int y, t_map_data map_data);
-
-/// calculate_first_intersection.c
-bool				check_first_intersection(t_map_data map_data,
-						t_vector_data vector_data, int ray_angle, t_target *hit_point);
-bool				check_first_horizontal_intersection(t_map_data map_data,
-						t_vector_data vector_data, int angle, t_target *hit_point);
-bool				check_first_vertical_intersection(t_map_data map_data,
-						t_vector_data vector_data, int angle, t_target *hit_point);
-bool				check_first_corner_intersection(t_map_data map_data,
-						t_vector_data vector_data, t_target *hit_point);
-
-/// calculate_wall_data.c
 void				check_wall_side_horizontal(int step, t_target *hit_point);
 void				check_wall_side_vertical(int step, t_target *hit_point);
 void				calc_wall_distance_and_height(t_vector_data vector_data, t_target *hit_point);
-
-/// math_helpers.c
-double				degrees_to_radians(int degrees);
-double				radians_to_degrees(double radians);
-double				next_multiple(double value, int multiple);
-double				previous_multiple(double value, int multiple);
-int					int_abs_difference(int value_1, int value_2);
+bool				got_a_hit(int x, int y, t_map_data map_data);
 
 /// clean_memory.c
 void				exit_cub3(t_map_data *map_data,
@@ -308,6 +287,7 @@ void				clean_mlx(void	*mlx, void	*mlx_window, void *mlx_img);
 /// helper_functions.c
 void				test_map_data(t_map_data *map_data);
 void				test_tab_data(t_map_data *map_data);
+void				print_ray_data(t_target *target_array, int array_index);
 
 /// my_pixel_put.c
 void   				my_pixel_put(t_mlx_img *img, int x, int y, int color);

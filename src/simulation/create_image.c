@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:49:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 23:04:23 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/27 10:08:56 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	draw_obstacles(t_map_data map_data, t_vector_data *vector_data,
 	while (i < SCREEN_WIDTH)
 	{
 		target_array[i] = cast_ray(map_data, vector_data, i);
-		i++;
+		i++;;
 	}
 	put_walls_on_image(target_array, img);
 }
@@ -68,7 +68,7 @@ t_target	cast_ray(t_map_data map_data, t_vector_data *vector_data,
 {
 	t_target	hit_point;
 
-	calculate_deltas(vector_data, ray_number);
+	compute_vector_data(vector_data, ray_number);
 	get_intersection(map_data, *vector_data, &hit_point);
 	return(hit_point);
 }
@@ -86,6 +86,8 @@ void	put_walls_on_image(t_target *target_array, t_mlx_img *img)
 	{
 		pixels_height = target_array[array_index].wall_min_height_pixel;
 		colour = temp_colour(target_array[array_index].wall_facing_direction);
+		if (array_index % 40 == 0)
+			print_ray_data(target_array, array_index);
 		while (pixels_height <= target_array[array_index].wall_max_height_pixel)
 		{
 			my_pixel_put(img, array_index, pixels_height, colour);

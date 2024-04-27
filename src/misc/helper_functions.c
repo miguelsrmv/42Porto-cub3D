@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:39:16 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/03/20 10:29:48 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/27 08:11:00 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,15 @@ void	test_tab_data(t_map_data *map_data)
 	printf("X: %i\n", map_data->start_pos[1]);
 	printf("Y: %i\n", map_data->start_pos[0]);
 	printf("Orientation: %c\n\n", map_data->cardinal_direction);
+}
+
+void	print_ray_data(t_target *target_array, int array_index)
+{
+		printf("Ray %04i hit at position (%i, %i): wall drawn from min %i to max %i, colour %i.\n",
+		array_index,
+		(int)target_array[array_index].x_position,
+		(int)target_array[array_index].y_position,
+		target_array[array_index].wall_min_height_pixel,
+		target_array[array_index].wall_max_height_pixel,
+		target_array[array_index].wall_facing_direction);
 }

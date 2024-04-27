@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:54:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/26 21:53:16 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/27 10:00:22 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,14 @@ void	initialize_vector_data(t_vector_data *vector_data, t_map_data *map_data)
 		vector_data->vector_dir_x = 1;
 	else if (map_data->cardinal_direction == 'W')
 		vector_data->vector_dir_x = -1;
-	calculate_player_angle(vector_data);
+ 	vector_data->ray_dir_x = 0;
+	vector_data->ray_dir_y = 0;
+ 	vector_data->delta_dist_x = 0;
+	vector_data->delta_dist_y = 0;
+ 	vector_data->small_delta_dist_x = 0;
+	vector_data->small_delta_dist_y = 0;
+ 	vector_data->step_x = 0;
+	vector_data->step_y = 0;
+	//calculate_player_angle(vector_data);
 	calculate_camera_plane(vector_data);
 }
