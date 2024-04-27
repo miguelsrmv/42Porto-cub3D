@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/27 10:13:10 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/27 11:55:12 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,21 @@
 /// Magic numbers
 # define SCREEN_WIDTH 1280
 # define SCREEN_HEIGHT 720
-# define FOV 66
-# define TILE_SIZE 4
+# define FOV 0.66
 
 /// TEMPORARY INTS
 # define GREEN 65280
 # define RED 16711680
 # define BLUE 255
 # define WHITE 16777215
+# define SPEED 
+
+/// Keys for minilibx
+# define KEY_ESC		65307
+# define KEY_W			119
+# define KEY_A			97
+# define KEY_S			115
+# define KEY_D			100
 
 // enums
 enum e_ExitStatus
@@ -124,21 +131,19 @@ typedef struct s_vector_data
 	// Main direction the player is looking at
 	double		vector_dir_x;
 	double		vector_dir_y;
-	//double		player_angle;
 
 	// Direction each ray is pointing at
 	double		ray_dir_x;
 	double		ray_dir_y;
-	//double		ray_angle;
 
 	// Data for each ray
-	// Delta_dist is for checking each tile at a time
-	// Small_delta_dist is for checking very first tile
-	// Step represents positive or negative direction
+	/// Delta_dist is for checking each tile at a time
 	double		delta_dist_x;
 	double		delta_dist_y;
+	/// Small_delta_dist is for checking very first tile
 	double		small_delta_dist_x;
 	double		small_delta_dist_y;
+	/// Step represents positive or negative direction
 	int			step_x;
 	int			step_y;
 
@@ -147,6 +152,15 @@ typedef struct s_vector_data
 	double		camera_plane_y;
 
 }		t_vector_data;
+
+typedef struct s_mlx_img
+{
+	void		*img;
+	char		*addr;
+	int			bits_per_pixel;
+	int			line_length;
+	int			endian;
+}				t_mlx_img;
 
 typedef struct s_target
 {
@@ -167,14 +181,14 @@ typedef struct s_lean_limits
 	int			right_limit;
 }	t_lean_limits;
 
-typedef struct s_mlx_img
+typedef struct s_cube
 {
-	void		*img;
-	char		*addr;
-	int			bits_per_pixel;
-	int			line_length;
-	int			endian;
-}				t_mlx_img;
+	t_map_data		*map_data;
+	t_vector_data	*vector_data;
+	t_mlx_img		image;
+	void			*mlx;
+	void			*mlx_window;
+}	t_cube;
 
 // Function declarations
 /// main.c
@@ -244,13 +258,12 @@ void				update_lean_limits(t_lean_limits *lean_limits,
 						int x, int y);
 
 /// run_cub3d.c
-void				run_cub3d(t_map_data *map_data);
-
-/// run_simulation.c
-void				run_simulation(t_map_data *map_data,
-						t_mlx_img *img, void *mlx, void *mlx_window);
+void				run_cub3d(t_cube *cube);
+void				initialize_mlx(t_cube *cube);
 void				initialize_vector_data(t_vector_data *vector_data,
-						t_map_data *map_data);
+						t_map_data *map_data, t_cube *cube);
+int					render_image(t_cube *cube);
+
 
 /// create_image.c
 void				create_image(t_map_data map_data,
@@ -293,5 +306,9 @@ void				print_ray_data(t_target *target_array, int array_index);
 void   				my_pixel_put(t_mlx_img *img, int x, int y, int color);
 int					convert_rgb_to_int(int *RGB);
 int					temp_colour(enum e_CardinalPoint direction);
+
+/// key_hooks.c
+int					key_hook(int keycode, t_cube *cube);
+
 
 #endif
