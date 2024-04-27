@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:19:31 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/27 10:43:40 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/27 15:45:20 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,22 +62,26 @@ void	check_wall_side_vertical(int step, t_target *hit_point)
 }
 
 /// @brief Checks distance and wall height
-void	calc_wall_distance_and_height(t_vector_data vector_data, t_target *hit_point)
+void	calc_wall_distance_and_height(t_vector_data vector_data,
+	t_target *hit_point)
 {
-	if (hit_point->wall_facing_direction == WEST || hit_point->wall_facing_direction == EAST)
-		hit_point->distance = vector_data.small_delta_dist_x - vector_data.delta_dist_x;
-		//hit_point->distance = fabs((vector_data.map_x - vector_data.pos_x + (1 - vector_data.step_x) / 2) / vector_data.ray_dir_x);
+	if (hit_point->wall_facing_direction == WEST
+		|| hit_point->wall_facing_direction == EAST)
+		hit_point->distance
+			= vector_data.small_delta_dist_x - vector_data.delta_dist_x;
 	else
-		hit_point->distance = vector_data.small_delta_dist_y - vector_data.delta_dist_y;
-		//hit_point->distance = fabs((vector_data.map_y - vector_data.pos_y + (1 - vector_data.step_y) / 2) / vector_data.ray_dir_y);
- 	if (hit_point->distance == 0)
+		hit_point->distance
+			= vector_data.small_delta_dist_y - vector_data.delta_dist_y;
+	if (hit_point->distance == 0)
 		hit_point->wall_height = SCREEN_HEIGHT;
 	else
 		hit_point->wall_height = ((int)(SCREEN_HEIGHT / hit_point->distance));
-	hit_point->wall_max_height_pixel = hit_point->wall_height / 2 + SCREEN_HEIGHT / 2;
+	hit_point->wall_max_height_pixel
+		= hit_point->wall_height / 2 + SCREEN_HEIGHT / 2;
 	if (hit_point->wall_max_height_pixel >= SCREEN_HEIGHT)
 		hit_point->wall_max_height_pixel = SCREEN_HEIGHT - 1;
-	hit_point->wall_min_height_pixel = -hit_point->wall_height / 2 + SCREEN_HEIGHT / 2;
+	hit_point->wall_min_height_pixel
+		= -hit_point->wall_height / 2 + SCREEN_HEIGHT / 2;
 	if (hit_point->wall_min_height_pixel < 0)
 		hit_point->wall_min_height_pixel = 0;
 }

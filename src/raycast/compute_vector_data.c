@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 09:50:12 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/27 10:08:49 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/27 15:39:13 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,25 +38,25 @@ void	calculate_small_delta(t_vector_data *vector_data)
 	{
 		vector_data->step_x = -1;
 		vector_data->small_delta_dist_x = (vector_data->pos_x
-			- vector_data->map_x) * vector_data->delta_dist_x;
+				- vector_data->map_x) * vector_data->delta_dist_x;
 	}
 	else
 	{
 		vector_data->step_x = 1;
 		vector_data->small_delta_dist_x = (vector_data->map_x + 1
-			- vector_data->pos_x) * vector_data->delta_dist_x;
+				- vector_data->pos_x) * vector_data->delta_dist_x;
 	}
 	if (vector_data->ray_dir_y < 0)
 	{
 		vector_data->step_y = -1;
 		vector_data->small_delta_dist_y = (vector_data->pos_y
-			- vector_data->map_y) * vector_data->delta_dist_y;
+				- vector_data->map_y) * vector_data->delta_dist_y;
 	}
 	else
 	{
 		vector_data->step_y = 1;
 		vector_data->small_delta_dist_y = (vector_data->map_y + 1
-			- vector_data->pos_y) * vector_data->delta_dist_y;
+				- vector_data->pos_y) * vector_data->delta_dist_y;
 	}
 }
 

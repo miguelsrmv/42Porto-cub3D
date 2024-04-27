@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:15:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/15 22:11:26 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/27 15:46:38 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,7 @@ void	clean_map_data(t_map_data *map_data)
 
 void	clean_mlx(void	*mlx, void	*mlx_window, void *mlx_img)
 {
-	(void)mlx_img;
-	//mlx_destroy_image(mlx, mlx_img);
+	mlx_destroy_image(mlx, mlx_img);
 	mlx_destroy_window(mlx, mlx_window);
 	mlx_destroy_display(mlx);
 	free(mlx);

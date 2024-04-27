@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:49:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/27 10:41:37 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/27 15:40:24 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	create_image(t_map_data map_data, t_vector_data *vector_data,
 void	draw_background(t_map_data map_data, t_mlx_img *img)
 {
 	int	width;
-	int height;
-	int colour;
+	int	height;
+	int	colour;
 
 	height = 0;
 	colour = convert_rgb_to_int(map_data.ceiling_color);
@@ -46,7 +46,8 @@ void	draw_background(t_map_data map_data, t_mlx_img *img)
 	}
 }
 
-/// @brief Gets the obstacles from each ray and then sends the array to be put on image
+/// @brief Gets the obstacles from each ray
+/// and then sends the array to be put on image
 void	draw_obstacles(t_map_data map_data, t_vector_data *vector_data,
 				t_mlx_img *img)
 {
@@ -57,7 +58,7 @@ void	draw_obstacles(t_map_data map_data, t_vector_data *vector_data,
 	while (i < SCREEN_WIDTH)
 	{
 		target_array[i] = cast_ray(map_data, vector_data, i);
-		i++;;
+		i++;
 	}
 	put_walls_on_image(target_array, img);
 }
@@ -70,7 +71,7 @@ t_target	cast_ray(t_map_data map_data, t_vector_data *vector_data,
 
 	compute_vector_data(vector_data, ray_number);
 	get_intersection(map_data, *vector_data, &hit_point);
-	return(hit_point);
+	return (hit_point);
 }
 
 /// @brief Draws the walls
@@ -79,13 +80,11 @@ void	put_walls_on_image(t_target *target_array, t_mlx_img *img)
 {
 	int	array_index;
 	int	pixels_height;
-	int colour;
+	int	colour;
 
 	array_index = 0;
 	while (array_index < SCREEN_WIDTH)
 	{
-		if (array_index % 10 == 0)
-			print_ray_data(target_array, array_index);
 		pixels_height = target_array[array_index].wall_min_height_pixel;
 		colour = temp_colour(target_array[array_index].wall_facing_direction);
 		while (pixels_height <= target_array[array_index].wall_max_height_pixel)

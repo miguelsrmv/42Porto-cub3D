@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/27 11:55:12 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/27 15:38:18 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,14 @@
 # define SCREEN_WIDTH 1280
 # define SCREEN_HEIGHT 720
 # define FOV 0.66
+# define MOVE_SPEED 1
+# define ROTATE_SPEED (M_PI / 100)
 
 /// TEMPORARY INTS
 # define GREEN 65280
 # define RED 16711680
 # define BLUE 255
 # define WHITE 16777215
-# define SPEED 
 
 /// Keys for minilibx
 # define KEY_ESC		65307
@@ -301,6 +302,7 @@ void				clean_mlx(void	*mlx, void	*mlx_window, void *mlx_img);
 void				test_map_data(t_map_data *map_data);
 void				test_tab_data(t_map_data *map_data);
 void				print_ray_data(t_target *target_array, int array_index);
+void				print_vector_data(t_vector_data *vector);
 
 /// my_pixel_put.c
 void   				my_pixel_put(t_mlx_img *img, int x, int y, int color);
@@ -309,6 +311,9 @@ int					temp_colour(enum e_CardinalPoint direction);
 
 /// key_hooks.c
 int					key_hook(int keycode, t_cube *cube);
-
+void				move_foward(t_map_data *map_data, t_vector_data *vector_data);
+void				move_backwards(t_map_data *map_data, t_vector_data *vector_data);
+void				turn_left(t_vector_data *vector_data);
+void				turn_right(t_vector_data *vector_data);
 
 #endif
