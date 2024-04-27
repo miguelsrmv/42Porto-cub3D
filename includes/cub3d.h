@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/27 15:38:18 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:08:57 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@
 # define SCREEN_HEIGHT 720
 # define FOV 0.66
 # define MOVE_SPEED 1
-# define ROTATE_SPEED (M_PI / 100)
+# define STEPS_PER_TILE 3
+# define ROTATE_SPEED (M_PI / 4)
 
 /// TEMPORARY INTS
 # define GREEN 65280
@@ -152,6 +153,9 @@ typedef struct s_vector_data
 	double		camera_plane_x;
 	double		camera_plane_y;
 
+	// Offset to allow for being centered on squares
+	double		offset_x;
+	double		offset_y;
 }		t_vector_data;
 
 typedef struct s_mlx_img
@@ -258,11 +262,15 @@ t_lean_limits		get_max_values(t_map_data **map_data);
 void				update_lean_limits(t_lean_limits *lean_limits,
 						int x, int y);
 
+/// map_expander.c
+void				expand_map(t_map_data **map_data);
+void				fill_in_larger_map(char **expanded_map, char **map_tab);
+void				expand_width(char *expanded_string, char *string);
+
 /// run_cub3d.c
 void				run_cub3d(t_cube *cube);
 void				initialize_mlx(t_cube *cube);
-void				initialize_vector_data(t_vector_data *vector_data,
-						t_map_data *map_data, t_cube *cube);
+t_vector_data		*initialize_vector_data(t_map_data *map_data);
 int					render_image(t_cube *cube);
 
 
@@ -295,7 +303,7 @@ bool				got_a_hit(int x, int y, t_map_data map_data);
 /// clean_memory.c
 void				exit_cub3(t_map_data *map_data,
 						char *message);
-void				clean_map_data(t_map_data *map_data);
+void				clean_data(t_map_data *map_data, t_vector_data *vector_data);
 void				clean_mlx(void	*mlx, void	*mlx_window, void *mlx_img);
 
 /// helper_functions.c
