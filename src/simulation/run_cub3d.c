@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:54:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/27 16:00:50 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/29 10:56:34 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	run_cub3d(t_cube	*cube)
 {
 	initialize_mlx(cube);
 	mlx_loop_hook(cube->mlx, render_image, cube);
-	mlx_hook(cube->mlx_window, 2, 1L << 0, key_hook, cube);
+	setup_keyhooks(cube);
+	setup_buttonhooks(cube);
 	mlx_loop(cube->mlx);
 	clean_mlx(cube->mlx, cube->mlx_window, (cube->image.img));
 }

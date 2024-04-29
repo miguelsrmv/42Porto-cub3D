@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/29 10:02:30 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/29 10:57:06 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@
 # define KEY_D				100
 # define KEY_LEFT_ARROW		65361
 # define KEY_RIGHT_ARROW	65363
+# define ESCAPE				65307
 
 // enums
 enum e_ExitStatus
@@ -314,8 +315,10 @@ void   				my_pixel_put(t_mlx_img *img, int x, int y, int color);
 int					convert_rgb_to_int(int *RGB);
 int					temp_colour(enum e_CardinalPoint direction);
 
-/// key_hooks.c
+/// hooks.c
 int					key_hook(int keycode, t_cube *cube);
+void				setup_keyhooks(t_cube *cube);
+void				setup_buttonhooks(t_cube *cube);
 
 /// movements.c
 void				move_foward(t_map_data *map_data, t_vector_data *vector_data);
