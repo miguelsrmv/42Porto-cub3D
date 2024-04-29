@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/27 18:08:57 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/29 09:55:49 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@
 # define SCREEN_HEIGHT 720
 # define FOV 0.66
 # define MOVE_SPEED 1
-# define STEPS_PER_TILE 3
-# define ROTATE_SPEED (M_PI / 4)
+# define WALL_OFFSET 1
+# define ROTATE_SPEED (M_PI / 16)
 
 /// TEMPORARY INTS
 # define GREEN 65280
@@ -262,11 +262,6 @@ t_lean_limits		get_max_values(t_map_data **map_data);
 void				update_lean_limits(t_lean_limits *lean_limits,
 						int x, int y);
 
-/// map_expander.c
-void				expand_map(t_map_data **map_data);
-void				fill_in_larger_map(char **expanded_map, char **map_tab);
-void				expand_width(char *expanded_string, char *string);
-
 /// run_cub3d.c
 void				run_cub3d(t_cube *cube);
 void				initialize_mlx(t_cube *cube);
@@ -319,8 +314,12 @@ int					temp_colour(enum e_CardinalPoint direction);
 
 /// key_hooks.c
 int					key_hook(int keycode, t_cube *cube);
+
+/// movements.c
 void				move_foward(t_map_data *map_data, t_vector_data *vector_data);
 void				move_backwards(t_map_data *map_data, t_vector_data *vector_data);
+
+/// looking.c 
 void				turn_left(t_vector_data *vector_data);
 void				turn_right(t_vector_data *vector_data);
 
