@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:21:44 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/29 10:58:23 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:41:57 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,4 @@ void	setup_keyhooks(t_cube *cube)
 void	setup_buttonhooks(t_cube *cube)
 {
 	mlx_hook(cube->mlx_window, 17, 1L << 17, mlx_loop_end, cube->mlx);
-	/// Hook to edit SCREEN_WIDTH and SCREEN_HEIGHT
 }

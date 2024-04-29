@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/29 10:57:06 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:32:22 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@
 # define FOV 0.66
 # define MOVE_SPEED 1
 # define WALL_OFFSET 1
-# define ROTATE_SPEED (M_PI / 16)
+# define ROTATE_SPEED (M_PI / 8)
 
 /// TEMPORARY INTS
 # define GREEN 65280
