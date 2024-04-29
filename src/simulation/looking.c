@@ -6,12 +6,13 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 09:55:13 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/29 09:56:34 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/29 09:58:04 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/// @brief Looks ROTATE_SPEED angles (radians) to the left
 void	turn_left(t_vector_data *vector_data)
 {
 	double	old_dir_x;
@@ -33,6 +34,7 @@ void	turn_left(t_vector_data *vector_data)
 		+ vector_data->camera_plane_y * cos(-ROTATE_SPEED);
 }
 
+/// @brief Looks ROTATE_SPEED angles (radians) to the right
 void	turn_right(t_vector_data *vector_data)
 {
 	double	old_dir_x;

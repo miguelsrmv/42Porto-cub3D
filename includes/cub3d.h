@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/29 09:55:49 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/29 10:02:30 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,13 @@
 # define WHITE 16777215
 
 /// Keys for minilibx
-# define KEY_ESC		65307
-# define KEY_W			119
-# define KEY_A			97
-# define KEY_S			115
-# define KEY_D			100
+# define KEY_ESC			65307
+# define KEY_W				119
+# define KEY_A				97
+# define KEY_S				115
+# define KEY_D				100
+# define KEY_LEFT_ARROW		65361
+# define KEY_RIGHT_ARROW	65363
 
 // enums
 enum e_ExitStatus
@@ -318,6 +320,8 @@ int					key_hook(int keycode, t_cube *cube);
 /// movements.c
 void				move_foward(t_map_data *map_data, t_vector_data *vector_data);
 void				move_backwards(t_map_data *map_data, t_vector_data *vector_data);
+void				move_left(t_map_data *map_data, t_vector_data *vector_data);
+void				move_right(t_map_data *map_data, t_vector_data *vector_data);
 
 /// looking.c 
 void				turn_left(t_vector_data *vector_data);

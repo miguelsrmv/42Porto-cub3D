@@ -6,12 +6,13 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 09:54:56 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/29 09:56:38 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/29 10:18:21 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/// @brief Walks 1 MOVE_SPEED foward
 void	move_foward(t_map_data *map_data, t_vector_data *vector_data)
 {
 	if ((map_data->map_tab
@@ -33,6 +34,7 @@ void	move_foward(t_map_data *map_data, t_vector_data *vector_data)
 		vector_data->vector_dir_y * MOVE_SPEED);
 }
 
+/// @brief Walks 1 MOVE_SPEED backwads
 void	move_backwards(t_map_data *map_data, t_vector_data *vector_data)
 {
 	if ((map_data->map_tab
@@ -50,4 +52,28 @@ void	move_backwards(t_map_data *map_data, t_vector_data *vector_data)
 	printf("Pos X was subtracted %f and Pos Y was subtracted %f",
 		vector_data->vector_dir_x * MOVE_SPEED,
 		vector_data->vector_dir_y * MOVE_SPEED);
+}
+
+/// @brief Walks 1 MOVE_SPEED left
+void	move_left(t_map_data *map_data, t_vector_data *vector_data)
+{
+	if ((map_data->map_tab
+			[(int)vector_data->pos_y]
+			[(int)(vector_data->pos_x + MOVE_SPEED)]) != '1')
+		vector_data->pos_x += MOVE_SPEED;
+	printf("Position after movement:\n");
+	print_vector_data(vector_data);
+	printf("Pos X was added %d", MOVE_SPEED);
+}
+
+/// @brief Walks 1 MOVE_SPEED right
+void	move_right(t_map_data *map_data, t_vector_data *vector_data)
+{
+	if ((map_data->map_tab
+			[(int)vector_data->pos_y]
+			[(int)(vector_data->pos_x - MOVE_SPEED)]) != '1')
+		vector_data->pos_x -= MOVE_SPEED;
+	printf("Position after movement:\n");
+	print_vector_data(vector_data);
+	printf("Pos X was subtracted %d", MOVE_SPEED);
 }
