@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:39:16 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/27 15:47:58 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/02 12:42:11 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,9 @@ void	print_ray_data(t_target *target_array, int array_index)
 
 void	print_vector_data(t_vector_data *vector)
 {
-	printf("Player position (%i, %i) looking at (%f, %f)\n",
+	printf("Player position (%f, %f) looking at (%f, %f)\n",
 		vector->pos_x,
 		vector->pos_y,
 		vector->vector_dir_x,
 		vector->vector_dir_y);
-	printf("Vector PosX: %f, Vector PosY: %i\n",
-		(vector->pos_x + vector->ray_dir_x * MOVE_SPEED),
-		(int)(vector->pos_y));
 }

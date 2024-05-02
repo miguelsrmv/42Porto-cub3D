@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:19:31 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/29 18:27:30 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:44:32 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 /// @brief Gets first intersection given a ray angle
 /// Fills hit_point with that data
-/// TODO: Check it's working properly ???
 void	get_intersection(t_map_data map_data,
 			t_vector_data vector_data, t_target *hit_point)
 {

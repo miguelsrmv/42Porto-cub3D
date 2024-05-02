@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:49:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/27 15:40:24 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/02 11:15:14 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	draw_obstacles(t_map_data map_data, t_vector_data *vector_data,
 	put_walls_on_image(target_array, img);
 }
 
-/// @brief Casts ray for each angle (player_angle + fov_angle)
+/// @brief Casts ray for each angle
 t_target	cast_ray(t_map_data map_data, t_vector_data *vector_data,
 				int ray_number)
 {

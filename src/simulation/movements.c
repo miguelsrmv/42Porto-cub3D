@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 09:54:56 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/29 18:38:42 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/02 12:41:01 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,20 @@
 /// @brief Walks 1 MOVE_SPEED foward
 void	move_foward(t_map_data *map_data, t_vector_data *vector_data)
 {
-	if ((map_data->map_tab
-			[(int)vector_data->pos_y]
-			[(int)(vector_data->pos_x
-				+ vector_data->vector_dir_x * MOVE_SPEED)]) != '1')
-		vector_data->pos_x
-			+= round(vector_data->vector_dir_x * MOVE_SPEED);
-	if ((map_data->map_tab
-			[(int)(vector_data->pos_y
-				+ vector_data->vector_dir_y * MOVE_SPEED)]
-		[(int)(vector_data->pos_x)]) != '1')
-		vector_data->pos_y
-			+= round(vector_data->vector_dir_y * MOVE_SPEED);
+	double	foward_vector_x;
+	double	foward_vector_y;
+
+	foward_vector_x = vector_data->vector_dir_x * MOVE_SPEED / TILE_SIZE;
+	foward_vector_y = vector_data->vector_dir_y * MOVE_SPEED / TILE_SIZE;
+	if (player_collides(map_data, vector_data,
+			foward_vector_x, foward_vector_y))
+	{
+		printf("Can't move foward!\n");
+		print_vector_data(vector_data);
+		return ;
+	}
+	vector_data->pos_x += foward_vector_x;
+	vector_data->pos_y += foward_vector_y;
 	printf("Position after movement:\n");
 	print_vector_data(vector_data);
 }
@@ -34,16 +36,20 @@ void	move_foward(t_map_data *map_data, t_vector_data *vector_data)
 /// @brief Walks 1 MOVE_SPEED backwads
 void	move_backwards(t_map_data *map_data, t_vector_data *vector_data)
 {
-	if ((map_data->map_tab
-			[(int)vector_data->pos_y]
-			[(int)(vector_data->pos_x
-				- vector_data->vector_dir_x * MOVE_SPEED)]) != '1')
-		vector_data->pos_x
-			-= round(vector_data->vector_dir_x * MOVE_SPEED);
-	if ((map_data->map_tab
-			[(int)(vector_data->pos_y - vector_data->vector_dir_y * MOVE_SPEED)]
-		[(int)(vector_data->pos_x)]) != '1')
-		vector_data->pos_y -= round(vector_data->vector_dir_y * MOVE_SPEED);
+	double	backwards_vector_x;
+	double	backwards_vector_y;
+
+	backwards_vector_x = -vector_data->vector_dir_x * MOVE_SPEED / TILE_SIZE;
+	backwards_vector_y = -vector_data->vector_dir_y * MOVE_SPEED / TILE_SIZE;
+	if (player_collides(map_data, vector_data,
+			backwards_vector_x, backwards_vector_y))
+	{
+		printf("Can't move backwards!\n");
+		print_vector_data(vector_data);
+		return ;
+	}
+	vector_data->pos_x += backwards_vector_x;
+	vector_data->pos_y += backwards_vector_y;
 	printf("Position after movement:\n");
 	print_vector_data(vector_data);
 }
@@ -51,19 +57,20 @@ void	move_backwards(t_map_data *map_data, t_vector_data *vector_data)
 /// @brief Walks 1 MOVE_SPEED left
 void	move_left(t_map_data *map_data, t_vector_data *vector_data)
 {
-	double	perpendicular_x;
-	double	perpendicular_y;
+	double	leftwards_vector_x;
+	double	leftwards_vector_y;
 
-	perpendicular_x = vector_data->vector_dir_y;
-	perpendicular_y = -vector_data->vector_dir_x;
-	if (map_data->map_tab
-		[(int)(vector_data->pos_y + perpendicular_y * MOVE_SPEED)]
-		[(int)(vector_data->pos_x)] != '1')
-		vector_data->pos_y += round(perpendicular_y * MOVE_SPEED);
-	if (map_data->map_tab
-		[(int)(vector_data->pos_y)]
-		[(int)(vector_data->pos_x + perpendicular_x * MOVE_SPEED)] != '1')
-		vector_data->pos_x += round(perpendicular_x * MOVE_SPEED);
+	leftwards_vector_x = -vector_data->vector_dir_x * MOVE_SPEED / TILE_SIZE;
+	leftwards_vector_y = vector_data->vector_dir_y * MOVE_SPEED / TILE_SIZE;
+	if (player_collides(map_data, vector_data,
+			leftwards_vector_x, leftwards_vector_y))
+	{
+		printf("Can't move left!\n");
+		print_vector_data(vector_data);
+		return ;
+	}
+	vector_data->pos_y += leftwards_vector_x;
+	vector_data->pos_x += leftwards_vector_y;
 	printf("Position after movement:\n");
 	print_vector_data(vector_data);
 }
@@ -71,19 +78,21 @@ void	move_left(t_map_data *map_data, t_vector_data *vector_data)
 /// @brief Walks 1 MOVE_SPEED right
 void	move_right(t_map_data *map_data, t_vector_data *vector_data)
 {
-	double	perpendicular_x;
-	double	perpendicular_y;
+	double	rightwards_vector_x;
+	double	rightwards_vector_y;
 
-	perpendicular_x = vector_data->vector_dir_y;
-	perpendicular_y = -vector_data->vector_dir_x;
-	if (map_data->map_tab
-		[(int)(vector_data->pos_y - perpendicular_y * MOVE_SPEED)]
-		[(int)(vector_data->pos_x)] != '1')
-		vector_data->pos_y -= round(perpendicular_y * MOVE_SPEED);
-	if (map_data->map_tab
-		[(int)(vector_data->pos_y)]
-		[(int)(vector_data->pos_x - perpendicular_x * MOVE_SPEED)] != '1')
-		vector_data->pos_x -= round(perpendicular_x * MOVE_SPEED);
+	rightwards_vector_x = vector_data->vector_dir_x * MOVE_SPEED / TILE_SIZE;
+	rightwards_vector_y = -vector_data->vector_dir_y * MOVE_SPEED / TILE_SIZE;
+	if (player_collides(map_data, vector_data,
+			rightwards_vector_x, rightwards_vector_y))
+	{
+		printf("Can't move right!\n");
+		print_vector_data(vector_data);
+		return ;
+	}
+	vector_data->pos_y += rightwards_vector_x;
+	vector_data->pos_x += rightwards_vector_y;
 	printf("Position after movement:\n");
 	print_vector_data(vector_data);
 }
+

@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/29 18:32:22 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/02 12:42:30 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@
 # define FOV 0.66
 # define MOVE_SPEED 1
 # define WALL_OFFSET 1
-# define ROTATE_SPEED (M_PI / 8)
+# define TILE_SIZE 4
+# define ROTATE_SPEED (M_PI / 32)
 
 /// TEMPORARY INTS
 # define GREEN 65280
@@ -103,6 +104,14 @@ enum e_CardinalPoint
 	EAST,
 };
 
+enum e_Movement
+{
+	FOWARD,
+	LEFT,
+	BACKWARDS,
+	RIGHT,
+};
+
 // Structs
 typedef struct s_map_data
 {
@@ -130,8 +139,8 @@ typedef struct s_vector_data
 	int			map_y;
 
 	// Player position on the grid, considering TILE_SIZE
-	int			pos_x;
-	int			pos_y;
+	double		pos_x;
+	double		pos_y;
 
 	// Main direction the player is looking at
 	double		vector_dir_x;
@@ -325,6 +334,10 @@ void				move_foward(t_map_data *map_data, t_vector_data *vector_data);
 void				move_backwards(t_map_data *map_data, t_vector_data *vector_data);
 void				move_left(t_map_data *map_data, t_vector_data *vector_data);
 void				move_right(t_map_data *map_data, t_vector_data *vector_data);
+
+/// collisions.c
+bool				player_collides(t_map_data *map_data, t_vector_data *vector_data,
+						double movement_vector_x, double movement_vector_y);
 
 /// looking.c 
 void				turn_left(t_vector_data *vector_data);
