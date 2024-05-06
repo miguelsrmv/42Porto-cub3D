@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:39:16 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/06 20:09:06 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:26:54 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,13 @@ void	print_current_perspective(t_map_data *map, t_vector_data *vector)
 	t_target	target_array[SCREEN_WIDTH];
 	int			i;
 
+	printf("\n*********************\n\n");
+	printf("Current perspective:\n");
 	i = 0;
 	while (i < SCREEN_WIDTH)
 	{
 		target_array[i] = cast_ray(*map, vector, i);
-		if (i % 20 == 0)
+		if (i % 100 == 0)
 			printf("Ray number %i hit a target on position (%i, %i)\n",
 				i,
 				(int)target_array[i].x_position,
@@ -91,4 +93,31 @@ void	print_current_perspective(t_map_data *map, t_vector_data *vector)
 		i++;
 	}
 	return ;
+}
+
+void	print_current_map(t_map_data *map_data, t_vector_data *vector)
+{
+	int	x;
+	int	y;
+
+	x = 0;
+	y = 0;
+	printf("\n*********************\n\n");
+	printf("Current map:\n\n");
+	while (map_data->map_tab[y])
+	{
+		x = 0;
+		while (map_data->map_tab[y][x])
+		{
+			if (x == (int)(vector->pos_x - 0.5)
+				&& y == (int)(vector->pos_y + 0.5))
+				printf("X");
+			else
+				printf("%c", map_data->map_tab[y][x]);
+			x++;
+		}
+		printf("\n");
+		y++;
+	}
+	printf("\n\n");
 }

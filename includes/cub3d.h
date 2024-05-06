@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/06 20:04:24 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:16:37 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@
 # define ESCAPE				65307
 # define SPACE				32
 # define ENTER				65293
+# define BACKSPACE			65288
 
 // enums
 enum e_ExitStatus
@@ -321,6 +322,7 @@ void				test_tab_data(t_map_data *map_data);
 void				print_ray_data(t_target *target_array, int array_index);
 void				print_vector_data(t_vector_data *vector);
 void				print_current_perspective(t_map_data *map_data, t_vector_data *vector_data);
+void				print_current_map(t_map_data *map_data, t_vector_data *vector);
 
 /// my_pixel_put.c
 void   				my_pixel_put(t_mlx_img *img, int x, int y, int color);
