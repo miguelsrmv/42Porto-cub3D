@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:54:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/29 10:56:34 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/02 21:46:31 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ t_vector_data	*initialize_vector_data(t_map_data *map_data)
 		exit_cub3(map_data, MALLOC_ERROR_MSG);
 	vector_data->map_x = map_data->start_pos[X];
 	vector_data->map_y = map_data->start_pos[Y];
-	vector_data->pos_x = map_data->start_pos[X];
-	vector_data->pos_y = map_data->start_pos[Y];
+	vector_data->pos_x = map_data->start_pos[X] + 0.5;
+	vector_data->pos_y = map_data->start_pos[Y] - 0.5;
 	vector_data->vector_dir_x = 0;
 	vector_data->vector_dir_y = 0;
 	if (map_data->cardinal_direction == 'N')

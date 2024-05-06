@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:21:44 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/29 18:41:57 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:04:34 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 /// @brief Gets user input and triggers respective event
 int	key_hook(int keycode, t_cube *cube)
 {
-	printf("\n*********************\n\n");
-	printf("Current position:\n");
-	print_vector_data(cube->vector_data);
-	printf("\n");
 	if (keycode == KEY_W)
 		move_foward(cube->map_data, cube->vector_data);
 	else if (keycode == KEY_S)
@@ -33,6 +29,10 @@ int	key_hook(int keycode, t_cube *cube)
 		turn_right(cube->vector_data);
 	else if (keycode == ESCAPE)
 		mlx_loop_end(cube->mlx);
+	else if (keycode == SPACE)
+		print_vector_data(cube->vector_data);
+ 	else if (keycode == ENTER)
+		print_current_perspective(cube->map_data, cube->vector_data);
 	return (0);
 }
 

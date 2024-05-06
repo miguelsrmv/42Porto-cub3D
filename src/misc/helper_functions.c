@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:39:16 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/02 12:42:11 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:09:06 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,31 @@ void	print_ray_data(t_target *target_array, int array_index)
 
 void	print_vector_data(t_vector_data *vector)
 {
+	printf("\n*********************\n\n");
+	printf("Current position:\n");
 	printf("Player position (%f, %f) looking at (%f, %f)\n",
 		vector->pos_x,
 		vector->pos_y,
 		vector->vector_dir_x,
 		vector->vector_dir_y);
+	printf("\n");
+}
+
+void	print_current_perspective(t_map_data *map, t_vector_data *vector)
+{
+	t_target	target_array[SCREEN_WIDTH];
+	int			i;
+
+	i = 0;
+	while (i < SCREEN_WIDTH)
+	{
+		target_array[i] = cast_ray(*map, vector, i);
+		if (i % 20 == 0)
+			printf("Ray number %i hit a target on position (%i, %i)\n",
+				i,
+				(int)target_array[i].x_position,
+				(int)target_array[i].y_position);
+		i++;
+	}
+	return ;
 }

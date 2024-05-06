@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/02 12:42:30 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:04:24 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@
 # define KEY_LEFT_ARROW		65361
 # define KEY_RIGHT_ARROW	65363
 # define ESCAPE				65307
+# define SPACE				32
+# define ENTER				65293
 
 // enums
 enum e_ExitStatus
@@ -318,6 +320,7 @@ void				test_map_data(t_map_data *map_data);
 void				test_tab_data(t_map_data *map_data);
 void				print_ray_data(t_target *target_array, int array_index);
 void				print_vector_data(t_vector_data *vector);
+void				print_current_perspective(t_map_data *map_data, t_vector_data *vector_data);
 
 /// my_pixel_put.c
 void   				my_pixel_put(t_mlx_img *img, int x, int y, int color);
@@ -337,6 +340,12 @@ void				move_right(t_map_data *map_data, t_vector_data *vector_data);
 
 /// collisions.c
 bool				player_collides(t_map_data *map_data, t_vector_data *vector_data,
+						double movement_vector_x, double movement_vector_y);
+bool				frontal_collision(t_map_data *map_data, t_vector_data *vector_data,
+						double movement_vector_x, double movement_vector_y);
+bool				minus_45_collision(t_map_data *map_data, t_vector_data *vector_data,
+						double movement_vector_x, double movement_vector_y);
+bool				plus_45_collision(t_map_data *map_data, t_vector_data *vector_data,
 						double movement_vector_x, double movement_vector_y);
 
 /// looking.c 

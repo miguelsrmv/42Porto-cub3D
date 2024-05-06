@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 09:54:56 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/02 12:41:01 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/06 19:52:15 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,10 @@ void	move_foward(t_map_data *map_data, t_vector_data *vector_data)
 			foward_vector_x, foward_vector_y))
 	{
 		printf("Can't move foward!\n");
-		print_vector_data(vector_data);
 		return ;
 	}
 	vector_data->pos_x += foward_vector_x;
 	vector_data->pos_y += foward_vector_y;
-	printf("Position after movement:\n");
-	print_vector_data(vector_data);
 }
 
 /// @brief Walks 1 MOVE_SPEED backwads
@@ -45,13 +42,10 @@ void	move_backwards(t_map_data *map_data, t_vector_data *vector_data)
 			backwards_vector_x, backwards_vector_y))
 	{
 		printf("Can't move backwards!\n");
-		print_vector_data(vector_data);
 		return ;
 	}
 	vector_data->pos_x += backwards_vector_x;
 	vector_data->pos_y += backwards_vector_y;
-	printf("Position after movement:\n");
-	print_vector_data(vector_data);
 }
 
 /// @brief Walks 1 MOVE_SPEED left
@@ -66,13 +60,10 @@ void	move_left(t_map_data *map_data, t_vector_data *vector_data)
 			leftwards_vector_x, leftwards_vector_y))
 	{
 		printf("Can't move left!\n");
-		print_vector_data(vector_data);
 		return ;
 	}
 	vector_data->pos_y += leftwards_vector_x;
 	vector_data->pos_x += leftwards_vector_y;
-	printf("Position after movement:\n");
-	print_vector_data(vector_data);
 }
 
 /// @brief Walks 1 MOVE_SPEED right
@@ -87,12 +78,9 @@ void	move_right(t_map_data *map_data, t_vector_data *vector_data)
 			rightwards_vector_x, rightwards_vector_y))
 	{
 		printf("Can't move right!\n");
-		print_vector_data(vector_data);
 		return ;
 	}
 	vector_data->pos_y += rightwards_vector_x;
 	vector_data->pos_x += rightwards_vector_y;
-	printf("Position after movement:\n");
-	print_vector_data(vector_data);
-}
 
+}

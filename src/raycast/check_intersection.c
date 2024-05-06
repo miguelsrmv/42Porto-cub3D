@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:19:31 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/29 18:44:32 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/05 11:48:49 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,7 @@ void	calc_wall_distance_and_height(t_vector_data vector_data,
 	else
 		hit_point->distance
 			= vector_data.small_delta_dist_y - vector_data.delta_dist_y;
-	if (hit_point->distance == 0)
-		hit_point->wall_height = SCREEN_HEIGHT;
-	else
-		hit_point->wall_height = ((int)(SCREEN_HEIGHT / hit_point->distance));
+	hit_point->wall_height = ((int)(SCREEN_HEIGHT / hit_point->distance));
 	hit_point->wall_max_height_pixel
 		= hit_point->wall_height / 2 + SCREEN_HEIGHT / 2;
 	if (hit_point->wall_max_height_pixel >= SCREEN_HEIGHT)
