@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 09:54:56 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/06 20:27:41 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/06 22:40:41 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	move_foward(t_map_data *map_data, t_vector_data *vector_data)
 	}
 	vector_data->pos_x += foward_vector_x;
 	vector_data->pos_y += foward_vector_y;
+	update_position(vector_data);
 }
 
 /// @brief Walks 1 MOVE_SPEED backwads
@@ -46,6 +47,7 @@ void	move_backwards(t_map_data *map_data, t_vector_data *vector_data)
 	}
 	vector_data->pos_x += backwards_vector_x;
 	vector_data->pos_y += backwards_vector_y;
+	update_position(vector_data);
 }
 
 /// @brief Walks 1 MOVE_SPEED left
@@ -64,6 +66,7 @@ void	move_left(t_map_data *map_data, t_vector_data *vector_data)
 	}
 	vector_data->pos_y += leftwards_vector_x;
 	vector_data->pos_x += leftwards_vector_y;
+	update_position(vector_data);
 }
 
 /// @brief Walks 1 MOVE_SPEED right
@@ -82,4 +85,11 @@ void	move_right(t_map_data *map_data, t_vector_data *vector_data)
 	}
 	vector_data->pos_y += rightwards_vector_x;
 	vector_data->pos_x += rightwards_vector_y;
+	update_position(vector_data);
+}
+
+void	update_position(t_vector_data *vector_data)
+{
+	vector_data->map_x = (int)vector_data->pos_x;
+	vector_data->map_y = (int)vector_data->pos_y;
 }

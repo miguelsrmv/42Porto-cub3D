@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:39:16 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/06 20:26:54 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/06 22:22:11 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	print_current_perspective(t_map_data *map, t_vector_data *vector)
 	while (i < SCREEN_WIDTH)
 	{
 		target_array[i] = cast_ray(*map, vector, i);
-		if (i % 100 == 0)
+		if (i % 40 == 0)
 			printf("Ray number %i hit a target on position (%i, %i)\n",
 				i,
 				(int)target_array[i].x_position,
