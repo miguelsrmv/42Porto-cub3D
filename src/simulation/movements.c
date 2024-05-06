@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 09:54:56 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/06 19:52:15 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:27:41 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,4 @@ void	move_right(t_map_data *map_data, t_vector_data *vector_data)
 	}
 	vector_data->pos_y += rightwards_vector_x;
 	vector_data->pos_x += rightwards_vector_y;
-
 }

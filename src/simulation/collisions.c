@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 09:53:00 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/02 21:36:39 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:28:11 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,17 @@ bool	player_collides(t_map_data *map_data, t_vector_data *vector_data,
 	double movement_vector_x, double movement_vector_y)
 {
 	return (false);
-	if (frontal_collision(map_data, vector_data, movement_vector_x, movement_vector_y)
-		|| minus_45_collision(map_data, vector_data, movement_vector_x, movement_vector_y)
-		|| plus_45_collision(map_data, vector_data, movement_vector_x, movement_vector_y))
+	if (frontal_collision(map_data, vector_data,
+			movement_vector_x, movement_vector_y)
+		|| minus_45_collision(map_data, vector_data,
+			movement_vector_x, movement_vector_y)
+		|| plus_45_collision(map_data, vector_data,
+			movement_vector_x, movement_vector_y))
 		return (true);
 	return (false);
 }
 
-bool	frontal_collision(t_map_data *map_data, t_vector_data *vector_data, 
+bool	frontal_collision(t_map_data *map_data, t_vector_data *vector_data,
 	double movement_vector_x, double movement_vector_y)
 {
 	double	final_movement_vector_x;

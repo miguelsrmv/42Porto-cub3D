@@ -6,13 +6,14 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:21:44 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/06 20:17:13 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:28:48 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /// @brief Gets user input and triggers respective event
+/// TODO: REMOVE SPACE/ENTER/BACKSPACE functions AND #defines on cub3d.h
 int	key_hook(int keycode, t_cube *cube)
 {
 	if (keycode == KEY_W)
