@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:19:31 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/05 11:48:49 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/07 10:42:41 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@
 void	get_intersection(t_map_data map_data,
 			t_vector_data vector_data, t_target *hit_point)
 {
-	bool		hit_flag;
-
-	hit_flag = false;
-	while (!hit_flag)
+	while (true)
 	{
 		if (vector_data.small_delta_dist_x < vector_data.small_delta_dist_y)
 		{
@@ -35,7 +32,7 @@ void	get_intersection(t_map_data map_data,
 			check_wall_side_horizontal(vector_data.step_y, hit_point);
 		}
 		if (got_a_hit(vector_data.map_x, vector_data.map_y, map_data))
-			hit_flag = true;
+			break ;
 	}
 	hit_point->x_position = vector_data.map_x;
 	hit_point->y_position = vector_data.map_y;

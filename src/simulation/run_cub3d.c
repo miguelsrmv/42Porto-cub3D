@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:54:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/02 21:46:31 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:38:34 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_vector_data	*initialize_vector_data(t_map_data *map_data)
 		vector_data->vector_dir_x = -1;
 	vector_data->delta_dist_x = 0;
 	vector_data->delta_dist_y = 0;
-	calculate_camera_plane(vector_data);
+	calculate_camera_plane(vector_data, FOV);
 	return (vector_data);
 }
 

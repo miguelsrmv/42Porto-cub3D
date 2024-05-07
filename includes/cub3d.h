@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/06 22:41:02 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:33:38 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,10 @@
 # define SCREEN_HEIGHT 720
 # define FOV 0.66
 # define MOVE_SPEED 1
-# define WALL_OFFSET 1
 # define TILE_SIZE 4
 # define ROTATE_SPEED (M_PI / 32)
+# define WALL_OFFSET 0.75
+# define HITBOX_FOV 0.90
 
 /// TEMPORARY INTS
 # define GREEN 65280
@@ -295,7 +296,7 @@ void				put_walls_on_image(t_target *target_array, t_mlx_img *img);
 
 /// camera_plane.c
 void 				normalize_vector(double *x, double *y);
-void				calculate_camera_plane(t_vector_data *vector_data);
+void				calculate_camera_plane(t_vector_data *vector_data, double fov_angle);
 
 /// compute_vector_data.c
 void				compute_vector_data(t_vector_data *vector_data, int ray_number);
@@ -339,17 +340,14 @@ void				move_foward(t_map_data *map_data, t_vector_data *vector_data);
 void				move_backwards(t_map_data *map_data, t_vector_data *vector_data);
 void				move_left(t_map_data *map_data, t_vector_data *vector_data);
 void				move_right(t_map_data *map_data, t_vector_data *vector_data);
-void				update_position(t_vector_data *vector_data);
+void				update_position(t_map_data *map_data, t_vector_data *vector_data,
+						double x_movement, double y_movement);
 
 /// collisions.c
-bool				player_collides(t_map_data *map_data, t_vector_data *vector_data,
+bool				player_collides(t_map_data *map_data, t_vector_data vector_data,
 						double movement_vector_x, double movement_vector_y);
-bool				frontal_collision(t_map_data *map_data, t_vector_data *vector_data,
-						double movement_vector_x, double movement_vector_y);
-bool				minus_45_collision(t_map_data *map_data, t_vector_data *vector_data,
-						double movement_vector_x, double movement_vector_y);
-bool				plus_45_collision(t_map_data *map_data, t_vector_data *vector_data,
-						double movement_vector_x, double movement_vector_y);
+double				collision_distance(t_map_data *map_data, t_vector_data *vector_data, int ray);
+double				calc_distance_from_wall(t_map_data map_data, t_vector_data vector_data);
 
 /// looking.c 
 void				turn_left(t_vector_data *vector_data);
