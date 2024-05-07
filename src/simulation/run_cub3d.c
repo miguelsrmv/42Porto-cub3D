@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:54:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/07 12:38:34 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:33:28 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,13 @@ t_vector_data	*initialize_vector_data(t_map_data *map_data)
 	vector_data->map_y = map_data->start_pos[Y];
 	vector_data->pos_x = map_data->start_pos[X] + 0.5;
 	vector_data->pos_y = map_data->start_pos[Y] - 0.5;
+	fill_in_initial_vectors(map_data, vector_data);
+	calculate_camera_plane(vector_data, FOV);
+	return (vector_data);
+}
+
+void	fill_in_initial_vectors(t_map_data *map_data, t_vector_data *vector_data)
+{
 	vector_data->vector_dir_x = 0;
 	vector_data->vector_dir_y = 0;
 	if (map_data->cardinal_direction == 'N')
@@ -47,8 +54,6 @@ t_vector_data	*initialize_vector_data(t_map_data *map_data)
 		vector_data->vector_dir_x = -1;
 	vector_data->delta_dist_x = 0;
 	vector_data->delta_dist_y = 0;
-	calculate_camera_plane(vector_data, FOV);
-	return (vector_data);
 }
 
 void	initialize_mlx(t_cube *cube)

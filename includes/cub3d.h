@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/07 14:33:38 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:12:00 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@
 # define SCREEN_WIDTH 1280
 # define SCREEN_HEIGHT 720
 # define FOV 0.66
-# define MOVE_SPEED 1
+# define MOVE_SPEED 0.5
 # define TILE_SIZE 4
-# define ROTATE_SPEED (M_PI / 32)
-# define WALL_OFFSET 0.75
-# define HITBOX_FOV 0.90
+# define ROTATE_SPEED (M_PI / 64)
+# define WALL_OFFSET 0.5 + (MOVE_SPEED / TILE_SIZE)
+# define HITBOX_FOV 0.75
 
 /// TEMPORARY INTS
 # define GREEN 65280
@@ -282,6 +282,8 @@ void				update_lean_limits(t_lean_limits *lean_limits,
 void				run_cub3d(t_cube *cube);
 void				initialize_mlx(t_cube *cube);
 t_vector_data		*initialize_vector_data(t_map_data *map_data);
+void				fill_in_initial_vectors(t_map_data *map_data,
+						t_vector_data *vector_data);
 int					render_image(t_cube *cube);
 
 
@@ -306,9 +308,10 @@ void				calculate_big_delta(t_vector_data *vector_data);
 /// check_intersections.c
 void				get_intersection(t_map_data map_data,
 						t_vector_data vector_data, t_target *hit_point);
-void				check_wall_side_horizontal(int step, t_target *hit_point);
-void				check_wall_side_vertical(int step, t_target *hit_point);
-void				calc_wall_distance_and_height(t_vector_data vector_data, t_target *hit_point);
+void				check_wall_side(int step, t_target *hit_point, enum e_Coordinates side);
+void				calc_wall_distance(t_vector_data vector_data,
+						t_target *hit_point);
+void				calc_wall_height(t_target *hit_point);
 bool				got_a_hit(int x, int y, t_map_data map_data);
 
 /// clean_memory.c
@@ -336,18 +339,11 @@ void				setup_keyhooks(t_cube *cube);
 void				setup_buttonhooks(t_cube *cube);
 
 /// movements.c
-void				move_foward(t_map_data *map_data, t_vector_data *vector_data);
-void				move_backwards(t_map_data *map_data, t_vector_data *vector_data);
-void				move_left(t_map_data *map_data, t_vector_data *vector_data);
-void				move_right(t_map_data *map_data, t_vector_data *vector_data);
+void				move(t_map_data *map_data, t_vector_data *vector_data, enum e_Movement movement);
+void				rotate_vector_data(t_vector_data *vector_rotated, enum e_Movement movement);
 void				update_position(t_map_data *map_data, t_vector_data *vector_data,
-						double x_movement, double y_movement);
-
-/// collisions.c
-bool				player_collides(t_map_data *map_data, t_vector_data vector_data,
-						double movement_vector_x, double movement_vector_y);
-double				collision_distance(t_map_data *map_data, t_vector_data *vector_data, int ray);
-double				calc_distance_from_wall(t_map_data map_data, t_vector_data vector_data);
+						t_vector_data *vector_rotated);
+bool				player_collides(t_map_data *map_data, t_vector_data *vector_rotated);
 
 /// looking.c 
 void				turn_left(t_vector_data *vector_data);

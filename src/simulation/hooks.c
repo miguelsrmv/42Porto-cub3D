@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:21:44 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/06 20:28:48 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:41:01 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 int	key_hook(int keycode, t_cube *cube)
 {
 	if (keycode == KEY_W)
-		move_foward(cube->map_data, cube->vector_data);
+		move(cube->map_data, cube->vector_data, FOWARD);
 	else if (keycode == KEY_S)
-		move_backwards(cube->map_data, cube->vector_data);
+		move(cube->map_data, cube->vector_data, BACKWARDS);
 	else if (keycode == KEY_A)
-		move_left(cube->map_data, cube->vector_data);
+		move(cube->map_data, cube->vector_data, LEFT);
 	else if (keycode == KEY_D)
-		move_right(cube->map_data, cube->vector_data);
+		move(cube->map_data, cube->vector_data, RIGHT);
 	else if (keycode == KEY_LEFT_ARROW)
 		turn_left(cube->vector_data);
 	else if (keycode == KEY_RIGHT_ARROW)
