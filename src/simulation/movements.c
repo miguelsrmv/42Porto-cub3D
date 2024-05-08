@@ -6,71 +6,75 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 09:54:56 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/07 18:11:46 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:24:26 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /// @brief Walks 1 MOVE_SPEED / TILE_SIZE to the desired direction
-void	move(t_map_data *map_data, t_vector_data *vector_data, enum e_Movement movement)
+void	move(t_map_data *map_data, t_vector_data *vector_data,
+			t_movement movement)
 {
-	t_vector_data	vector_rotated;
+	double	x_movement;
+	double	y_movement;
+	double	x_offset;
+	double	y_offset;
 
-	vector_rotated = *vector_data;
-	rotate_vector_data(&vector_rotated, movement);
-	update_position(map_data, vector_data, &vector_rotated);
+	set_move_values(vector_data, movement, &x_movement, &y_movement);
+	set_offset_values(x_movement, y_movement, &x_offset, &y_offset);
+	if (map_data->map_tab[(int)vector_data->pos_y]
+		[(int)(vector_data->pos_x + x_movement + x_offset)] != '1')
+	{
+		vector_data->pos_x += x_movement;
+		vector_data->map_x = (int)vector_data->pos_x;
+	}
+	if (map_data->map_tab[(int)(vector_data->pos_y + y_movement + y_offset)]
+		[(int)vector_data->pos_x] != '1')
+	{
+		vector_data->pos_y += y_movement;
+		vector_data->map_y = (int)vector_data->pos_y;
+	}
 }
 
-/// @brief Gets rotated vector
-void	rotate_vector_data(t_vector_data *vector_rotated, enum e_Movement movement)
+/// @brief Sets movement values
+void	set_move_values(t_vector_data *vector_data, t_movement movement,
+		double *x_movement, double *y_movement)
 {
-	if (movement == BACKWARDS)
+	if (movement == FOWARD)
 	{
-		vector_rotated->vector_dir_x = -vector_rotated->vector_dir_x;
-		vector_rotated->vector_dir_y = -vector_rotated->vector_dir_y;
+		*x_movement = vector_data->vector_dir_x;
+		*y_movement = vector_data->vector_dir_y;
+	}
+	else if (movement == BACKWARDS)
+	{
+		*x_movement = -vector_data->vector_dir_x;
+		*y_movement = -vector_data->vector_dir_y;
 	}
 	else if (movement == LEFT)
 	{
-		vector_rotated->vector_dir_x = vector_rotated->vector_dir_y;
-		vector_rotated->vector_dir_y = -vector_rotated->vector_dir_x;
+		*x_movement = vector_data->vector_dir_y;
+		*y_movement = -vector_data->vector_dir_x;
 	}
 	else if (movement == RIGHT)
 	{
-		vector_rotated->vector_dir_x = -vector_rotated->vector_dir_y;
-		vector_rotated->vector_dir_y = vector_rotated->vector_dir_x;
+		*x_movement = -vector_data->vector_dir_y;
+		*y_movement = vector_data->vector_dir_x;
 	}
+	*x_movement *= MOVE_SPEED / TILE_SIZE;
+	*y_movement *= MOVE_SPEED / TILE_SIZE;
 }
 
-/// @brief Updates player position if no collision is detected
-void	update_position(t_map_data *map_data, t_vector_data *vector_data,
-			t_vector_data *vector_rotated)
+/// @brief Sets offset values to avoid collision
+void	set_offset_values(double x_movement, double y_movement,
+	double *x_offset, double *y_offset)
 {
-	if (player_collides(map_data, vector_rotated))
-	{
-		printf("Can't move in that direction!\n");
-		return ;
-	}
-	vector_data->pos_x += vector_rotated->vector_dir_x * MOVE_SPEED / TILE_SIZE;
-	vector_data->pos_y += vector_rotated->vector_dir_x * MOVE_SPEED / TILE_SIZE;
-	vector_data->map_x = (int)vector_data->pos_x;
-	vector_data->map_y = (int)vector_data->pos_y;
-}
-
-/// @brief Checks if there's an obstacle within a +- 45º field of
-/// (movement_vector_x, movement_vector_y), returning if player collides or not
-bool	player_collides(t_map_data *map_data, t_vector_data *vector_rotated)
-{
-	t_target	target_array[SCREEN_WIDTH];
-	int			i;
-
-	i = 0;
-	while (i < SCREEN_WIDTH)
-	{
-		target_array[i] = cast_ray(*map_data, vector_rotated, i);
-		if (target_array[i].distance < WALL_OFFSET)
-			return (true);
-		i++;
-	}
-	return (false);
+	if (x_movement < 0)
+		*x_offset = -WALL_OFFSET;
+	else
+		*x_offset = WALL_OFFSET;
+	if (y_movement < 0)
+		*y_offset = -WALL_OFFSET;
+	else
+		*y_offset = WALL_OFFSET;
 }

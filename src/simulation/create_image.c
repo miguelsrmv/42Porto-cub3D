@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:49:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/07 18:08:25 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:21:05 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ void	put_walls_on_image(t_target *target_array, t_mlx_img *img)
 	array_index = 0;
 	while (array_index < SCREEN_WIDTH)
 	{
-		calc_wall_height(&target_array[array_index]);
 		pixels_height = target_array[array_index].wall_min_height_pixel;
 		colour = temp_colour(target_array[array_index].wall_facing_direction);
 		while (pixels_height <= target_array[array_index].wall_max_height_pixel)

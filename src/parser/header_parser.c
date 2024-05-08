@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/15 22:11:30 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:29:37 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	check_header(t_map_data **map_data)
 {
 	char				*line;
 	int					lines_parsed;
-	enum e_HeaderType	line_result;
+	t_HeaderType		line_result;
 
 	lines_parsed = 0;
 	while (lines_parsed < 6)
@@ -41,7 +41,7 @@ void	check_header(t_map_data **map_data)
 ////// but maybe it should also be split by \t !!!!
 ////// Use piscine's ft_split with sep rather than ' ' ?
 /// @param	line is line read from file
-enum e_HeaderType	check_line(char *line, t_map_data **map_data)
+t_HeaderType	check_line(char *line, t_map_data **map_data)
 {
 	char	*trimmed_line;
 	char	**line_as_tab;

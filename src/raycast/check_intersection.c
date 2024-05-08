@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:19:31 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/07 18:07:26 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:28:01 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,11 @@ void	get_intersection(t_map_data map_data,
 	hit_point->x_position = vector_data.map_x;
 	hit_point->y_position = vector_data.map_y;
 	calc_wall_distance(vector_data, hit_point);
+	calc_wall_height(hit_point);
 }
 
 /// @brief Checks if wall was hit from NORTH or SOUTH 
-void	check_wall_side(int step, t_target *hit_point, enum e_Coordinates side)
+void	check_wall_side(int step, t_target *hit_point, t_Coordinates side)
 {
 	if (side == Y)
 	{

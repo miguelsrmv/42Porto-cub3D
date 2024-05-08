@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:39:16 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/07 18:10:11 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:38:59 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,24 @@ void	test_tab_data(t_map_data *map_data)
 	printf("Orientation: %c\n\n", map_data->cardinal_direction);
 }
 
-void	print_ray_data(t_target *target_array, int array_index)
+/// @brief Temporary function just to test wall sides
+/// 255 is Blue
+/// 65280 is Green
+/// 1671168 is Red
+/// 16777215 is White
+int	temp_colour(t_CardinalPoint direction)
+{
+	if (direction == NORTH)
+		return (255);
+	else if (direction == SOUTH)
+		return (16711680);
+	else if (direction == WEST)
+		return (65280);
+	else
+		return (16777215);
+}
+
+/* void	print_ray_data(t_target *target_array, int array_index)
 {
 	printf("Ray %04i hit at position (%i, %i): \
 	wall drawn from min %i to max %i, colour %i.\n",
@@ -120,4 +137,4 @@ void	print_current_map(t_map_data *map_data, t_vector_data *vector)
 		y++;
 	}
 	printf("\n\n");
-}
+} */

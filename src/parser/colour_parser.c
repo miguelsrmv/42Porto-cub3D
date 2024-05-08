@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 17:05:58 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/02/23 23:31:18 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:26:10 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	unite_colours(char **line_as_tab)
 
 /// @brief Checks if colours only contain digits
 /// @param colours is line_as_tab after unite_colours() processing
-enum e_HeaderType	check_colours_tab(char **colours)
+t_HeaderType	check_colours_tab(char **colours)
 {
 	int		colour_count;
 	int		i;

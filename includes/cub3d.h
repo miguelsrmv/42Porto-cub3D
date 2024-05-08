@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/07 18:12:00 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:35:40 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,7 @@
 # define MOVE_SPEED 0.5
 # define TILE_SIZE 4
 # define ROTATE_SPEED (M_PI / 64)
-# define WALL_OFFSET 0.5 + (MOVE_SPEED / TILE_SIZE)
-# define HITBOX_FOV 0.75
-
-/// TEMPORARY INTS
-# define GREEN 65280
-# define RED 16711680
-# define BLUE 255
-# define WHITE 16777215
+# define WALL_OFFSET 0.5
 
 /// Keys for minilibx
 # define KEY_ESC			65307
@@ -71,9 +64,6 @@
 # define KEY_LEFT_ARROW		65361
 # define KEY_RIGHT_ARROW	65363
 # define ESCAPE				65307
-# define SPACE				32
-# define ENTER				65293
-# define BACKSPACE			65288
 
 // enums
 enum e_ExitStatus
@@ -87,34 +77,34 @@ enum e_ExitStatus
 	MALLOC_ERROR,
 };
 
-enum e_HeaderType
+typedef enum e_HeaderType
 {
 	VALID_INFO,
 	EMPTY_LINE,
 	INVALID,
-};
+}	t_HeaderType;
 
-enum e_Coordinates
+typedef enum e_Coordinates
 {
 	Y,
 	X,
-};
+}	t_Coordinates;
 
-enum e_CardinalPoint
+typedef enum e_CardinalPoint		
 {
 	NORTH,
 	SOUTH,
 	WEST,
 	EAST,
-};
+}	t_CardinalPoint;
 
-enum e_Movement
+typedef enum e_Movement
 {
 	FOWARD,
 	LEFT,
 	BACKWARDS,
 	RIGHT,
-};
+}	t_movement;
 
 // Structs
 typedef struct s_map_data
@@ -191,7 +181,7 @@ typedef struct s_target
 	int						wall_height;
 	int						wall_max_height_pixel;
 	int						wall_min_height_pixel;
-	enum e_CardinalPoint	wall_facing_direction;
+	t_CardinalPoint			wall_facing_direction;
 }	t_target;
 
 typedef struct s_lean_limits
@@ -226,7 +216,7 @@ void				initialize_map_data(t_map_data **map_data,
 
 /// header_parser.c
 void				check_header(t_map_data **map_data);
-enum e_HeaderType	check_line(char *line, t_map_data **map_data);
+t_HeaderType		check_line(char *line, t_map_data **map_data);
 void				check_tab_format(char **line_as_tab,
 						t_map_data **map_data);
 
@@ -241,7 +231,7 @@ void				check_texture_validity(t_map_data **map_data,
 void				check_floor_ceiling_texture(char **line_as_tab,
 						t_map_data **map_data);
 void				unite_colours(char **line_as_tab);
-enum e_HeaderType	check_colours_tab(char **colours);
+t_HeaderType		check_colours_tab(char **colours);
 void				fill_in_colours(int *color, char **colours);
 void				check_colour_values(t_map_data **map_data);
 
@@ -278,12 +268,14 @@ t_lean_limits		get_max_values(t_map_data **map_data);
 void				update_lean_limits(t_lean_limits *lean_limits,
 						int x, int y);
 
-/// run_cub3d.c
-void				run_cub3d(t_cube *cube);
-void				initialize_mlx(t_cube *cube);
+/// vector_init.c
 t_vector_data		*initialize_vector_data(t_map_data *map_data);
 void				fill_in_initial_vectors(t_map_data *map_data,
 						t_vector_data *vector_data);
+
+/// run_cub3d.c
+void				run_cub3d(t_cube *cube);
+void				initialize_mlx(t_cube *cube);
 int					render_image(t_cube *cube);
 
 
@@ -308,7 +300,7 @@ void				calculate_big_delta(t_vector_data *vector_data);
 /// check_intersections.c
 void				get_intersection(t_map_data map_data,
 						t_vector_data vector_data, t_target *hit_point);
-void				check_wall_side(int step, t_target *hit_point, enum e_Coordinates side);
+void				check_wall_side(int step, t_target *hit_point, t_Coordinates side);
 void				calc_wall_distance(t_vector_data vector_data,
 						t_target *hit_point);
 void				calc_wall_height(t_target *hit_point);
@@ -323,15 +315,15 @@ void				clean_mlx(void	*mlx, void	*mlx_window, void *mlx_img);
 /// helper_functions.c
 void				test_map_data(t_map_data *map_data);
 void				test_tab_data(t_map_data *map_data);
-void				print_ray_data(t_target *target_array, int array_index);
+/* void				print_ray_data(t_target *target_array, int array_index);
 void				print_vector_data(t_vector_data *vector);
 void				print_current_perspective(t_map_data *map_data, t_vector_data *vector_data);
-void				print_current_map(t_map_data *map_data, t_vector_data *vector);
+void				print_current_map(t_map_data *map_data, t_vector_data *vector); */
+int					temp_colour(t_CardinalPoint		 direction);
 
 /// my_pixel_put.c
 void   				my_pixel_put(t_mlx_img *img, int x, int y, int color);
 int					convert_rgb_to_int(int *RGB);
-int					temp_colour(enum e_CardinalPoint direction);
 
 /// hooks.c
 int					key_hook(int keycode, t_cube *cube);
@@ -339,11 +331,11 @@ void				setup_keyhooks(t_cube *cube);
 void				setup_buttonhooks(t_cube *cube);
 
 /// movements.c
-void				move(t_map_data *map_data, t_vector_data *vector_data, enum e_Movement movement);
-void				rotate_vector_data(t_vector_data *vector_rotated, enum e_Movement movement);
-void				update_position(t_map_data *map_data, t_vector_data *vector_data,
-						t_vector_data *vector_rotated);
-bool				player_collides(t_map_data *map_data, t_vector_data *vector_rotated);
+void				move(t_map_data *map_data, t_vector_data *vector_data, t_movement movement);
+void				set_move_values(t_vector_data *vector_data, t_movement movement,
+						double *x_movement, double *y_movement);
+void				set_offset_values(double x_movement, double y_movement,
+						double *x_offset, double *y_offset);
 
 /// looking.c 
 void				turn_left(t_vector_data *vector_data);
