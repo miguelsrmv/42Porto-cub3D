@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:15:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/09 10:10:34 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:28:59 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	clean_data(t_map_data *map_data, t_vector_data *vector_data)
 	if (map_data)
 	{
 		close(map_data->file_fd);
+		if (map_data->window_title)
+			free(map_data->window_title);
 		if (map_data->textr_path[NORTH])
 			free(map_data->textr_path[NORTH]);
 		if (map_data->textr_path[SOUTH])

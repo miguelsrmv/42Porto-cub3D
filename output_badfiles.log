@@ -1,191 +1,349 @@
 Running valgrind on maps/bad/color_invalid_rgb.cub...
 Error
 Invalid header (colour error)
+==157249== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157249== Open file descriptor 4: /dev/ptmx
+==157249==    <inherited from parent>
+==157249== 
+==157249== 
 
 
 
 Running valgrind on maps/bad/color_missing.cub...
 Error
 Invalid header
+==157254== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157254== Open file descriptor 4: /dev/ptmx
+==157254==    <inherited from parent>
+==157254== 
+==157254== 
 
 
 
 Running valgrind on maps/bad/color_missing_ceiling_rgb.cub...
 Error
 Invalid header (colour error)
+==157259== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157259== Open file descriptor 4: /dev/ptmx
+==157259==    <inherited from parent>
+==157259== 
+==157259== 
 
 
 
 Running valgrind on maps/bad/color_missing_floor_rgb.cub...
 Error
 Invalid header (colour error)
+==157264== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157264== Open file descriptor 4: /dev/ptmx
+==157264==    <inherited from parent>
+==157264== 
+==157264== 
 
 
 
 Running valgrind on maps/bad/color_none.cub...
 Error
 Invalid header
+==157269== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157269== Open file descriptor 4: /dev/ptmx
+==157269==    <inherited from parent>
+==157269== 
+==157269== 
 
 
 
 Running valgrind on maps/bad/empty.cub...
 Error
 Invalid header
+==157274== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157274== Open file descriptor 4: /dev/ptmx
+==157274==    <inherited from parent>
+==157274== 
+==157274== 
 
 
 
 Running valgrind on maps/bad/file_letter_end.cub...
 Error
 Invalid map (invalid characters)
+==157280== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157280== Open file descriptor 4: /dev/ptmx
+==157280==    <inherited from parent>
+==157280== 
+==157280== 
 
 
 
 Running valgrind on maps/bad/filetype_missing...
 Error
 Usage: "./cube3D map_file.cub"
+==157288== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157288== Open file descriptor 4: /dev/ptmx
+==157288==    <inherited from parent>
+==157288== 
+==157288== 
 
 
 
 Running valgrind on maps/bad/filetype_wrong.buc...
 Error
 Usage: "./cube3D map_file.cub"
+==157296== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157296== Open file descriptor 4: /dev/ptmx
+==157296==    <inherited from parent>
+==157296== 
+==157296== 
 
 
 
 Running valgrind on maps/bad/forbidden.cub...
 maps/bad/forbidden.cub: Permission denied
 Error
+==157303== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157303== Open file descriptor 4: /dev/ptmx
+==157303==    <inherited from parent>
+==157303== 
+==157303== 
 
 
 
 Running valgrind on maps/bad/map_first.cub...
 Error
 Invalid header
+==157310== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157310== Open file descriptor 4: /dev/ptmx
+==157310==    <inherited from parent>
+==157310== 
+==157310== 
 
 
 
 Running valgrind on maps/bad/map_middle.cub...
 Error
 Invalid header
+==157315== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157315== Open file descriptor 4: /dev/ptmx
+==157315==    <inherited from parent>
+==157315== 
+==157315== 
 
 
 
 Running valgrind on maps/bad/map_missing.cub...
 Error
 Invalid map (missing map)
+==157320== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157320== Open file descriptor 4: /dev/ptmx
+==157320==    <inherited from parent>
+==157320== 
+==157320== 
 
 
 
 Running valgrind on maps/bad/map_missing2.cub...
 Error
 Invalid map (missing map)
+==157325== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157325== Open file descriptor 4: /dev/ptmx
+==157325==    <inherited from parent>
+==157325== 
+==157325== 
 
 
 
 Running valgrind on maps/bad/map_only.cub...
 Error
 Invalid header
+==157331== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157331== Open file descriptor 4: /dev/ptmx
+==157331==    <inherited from parent>
+==157331== 
+==157331== 
 
 
 
 Running valgrind on maps/bad/map_too_small.cub...
 Error
 Invalid map (map too small)
+==157335== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157335== Open file descriptor 4: /dev/ptmx
+==157335==    <inherited from parent>
+==157335== 
+==157335== 
 
 
 
 Running valgrind on maps/bad/player_multiple.cub...
 Error
 Invalid map (starting position)
+==157341== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157341== Open file descriptor 4: /dev/ptmx
+==157341==    <inherited from parent>
+==157341== 
+==157341== 
 
 
 
 Running valgrind on maps/bad/player_none.cub...
 Error
 No starting position
+==157351== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157351== Open file descriptor 4: /dev/ptmx
+==157351==    <inherited from parent>
+==157351== 
+==157351== 
 
 
 
 Running valgrind on maps/bad/player_on_edge.cub...
 Error
 Invalid map (no closed border)
+==157356== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157356== Open file descriptor 4: /dev/ptmx
+==157356==    <inherited from parent>
+==157356== 
+==157356== 
 
 
 
 Running valgrind on maps/bad/player_on_edge2.cub...
 Error
 Invalid map (no closed border)
+==157362== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157362== Open file descriptor 4: /dev/ptmx
+==157362==    <inherited from parent>
+==157362== 
+==157362== 
 
 
 
 Running valgrind on maps/bad/textures_dir.cub...
 Error
-Problem opening texture: Is a directory
+Invalid texture format==157369== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157369== Open file descriptor 4: /dev/ptmx
+==157369==    <inherited from parent>
+==157369== 
+==157369== 
 
 
 
 Running valgrind on maps/bad/textures_duplicates.cub...
 Error
 Invalid header (repeated data)
+==157375== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157375== Open file descriptor 4: /dev/ptmx
+==157375==    <inherited from parent>
+==157375== 
+==157375== 
 
 
 
 Running valgrind on maps/bad/textures_forbidden.cub...
 Error
 Problem opening texture: Permission denied
+==157381== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157381== Open file descriptor 4: /dev/ptmx
+==157381==    <inherited from parent>
+==157381== 
+==157381== 
 
 
 
 Running valgrind on maps/bad/textures_invalid.cub...
 Error
-Problem opening texture: No such file or directory
+Invalid texture format==157386== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157386== Open file descriptor 4: /dev/ptmx
+==157386==    <inherited from parent>
+==157386== 
+==157386== 
 
 
 
 Running valgrind on maps/bad/textures_missing.cub...
 Error
 Invalid header
+==157393== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157393== Open file descriptor 4: /dev/ptmx
+==157393==    <inherited from parent>
+==157393== 
+==157393== 
 
 
 
 Running valgrind on maps/bad/textures_none.cub...
 Error
 Invalid header
+==157399== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157399== Open file descriptor 4: /dev/ptmx
+==157399==    <inherited from parent>
+==157399== 
+==157399== 
 
 
 
 Running valgrind on maps/bad/textures_not_xpm.cub...
 Error
-Invalid texture format
+Invalid texture format==157404== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157404== Open file descriptor 4: /dev/ptmx
+==157404==    <inherited from parent>
+==157404== 
+==157404== 
+
 
 
 Running valgrind on maps/bad/wall_hole_east.cub...
 Error
 Invalid map (no closed border)
+==157410== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157410== Open file descriptor 4: /dev/ptmx
+==157410==    <inherited from parent>
+==157410== 
+==157410== 
 
 
 
 Running valgrind on maps/bad/wall_hole_north.cub...
 Error
 Invalid map (no closed border)
+==157418== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157418== Open file descriptor 4: /dev/ptmx
+==157418==    <inherited from parent>
+==157418== 
+==157418== 
 
 
 
 Running valgrind on maps/bad/wall_hole_south.cub...
 Error
 Invalid map (no closed border)
+==157425== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157425== Open file descriptor 4: /dev/ptmx
+==157425==    <inherited from parent>
+==157425== 
+==157425== 
 
 
 
 Running valgrind on maps/bad/wall_hole_west.cub...
 Error
 Invalid map (no closed border)
+==157432== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157432== Open file descriptor 4: /dev/ptmx
+==157432==    <inherited from parent>
+==157432== 
+==157432== 
 
 
 
 Running valgrind on maps/bad/wall_none.cub...
 Error
 Invalid map (no closed border)
+==157439== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157439== Open file descriptor 4: /dev/ptmx
+==157439==    <inherited from parent>
+==157439== 
+==157439== 
 
 
 

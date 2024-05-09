@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/09 10:10:38 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:30:34 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@
 # define MAP_LIMIT_ERROR_MSG "Invalid map (no closed border)\n"
 # define OTHER_ERROR_MSG "Unspecified error\n"
 # define NO_START_POS "No starting position\n"
+# define LOAD_TEXTURE_MSG "System error loading texture\n"
 
 /// Magic numbers
 # define SCREEN_WIDTH 1280
@@ -121,18 +122,22 @@ typedef struct s_texture
 typedef struct s_map_data
 {
 	int			file_fd;
+
 	char		*textr_path[4];
 	t_texture	texture[4];
+
 	int			floor_color[3];
 	int			ceiling_color[3];
 
 	int			map_width;
 	int			map_height;
 	char		*map_buffer;
-
 	char		**map_tab;
+
 	int			start_pos[2];
 	char		cardinal_direction;
+
+	char		*window_title;
 }		t_map_data;
 
 typedef struct s_vector_data
@@ -220,9 +225,11 @@ void				check_usage(int argc, char **argv);
 int					check_file(char *file);
 
 /// main_parser.c
-t_map_data			*check_contents(int file_fd);
+t_map_data			*check_contents(int file_fd, char *map_path);
 void				initialize_map_data(t_map_data **map_data,
 						int file_fd);
+void				get_window_title(char *map_path,
+						t_map_data *map_data);
 
 /// header_parser.c
 void				check_header(t_map_data **map_data);

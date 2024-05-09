@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:12:46 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/27 16:03:29 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:22:51 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 
 	check_usage(argc, argv);
 	file_fd = check_file(argv[1]);
-	cube.map_data = check_contents(file_fd);
+	cube.map_data = check_contents(file_fd, argv[1]);
 	cube.vector_data = initialize_vector_data(cube.map_data);
 	run_cub3d(&cube);
 	clean_data(cube.map_data, cube.vector_data);

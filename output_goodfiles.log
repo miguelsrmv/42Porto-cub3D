@@ -29,26 +29,11 @@ X: 1
 Y: 19
 Orientation: N
 
-==303117== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303117== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303117==    <inherited from parent>
-==303117== 
-==303117== Open file descriptor 24: /dev/ptmx
-==303117==    <inherited from parent>
-==303117== 
-==303117== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303117==    <inherited from parent>
-==303117== 
-==303117== Open file descriptor 21: /dev/ptmx
-==303117==    <inherited from parent>
-==303117== 
-==303117== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303117==    <inherited from parent>
-==303117== 
-==303117== Open file descriptor 19: /dev/urandom
-==303117==    <inherited from parent>
-==303117== 
-==303117== 
+==157751== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157751== Open file descriptor 4: /dev/ptmx
+==157751==    <inherited from parent>
+==157751== 
+==157751== 
 
 
 
@@ -75,26 +60,11 @@ X: 7
 Y: 3
 Orientation: N
 
-==303120== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303120== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303120==    <inherited from parent>
-==303120== 
-==303120== Open file descriptor 24: /dev/ptmx
-==303120==    <inherited from parent>
-==303120== 
-==303120== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303120==    <inherited from parent>
-==303120== 
-==303120== Open file descriptor 21: /dev/ptmx
-==303120==    <inherited from parent>
-==303120== 
-==303120== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303120==    <inherited from parent>
-==303120== 
-==303120== Open file descriptor 19: /dev/urandom
-==303120==    <inherited from parent>
-==303120== 
-==303120== 
+==157771== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157771== Open file descriptor 4: /dev/ptmx
+==157771==    <inherited from parent>
+==157771== 
+==157771== 
 
 
 
@@ -118,26 +88,11 @@ X: 2
 Y: 1
 Orientation: W
 
-==303131== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303131== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303131==    <inherited from parent>
-==303131== 
-==303131== Open file descriptor 24: /dev/ptmx
-==303131==    <inherited from parent>
-==303131== 
-==303131== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303131==    <inherited from parent>
-==303131== 
-==303131== Open file descriptor 21: /dev/ptmx
-==303131==    <inherited from parent>
-==303131== 
-==303131== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303131==    <inherited from parent>
-==303131== 
-==303131== Open file descriptor 19: /dev/urandom
-==303131==    <inherited from parent>
-==303131== 
-==303131== 
+==157787== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157787== Open file descriptor 4: /dev/ptmx
+==157787==    <inherited from parent>
+==157787== 
+==157787== 
 
 
 
@@ -161,26 +116,11 @@ X: 9
 Y: 5
 Orientation: S
 
-==303136== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303136== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303136==    <inherited from parent>
-==303136== 
-==303136== Open file descriptor 24: /dev/ptmx
-==303136==    <inherited from parent>
-==303136== 
-==303136== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303136==    <inherited from parent>
-==303136== 
-==303136== Open file descriptor 21: /dev/ptmx
-==303136==    <inherited from parent>
-==303136== 
-==303136== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303136==    <inherited from parent>
-==303136== 
-==303136== Open file descriptor 19: /dev/urandom
-==303136==    <inherited from parent>
-==303136== 
-==303136== 
+==157801== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157801== Open file descriptor 4: /dev/ptmx
+==157801==    <inherited from parent>
+==157801== 
+==157801== 
 
 
 
@@ -215,26 +155,65 @@ X: 1
 Y: 19
 Orientation: N
 
-==303149== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303149== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303149==    <inherited from parent>
-==303149== 
-==303149== Open file descriptor 24: /dev/ptmx
-==303149==    <inherited from parent>
-==303149== 
-==303149== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303149==    <inherited from parent>
-==303149== 
-==303149== Open file descriptor 21: /dev/ptmx
-==303149==    <inherited from parent>
-==303149== 
-==303149== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303149==    <inherited from parent>
-==303149== 
-==303149== Open file descriptor 19: /dev/urandom
-==303149==    <inherited from parent>
-==303149== 
-==303149== 
+==157821== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157821== Open file descriptor 4: /dev/ptmx
+==157821==    <inherited from parent>
+==157821== 
+==157821== 
+
+
+
+Running valgrind on maps/good/mine.cub...
+Here's the tabbed data:
+
+111111111111111
+111111000111111
+111110000011111
+1111000S0001111
+111000000000111
+110000000000011
+100000001100001
+110000011000011
+111000010000111
+111101000001111
+111110000011111
+111111000111111
+111111111111111
+
+
+Player starting position is:
+X: 7
+Y: 3
+Orientation: S
+
+==157836== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157836== Open file descriptor 4: /dev/ptmx
+==157836==    <inherited from parent>
+==157836== 
+==157836== 
+
+
+
+Running valgrind on maps/good/mine2.cub...
+Here's the tabbed data:
+
+11111
+10001
+10S01
+10001
+11110
+
+
+Player starting position is:
+X: 2
+Y: 2
+Orientation: S
+
+==157850== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157850== Open file descriptor 4: /dev/ptmx
+==157850==    <inherited from parent>
+==157850== 
+==157850== 
 
 
 
@@ -261,26 +240,11 @@ X: 7
 Y: 3
 Orientation: N
 
-==303155== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303155== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303155==    <inherited from parent>
-==303155== 
-==303155== Open file descriptor 24: /dev/ptmx
-==303155==    <inherited from parent>
-==303155== 
-==303155== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303155==    <inherited from parent>
-==303155== 
-==303155== Open file descriptor 21: /dev/ptmx
-==303155==    <inherited from parent>
-==303155== 
-==303155== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303155==    <inherited from parent>
-==303155== 
-==303155== Open file descriptor 19: /dev/urandom
-==303155==    <inherited from parent>
-==303155== 
-==303155== 
+==157865== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157865== Open file descriptor 4: /dev/ptmx
+==157865==    <inherited from parent>
+==157865== 
+==157865== 
 
 
 
@@ -297,26 +261,11 @@ X: 2
 Y: 1
 Orientation: W
 
-==303158== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303158== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303158==    <inherited from parent>
-==303158== 
-==303158== Open file descriptor 24: /dev/ptmx
-==303158==    <inherited from parent>
-==303158== 
-==303158== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303158==    <inherited from parent>
-==303158== 
-==303158== Open file descriptor 21: /dev/ptmx
-==303158==    <inherited from parent>
-==303158== 
-==303158== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303158==    <inherited from parent>
-==303158== 
-==303158== Open file descriptor 19: /dev/urandom
-==303158==    <inherited from parent>
-==303158== 
-==303158== 
+==157887== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157887== Open file descriptor 4: /dev/ptmx
+==157887==    <inherited from parent>
+==157887== 
+==157887== 
 
 
 
@@ -357,26 +306,11 @@ X: 9
 Y: 3
 Orientation: N
 
-==303172== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303172== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303172==    <inherited from parent>
-==303172== 
-==303172== Open file descriptor 24: /dev/ptmx
-==303172==    <inherited from parent>
-==303172== 
-==303172== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303172==    <inherited from parent>
-==303172== 
-==303172== Open file descriptor 21: /dev/ptmx
-==303172==    <inherited from parent>
-==303172== 
-==303172== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303172==    <inherited from parent>
-==303172== 
-==303172== Open file descriptor 19: /dev/urandom
-==303172==    <inherited from parent>
-==303172== 
-==303172== 
+==157965== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157965== Open file descriptor 4: /dev/ptmx
+==157965==    <inherited from parent>
+==157965== 
+==157965== 
 
 
 
@@ -399,26 +333,11 @@ X: 2
 Y: 6
 Orientation: N
 
-==303174== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303174== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303174==    <inherited from parent>
-==303174== 
-==303174== Open file descriptor 24: /dev/ptmx
-==303174==    <inherited from parent>
-==303174== 
-==303174== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303174==    <inherited from parent>
-==303174== 
-==303174== Open file descriptor 21: /dev/ptmx
-==303174==    <inherited from parent>
-==303174== 
-==303174== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303174==    <inherited from parent>
-==303174== 
-==303174== Open file descriptor 19: /dev/urandom
-==303174==    <inherited from parent>
-==303174== 
-==303174== 
+==157990== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==157990== Open file descriptor 4: /dev/ptmx
+==157990==    <inherited from parent>
+==157990== 
+==157990== 
 
 
 
@@ -435,360 +354,541 @@ X: 2
 Y: 1
 Orientation: S
 
-==303178== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303178== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303178==    <inherited from parent>
-==303178== 
-==303178== Open file descriptor 24: /dev/ptmx
-==303178==    <inherited from parent>
-==303178== 
-==303178== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303178==    <inherited from parent>
-==303178== 
-==303178== Open file descriptor 21: /dev/ptmx
-==303178==    <inherited from parent>
-==303178== 
-==303178== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303178==    <inherited from parent>
-==303178== 
-==303178== Open file descriptor 19: /dev/urandom
-==303178==    <inherited from parent>
-==303178== 
-==303178== 
+==158007== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==158007== Open file descriptor 4: /dev/ptmx
+==158007==    <inherited from parent>
+==158007== 
+==158007== 
 
 
 
 Running valgrind on maps/good/test_map_hole.cub...
-Here's the tabbed data:
-
-111111111111
-100000000011
-100000000001
-100000000011
-10S000000001
-111111111111
-
-
-Player starting position is:
-X: 2
-Y: 4
-Orientation: S
-
-==303192== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303192== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303192==    <inherited from parent>
-==303192== 
-==303192== Open file descriptor 24: /dev/ptmx
-==303192==    <inherited from parent>
-==303192== 
-==303192== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303192==    <inherited from parent>
-==303192== 
-==303192== Open file descriptor 21: /dev/ptmx
-==303192==    <inherited from parent>
-==303192== 
-==303192== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303192==    <inherited from parent>
-==303192== 
-==303192== Open file descriptor 19: /dev/urandom
-==303192==    <inherited from parent>
-==303192== 
-==303192== 
-
-
-
-Running valgrind on maps/good/test_pos_bottom.cub...
-Here's the tabbed data:
-
-111
-101
-101
-101
-101
-101
-101
-101
-101
-101
-101
-1S1
-111
-
-
-Player starting position is:
-X: 1
-Y: 11
-Orientation: S
-
-==303195== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303195== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303195==    <inherited from parent>
-==303195== 
-==303195== Open file descriptor 24: /dev/ptmx
-==303195==    <inherited from parent>
-==303195== 
-==303195== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303195==    <inherited from parent>
-==303195== 
-==303195== Open file descriptor 21: /dev/ptmx
-==303195==    <inherited from parent>
-==303195== 
-==303195== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303195==    <inherited from parent>
-==303195== 
-==303195== Open file descriptor 19: /dev/urandom
-==303195==    <inherited from parent>
-==303195== 
-==303195== 
-
-
-
-Running valgrind on maps/good/test_pos_left.cub...
-Here's the tabbed data:
-
-111111111111111111111
-1W0000000000000000001
-111111111111111111111
-
-
-Player starting position is:
-X: 1
-Y: 1
-Orientation: W
-
-==303198== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303198== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303198==    <inherited from parent>
-==303198== 
-==303198== Open file descriptor 24: /dev/ptmx
-==303198==    <inherited from parent>
-==303198== 
-==303198== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303198==    <inherited from parent>
-==303198== 
-==303198== Open file descriptor 21: /dev/ptmx
-==303198==    <inherited from parent>
-==303198== 
-==303198== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303198==    <inherited from parent>
-==303198== 
-==303198== Open file descriptor 19: /dev/urandom
-==303198==    <inherited from parent>
-==303198== 
-==303198== 
-
-
-
-Running valgrind on maps/good/test_pos_right.cub...
-Here's the tabbed data:
-
-111111111111111111111
-1000000000000000000E1
-111111111111111111111
-
-
-Player starting position is:
-X: 19
-Y: 1
-Orientation: E
-
-==303201== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303201== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303201==    <inherited from parent>
-==303201== 
-==303201== Open file descriptor 24: /dev/ptmx
-==303201==    <inherited from parent>
-==303201== 
-==303201== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303201==    <inherited from parent>
-==303201== 
-==303201== Open file descriptor 21: /dev/ptmx
-==303201==    <inherited from parent>
-==303201== 
-==303201== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303201==    <inherited from parent>
-==303201== 
-==303201== Open file descriptor 19: /dev/urandom
-==303201==    <inherited from parent>
-==303201== 
-==303201== 
-
-
-
-Running valgrind on maps/good/test_pos_top.cub...
-Here's the tabbed data:
-
-111
-1N1
-101
-101
-101
-101
-101
-101
-101
-101
-101
-101
-111
-
-
-Player starting position is:
-X: 1
-Y: 1
-Orientation: N
-
-==303204== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303204== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303204==    <inherited from parent>
-==303204== 
-==303204== Open file descriptor 24: /dev/ptmx
-==303204==    <inherited from parent>
-==303204== 
-==303204== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303204==    <inherited from parent>
-==303204== 
-==303204== Open file descriptor 21: /dev/ptmx
-==303204==    <inherited from parent>
-==303204== 
-==303204== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303204==    <inherited from parent>
-==303204== 
-==303204== Open file descriptor 19: /dev/urandom
-==303204==    <inherited from parent>
-==303204== 
-==303204== 
-
-
-
-Running valgrind on maps/good/test_textures.cub...
-Here's the tabbed data:
-
-11111
-10001
-10S01
-10001
-10001
-10001
-11001
-10001
-10001
-10001
-10001
-10001
-11111
-
-
-Player starting position is:
-X: 2
-Y: 2
-Orientation: S
-
-==303213== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303213== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303213==    <inherited from parent>
-==303213== 
-==303213== Open file descriptor 24: /dev/ptmx
-==303213==    <inherited from parent>
-==303213== 
-==303213== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303213==    <inherited from parent>
-==303213== 
-==303213== Open file descriptor 21: /dev/ptmx
-==303213==    <inherited from parent>
-==303213== 
-==303213== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303213==    <inherited from parent>
-==303213== 
-==303213== Open file descriptor 19: /dev/urandom
-==303213==    <inherited from parent>
-==303213== 
-==303213== 
-
-
-
-Running valgrind on maps/good/test_whitespace.cub...
-Here's the tabbed data:
-
-11111
-10001
-10S01
-10001
-10001
-10001
-11001
-10001
-10001
-10001
-10001
-10001
-11111
-
-
-Player starting position is:
-X: 2
-Y: 2
-Orientation: S
-
-==303216== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303216== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303216==    <inherited from parent>
-==303216== 
-==303216== Open file descriptor 24: /dev/ptmx
-==303216==    <inherited from parent>
-==303216== 
-==303216== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303216==    <inherited from parent>
-==303216== 
-==303216== Open file descriptor 21: /dev/ptmx
-==303216==    <inherited from parent>
-==303216== 
-==303216== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303216==    <inherited from parent>
-==303216== 
-==303216== Open file descriptor 19: /dev/urandom
-==303216==    <inherited from parent>
-==303216== 
-==303216== 
-
-
-
-Running valgrind on maps/good/works.cub...
-Here's the tabbed data:
-
-1111111111111111111111111
-10S0110000100000000000001
-1000110000000000111111001
-1000110000000000110001001
-1000000000100000000001001
-1111111111111111111111111
-
-
-Player starting position is:
-X: 2
-Y: 1
-Orientation: S
-
-==303219== FILE DESCRIPTORS: 9 open (3 std) at exit.
-==303219== Open file descriptor 26: /home/miguel/.vscode-server/data/logs/20240320T080137/network.log
-==303219==    <inherited from parent>
-==303219== 
-==303219== Open file descriptor 24: /dev/ptmx
-==303219==    <inherited from parent>
-==303219== 
-==303219== Open file descriptor 23: /home/miguel/.vscode-server/data/logs/20240320T080137/remoteagent.log
-==303219==    <inherited from parent>
-==303219== 
-==303219== Open file descriptor 21: /dev/ptmx
-==303219==    <inherited from parent>
-==303219== 
-==303219== Open file descriptor 20: /home/miguel/.vscode-server/data/logs/20240320T080137/ptyhost.log
-==303219==    <inherited from parent>
-==303219== 
-==303219== Open file descriptor 19: /dev/urandom
-==303219==    <inherited from parent>
-==303219== 
-==303219== 
-
-
-
+==158031== FILE DESCRIPTORS: 6 open (3 std) at exit.
+==158031== Open AF_UNIX socket 5: <unknown>
+==158031==    at 0x4BC8B3B: socket (syscall-template.S:120)
+==158031==    by 0x4CD934D: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x4CDBD42: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x48B9EE9: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48A9B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== Open file descriptor 3: maps/good/test_map_hole.cub
+==158031==    at 0x4BB553B: open (open64.c:41)
+==158031==    by 0x10FB0B: check_file (usage_check.c:39)
+==158031==    by 0x10F9EE: main (main.c:21)
+==158031== 
+==158031== Open file descriptor 4: /dev/ptmx
+==158031==    <inherited from parent>
+==158031== 
+==158031== 
+==158031== 3 bytes in 1 blocks are still reachable in loss record 1 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x4B4958E: strdup (strdup.c:42)
+==158031==    by 0x48A9B45: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 8 bytes in 1 blocks are still reachable in loss record 2 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x4B4958E: strdup (strdup.c:42)
+==158031==    by 0x48A69AE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x486B820: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x48709E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x1157F3: mlx_int_deal_shm (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x115A81: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 8 bytes in 1 blocks are still reachable in loss record 3 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x4869B34: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x486B9DF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x48709E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x1157F3: mlx_int_deal_shm (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x115A81: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 10 bytes in 1 blocks are still reachable in loss record 4 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x4B4958E: strdup (strdup.c:42)
+==158031==    by 0x48A69AE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x4910213: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48AA6A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 16 bytes in 1 blocks are still reachable in loss record 5 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x4CDB2EE: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x4CDB8A3: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x48B9EE9: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48A9B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 22 bytes in 1 blocks are still reachable in loss record 6 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48AA03E: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 24 bytes in 1 blocks are still reachable in loss record 7 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x486B041: XextCreateExtension (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x486B4CC: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x486B9C8: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x48709E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x1157F3: mlx_int_deal_shm (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x115A81: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 24 bytes in 1 blocks are still reachable in loss record 8 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x4B4958E: strdup (strdup.c:42)
+==158031==    by 0x48A69AE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x486B820: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x486B50A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x486B9C8: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x48709E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x1157F3: mlx_int_deal_shm (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x115A81: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 24 bytes in 1 blocks are still reachable in loss record 9 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x486B9F5: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x48709E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x1157F3: mlx_int_deal_shm (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x115A81: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 24 bytes in 1 blocks are still reachable in loss record 10 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48B7A65: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48C02C6: _XReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48C077E: XSync (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x115D57: mlx_loop (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B1A: run_cub3d (run_cub3d.c:23)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 25 bytes in 1 blocks are still reachable in loss record 11 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x4CF7997: XauFileName (in /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0)
+==158031==    by 0x4CF7D9C: XauGetBestAuthByAddr (in /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0)
+==158031==    by 0x4CDBAB1: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x48B9EE9: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48A9B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x1104A8: check_text_path_validity (texture_parser.c:82)
+==158031==    by 0x110456: check_texture_files (texture_parser.c:70)
+==158031==    by 0x10FFB4: check_header (header_parser.c:35)
+==158031==    by 0x10FE4C: check_contents (main_parser.c:24)
+==158031==    by 0x10F9FB: main (main.c:22)
+==158031== 
+==158031== 29 bytes in 1 blocks are still reachable in loss record 12 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48A30CD: _XUpdateAtomCache (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48A5929: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x115A72: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 32 bytes in 1 blocks are still reachable in loss record 13 of 52
+==158031==    at 0x48487A9: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x4CDF15E: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x4CDF237: xcb_get_extension_data (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x4CDF2EE: xcb_prefetch_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x4CDF364: xcb_get_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x48AA52B: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 32 bytes in 1 blocks are still reachable in loss record 14 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x4CD81B7: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x4CD8A08: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x4CD8EB0: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x4CD9E44: xcb_wait_for_reply (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x4CDF292: xcb_get_extension_data (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x4CDF2EE: xcb_prefetch_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x4CDF364: xcb_get_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x48AA52B: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031== 
+==158031== 32 bytes in 1 blocks are still reachable in loss record 15 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x486B7FF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x48709E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x1157F3: mlx_int_deal_shm (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x115A81: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 32 bytes in 1 blocks are still reachable in loss record 16 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x486B7FF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x486B50A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x486B9C8: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x48709E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x1157F3: mlx_int_deal_shm (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x115A81: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 33 bytes in 1 blocks are still reachable in loss record 17 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48A30CD: _XUpdateAtomCache (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48A5929: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x115A5B: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 40 bytes in 1 blocks are still reachable in loss record 18 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48BA1F1: _XPollfdCacheInit (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48A9E71: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 48 bytes in 1 blocks are still reachable in loss record 19 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48B9E71: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48A9B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 48 bytes in 1 blocks are still reachable in loss record 20 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48B9E87: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48A9B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 56 bytes in 1 blocks are still reachable in loss record 21 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x111612: recreate_leaner_tab (map_cleaner.c:34)
+==158031==    by 0x1115AE: map_cleaner (map_cleaner.c:22)
+==158031==    by 0x1109F7: check_map (map_parser.c:26)
+==158031==    by 0x10FE58: check_contents (main_parser.c:25)
+==158031==    by 0x10F9FB: main (main.c:22)
+==158031== 
+==158031== 72 bytes in 1 blocks are still reachable in loss record 22 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48A9F20: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 78 bytes in 6 blocks are still reachable in loss record 23 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x115259: ft_strndup (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x11169C: recreate_leaner_tab (map_cleaner.c:42)
+==158031==    by 0x1115AE: map_cleaner (map_cleaner.c:22)
+==158031==    by 0x1109F7: check_map (map_parser.c:26)
+==158031==    by 0x10FE58: check_contents (main_parser.c:25)
+==158031==    by 0x10F9FB: main (main.c:22)
+==158031== 
+==158031== 88 bytes in 1 blocks are still reachable in loss record 24 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x11606B: mlx_int_new_xshm_image (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x116392: mlx_new_image (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111BA7: initialize_mlx (run_cub3d.c:35)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 104 bytes in 1 blocks are still reachable in loss record 25 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x115259: ft_strndup (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x110BA7: trim_map_buffer (map_parser.c:73)
+==158031==    by 0x110987: check_map (map_parser.c:19)
+==158031==    by 0x10FE58: check_contents (main_parser.c:25)
+==158031==    by 0x10F9FB: main (main.c:22)
+==158031== 
+==158031== 112 bytes in 1 blocks are still reachable in loss record 26 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48B9D72: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48A9B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 112 bytes in 1 blocks are still reachable in loss record 27 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48AA200: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 128 bytes in 1 blocks are still reachable in loss record 28 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x111CDD: initialize_vector_data (vector_init.c:20)
+==158031==    by 0x10FA0B: main (main.c:23)
+==158031== 
+==158031== 128 bytes in 1 blocks are still reachable in loss record 29 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48AA12E: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 128 bytes in 1 blocks are still reachable in loss record 30 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48A699E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x4910213: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48AA6A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 128 bytes in 1 blocks are still reachable in loss record 31 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48A699E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x486B820: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x48709E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x1157F3: mlx_int_deal_shm (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x115A81: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 128 bytes in 1 blocks are still reachable in loss record 32 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48A699E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x486B820: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x486B50A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x486B9C8: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x48709E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x1157F3: mlx_int_deal_shm (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x115A81: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 136 bytes in 1 blocks are still reachable in loss record 33 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x1159AF: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 136 bytes in 1 blocks are still reachable in loss record 34 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x486A0C3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x116096: mlx_int_new_xshm_image (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x116392: mlx_new_image (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111BA7: initialize_mlx (run_cub3d.c:35)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 139 bytes in 4 blocks are still reachable in loss record 35 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x113614: ft_strdup (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x1101D4: check_wall_texture (texture_parser.c:22)
+==158031==    by 0x11014A: check_tab_format (header_parser.c:80)
+==158031==    by 0x110097: check_line (header_parser.c:65)
+==158031==    by 0x10FF74: check_header (header_parser.c:29)
+==158031==    by 0x10FE4C: check_contents (main_parser.c:24)
+==158031==    by 0x10F9FB: main (main.c:22)
+==158031== 
+==158031== 152 bytes in 1 blocks are still reachable in loss record 36 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x491040E: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48AA6A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 160 bytes in 1 blocks are still reachable in loss record 37 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48989EF: XCreateGC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48AA5A4: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 160 bytes in 1 blocks are still reachable in loss record 38 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48989EF: XCreateGC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x115BFE: mlx_new_window (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B8D: initialize_mlx (run_cub3d.c:34)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 168 bytes in 1 blocks are still reachable in loss record 39 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48AA0B2: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 208 bytes in 1 blocks are still reachable in loss record 40 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x4869AE9: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x486B9DF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x48709E2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==158031==    by 0x1157F3: mlx_int_deal_shm (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x115A81: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 208 bytes in 1 blocks are still reachable in loss record 41 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48BBFAE: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48BEBB6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48BFEC0: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48C0205: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x115F05: mlx_int_wait_first_expose (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x115C3E: mlx_new_window (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B8D: initialize_mlx (run_cub3d.c:34)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 264 bytes in 1 blocks are still reachable in loss record 42 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x1135A8: ft_calloc (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x10FE94: initialize_map_data (main_parser.c:33)
+==158031==    by 0x10FE40: check_contents (main_parser.c:23)
+==158031==    by 0x10F9FB: main (main.c:22)
+==158031== 
+==158031== 512 bytes in 1 blocks are still reachable in loss record 43 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48A546A: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48A584E: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x115A5B: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 624 bytes in 3 blocks are still reachable in loss record 44 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48BBFAE: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48BEBB6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48C040C: _XReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48C077E: XSync (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x116160: mlx_int_new_xshm_image (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x116392: mlx_new_image (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111BA7: initialize_mlx (run_cub3d.c:35)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 936 bytes in 1 blocks are still reachable in loss record 45 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x115B60: mlx_new_window (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B8D: initialize_mlx (run_cub3d.c:34)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 2,288 bytes in 11 blocks are still reachable in loss record 46 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48BBFAE: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48BEBB6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48BFF01: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48C0205: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x115F05: mlx_int_wait_first_expose (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x115C3E: mlx_new_window (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B8D: initialize_mlx (run_cub3d.c:34)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 4,096 bytes in 1 blocks are still reachable in loss record 47 of 52
+==158031==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x4B1FBA3: _IO_file_doallocate (filedoalloc.c:101)
+==158031==    by 0x4B2ECDF: _IO_doallocbuf (genops.c:347)
+==158031==    by 0x4B2DF5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+==158031==    by 0x4B2C6D4: _IO_new_file_xsputn (fileops.c:1243)
+==158031==    by 0x4B2C6D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+==158031==    by 0x4B21F1B: puts (ioputs.c:40)
+==158031==    by 0x1132A0: test_tab_data (helper_functions.c:35)
+==158031==    by 0x110A06: check_map (map_parser.c:27)
+==158031==    by 0x10FE58: check_contents (main_parser.c:25)
+==158031==    by 0x10F9FB: main (main.c:22)
+==158031== 
+==158031== 4,704 bytes in 1 blocks are still reachable in loss record 48 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48A9B31: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 11,160 bytes in 1 blocks are still reachable in loss record 49 of 52
+==158031==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x4CDB4FB: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x4CDB8A3: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x48B9EE9: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48A9B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 16,384 bytes in 1 blocks are still reachable in loss record 50 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48A9EBE: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 21,168 bytes in 1 blocks are still reachable in loss record 51 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x4CDB204: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x4CDB8A3: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==158031==    by 0x48B9EE9: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x48A9B68: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
+==158031== 25,536 bytes in 2 blocks are still reachable in loss record 52 of 52
+==158031==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==158031==    by 0x48AA290: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.4.0)
+==158031==    by 0x1159C7: mlx_init (in /home/miguel/Coding/42Porto/CommonCore/cub3D/cub3D)
+==158031==    by 0x111B69: initialize_mlx (run_cub3d.c:33)
+==158031==    by 0x111ABE: run_cub3d (run_cub3d.c:18)
+==158031==    by 0x10FA1B: main (main.c:24)
+==158031== 
