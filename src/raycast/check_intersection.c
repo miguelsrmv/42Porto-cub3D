@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:19:31 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/08 16:28:01 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/08 21:14:56 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 void	get_intersection(t_map_data map_data,
 			t_vector_data vector_data, t_target *hit_point)
 {
-	while (true)
+	hit_point->x_position = vector_data.map_x;
+	hit_point->y_position = vector_data.map_y;
+	while (!got_a_hit(vector_data.map_x, vector_data.map_y, map_data))
 	{
 		if (vector_data.small_delta_dist_x < vector_data.small_delta_dist_y)
 		{
@@ -31,13 +33,11 @@ void	get_intersection(t_map_data map_data,
 			vector_data.map_y += vector_data.step_y;
 			check_wall_side(vector_data.step_y, hit_point, Y);
 		}
-		if (got_a_hit(vector_data.map_x, vector_data.map_y, map_data))
-			break ;
 	}
+	calc_tile_offset(vector_data, hit_point);
 	hit_point->x_position = vector_data.map_x;
 	hit_point->y_position = vector_data.map_y;
-	calc_wall_distance(vector_data, hit_point);
-	calc_wall_height(hit_point);
+	calc_wall_height(vector_data, hit_point);
 }
 
 /// @brief Checks if wall was hit from NORTH or SOUTH 
@@ -59,9 +59,21 @@ void	check_wall_side(int step, t_target *hit_point, t_Coordinates side)
 	}
 }
 
-/// @brief Checks wall distance
-void	calc_wall_distance(t_vector_data vector_data,
-	t_target *hit_point)
+/// @brief Checks hit offset for wall for future texture drawing
+void	calc_tile_offset(t_vector_data vector_data, t_target *hit_point)
+{
+	if (hit_point->wall_facing_direction == NORTH
+		|| hit_point->wall_facing_direction == SOUTH)
+		hit_point->tile_offset = (hit_point->x_position
+				+ vector_data.small_delta_dist_x);
+	else
+		hit_point->tile_offset = (hit_point->y_position
+				+ vector_data.small_delta_dist_y);
+	hit_point->tile_offset -= (int)hit_point->tile_offset;
+}
+
+/// @brief Checks wall height and distance
+void	calc_wall_height(t_vector_data vector_data, t_target *hit_point)
 {
 	if (hit_point->wall_facing_direction == WEST
 		|| hit_point->wall_facing_direction == EAST)
@@ -70,11 +82,6 @@ void	calc_wall_distance(t_vector_data vector_data,
 	else
 		hit_point->distance
 			= vector_data.small_delta_dist_y - vector_data.delta_dist_y;
-}
-
-/// @brief Checks wall height
-void	calc_wall_height(t_target *hit_point)
-{
 	hit_point->wall_height = ((int)(SCREEN_HEIGHT / hit_point->distance));
 	hit_point->wall_max_height_pixel
 		= hit_point->wall_height / 2 + SCREEN_HEIGHT / 2;

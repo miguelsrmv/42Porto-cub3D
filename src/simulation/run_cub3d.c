@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:54:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/08 16:35:07 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/09 09:59:33 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 void	run_cub3d(t_cube	*cube)
 {
 	initialize_mlx(cube);
+	load_textures(cube, cube->map_data);
 	mlx_loop_hook(cube->mlx, render_image, cube);
 	setup_keyhooks(cube);
 	setup_buttonhooks(cube);
@@ -37,6 +38,12 @@ void	initialize_mlx(t_cube *cube)
 	cube->mlx = mlx;
 	cube->mlx_window = mlx_window;
 	cube->image = image;
+}
+
+void	load_textures(t_cube *cube, t_map_data *map_data)
+{
+	(void)cube;
+	(void)map_data;
 }
 
 int	render_image(t_cube *cube)

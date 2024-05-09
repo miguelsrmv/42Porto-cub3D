@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:15:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/27 16:04:32 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/09 10:10:34 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ void	clean_data(t_map_data *map_data, t_vector_data *vector_data)
 	if (map_data)
 	{
 		close(map_data->file_fd);
-		if (map_data->north_texture)
-			free(map_data->north_texture);
-		if (map_data->south_texture)
-			free(map_data->south_texture);
-		if (map_data->west_texture)
-			free(map_data->west_texture);
-		if (map_data->east_texture)
-			free(map_data->east_texture);
+		if (map_data->textr_path[NORTH])
+			free(map_data->textr_path[NORTH]);
+		if (map_data->textr_path[SOUTH])
+			free(map_data->textr_path[SOUTH]);
+		if (map_data->textr_path[EAST])
+			free(map_data->textr_path[EAST]);
+		if (map_data->textr_path[WEST])
+			free(map_data->textr_path[WEST]);
 		if (map_data->map_buffer)
 			free(map_data->map_buffer);
 		if (map_data->map_tab)

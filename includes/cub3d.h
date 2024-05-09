@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/08 16:35:40 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/09 10:10:38 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@
 # define SCREEN_HEIGHT 720
 # define FOV 0.66
 # define MOVE_SPEED 0.5
-# define TILE_SIZE 4
+# define TILE_SIZE 6
 # define ROTATE_SPEED (M_PI / 64)
-# define WALL_OFFSET 0.5
+# define WALL_OFFSET 0.1
 
 /// Keys for minilibx
 # define KEY_ESC			65307
@@ -107,13 +107,22 @@ typedef enum e_Movement
 }	t_movement;
 
 // Structs
+typedef struct s_texture
+{
+	void		*img;
+	char		*addr;
+	int			bits_per_pixel;
+	int			line_length;
+	int			endian;
+	int			width;
+	int			height;
+}				t_texture;
+
 typedef struct s_map_data
 {
 	int			file_fd;
-	char		*north_texture;
-	char		*south_texture;
-	char		*west_texture;
-	char		*east_texture;
+	char		*textr_path[4];
+	t_texture	texture[4];
 	int			floor_color[3];
 	int			ceiling_color[3];
 
@@ -178,6 +187,7 @@ typedef struct s_target
 	double					x_position;
 	double					y_position;
 	double					distance;
+	double					tile_offset;
 	int						wall_height;
 	int						wall_max_height_pixel;
 	int						wall_min_height_pixel;
@@ -224,7 +234,7 @@ void				check_tab_format(char **line_as_tab,
 void				check_wall_texture(char **line_as_tab,
 						t_map_data **map_data);
 void				check_texture_files(t_map_data **map_data);
-void				check_texture_validity(t_map_data **map_data,
+void				check_text_path_validity(t_map_data **map_data,
 						char *file_path);
 
 /// colour_parser.c
@@ -276,6 +286,7 @@ void				fill_in_initial_vectors(t_map_data *map_data,
 /// run_cub3d.c
 void				run_cub3d(t_cube *cube);
 void				initialize_mlx(t_cube *cube);
+void				load_textures(t_cube *cube, t_map_data *map_data);
 int					render_image(t_cube *cube);
 
 
@@ -301,9 +312,8 @@ void				calculate_big_delta(t_vector_data *vector_data);
 void				get_intersection(t_map_data map_data,
 						t_vector_data vector_data, t_target *hit_point);
 void				check_wall_side(int step, t_target *hit_point, t_Coordinates side);
-void				calc_wall_distance(t_vector_data vector_data,
-						t_target *hit_point);
-void				calc_wall_height(t_target *hit_point);
+void				calc_wall_height(t_vector_data vector_data, t_target *hit_point);
+void				calc_tile_offset(t_vector_data vector_data, t_target *hit_point);
 bool				got_a_hit(int x, int y, t_map_data map_data);
 
 /// clean_memory.c

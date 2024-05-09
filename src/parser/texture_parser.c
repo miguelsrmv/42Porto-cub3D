@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/04/15 22:14:34 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/09 10:14:12 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,27 @@
 void	check_wall_texture(char **line_as_tab,
 		t_map_data **map_data)
 {
-	char	*texture_path;
+	char	*textr_path;
 
-	texture_path = ft_strdup(line_as_tab[1]);
-	if (!texture_path)
+	textr_path = ft_strdup(line_as_tab[1]);
+	if (!textr_path)
 	{
 		ft_free_tabs((void **)line_as_tab);
 		exit_cub3(*map_data, MALLOC_ERROR_MSG);
 	}
-	if (!ft_strcmp(line_as_tab[0], "NO") && !(*map_data)->north_texture)
-		(*map_data)->north_texture = texture_path;
-	else if (!ft_strcmp(line_as_tab[0], "SO") && !(*map_data)->south_texture)
-		(*map_data)->south_texture = texture_path;
-	else if (!ft_strcmp(line_as_tab[0], "WE") && !(*map_data)->west_texture)
-		(*map_data)->west_texture = texture_path;
-	else if (!ft_strcmp(line_as_tab[0], "EA") && !(*map_data)->east_texture)
-		(*map_data)->east_texture = texture_path;
+	if (!ft_strcmp(line_as_tab[0], "NO") && !(*map_data)->textr_path[NORTH])
+		(*map_data)->textr_path[NORTH] = textr_path;
+	else if (!ft_strcmp(line_as_tab[0], "SO")
+		&& !(*map_data)->textr_path[SOUTH])
+		(*map_data)->textr_path[SOUTH] = textr_path;
+	else if (!ft_strcmp(line_as_tab[0], "WE") && !(*map_data)->textr_path[WEST])
+		(*map_data)->textr_path[WEST] = textr_path;
+	else if (!ft_strcmp(line_as_tab[0], "EA") && !(*map_data)->textr_path[EAST])
+		(*map_data)->textr_path[EAST] = textr_path;
 	else
 	{
 		ft_free_tabs((void **)line_as_tab);
-		free(texture_path);
+		free(textr_path);
 		exit_cub3(*map_data, REPEATED_ERROR_MSG);
 	}
 	ft_free_tabs((void **)line_as_tab);
@@ -48,19 +49,16 @@ void	check_texture_files(t_map_data **map_data)
 {
 	int		file_fd;
 	int		i;
-	char	*textures[4];
+	char	*textr_path;
 	char	*buffer[1];
 
-	textures[0] = (*map_data)->north_texture;
-	textures[1] = (*map_data)->south_texture;
-	textures[2] = (*map_data)->west_texture;
-	textures[3] = (*map_data)->east_texture;
 	i = -1;
 	while (++i < 4)
 	{
-		if (ft_checkextension(textures[i], ".xpm"))
+		textr_path = (*map_data)->textr_path[i];
+		if (ft_checkextension(textr_path, ".xpm"))
 			exit_cub3(*map_data, TEXTURE_WRONG_FORMAT_MSG);
-		file_fd = open(textures[i], O_RDONLY);
+		file_fd = open(textr_path, O_RDONLY);
 		if (file_fd == -1)
 			exit_cub3(*map_data, TEXTURE_ERROR_MSG);
 		if (read(file_fd, buffer, 0) == -1 && errno == EISDIR)
@@ -69,12 +67,12 @@ void	check_texture_files(t_map_data **map_data)
 			exit_cub3(*map_data, TEXTURE_ERROR_MSG);
 		}
 		close(file_fd);
-		check_texture_validity(map_data, textures[i]);
+		check_text_path_validity(map_data, textr_path);
 	}
 }
 
 /// @brief Checks if the provided .xpm file is valid
-void	check_texture_validity(t_map_data **map_data, char *file_path)
+void	check_text_path_validity(t_map_data **map_data, char *file_path)
 {
 	void	*mlx;
 	void	*img;
