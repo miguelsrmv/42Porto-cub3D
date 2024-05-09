@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:19:31 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/08 21:14:56 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/09 21:14:44 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	get_intersection(t_map_data map_data,
 {
 	hit_point->x_position = vector_data.map_x;
 	hit_point->y_position = vector_data.map_y;
-	while (!got_a_hit(vector_data.map_x, vector_data.map_y, map_data))
+	while (true)
 	{
 		if (vector_data.small_delta_dist_x < vector_data.small_delta_dist_y)
 		{
@@ -33,6 +33,8 @@ void	get_intersection(t_map_data map_data,
 			vector_data.map_y += vector_data.step_y;
 			check_wall_side(vector_data.step_y, hit_point, Y);
 		}
+		if (got_a_hit(vector_data.map_x, vector_data.map_y, map_data))
+			break ;
 	}
 	calc_tile_offset(vector_data, hit_point);
 	hit_point->x_position = vector_data.map_x;
@@ -82,7 +84,11 @@ void	calc_wall_height(t_vector_data vector_data, t_target *hit_point)
 	else
 		hit_point->distance
 			= vector_data.small_delta_dist_y - vector_data.delta_dist_y;
-	hit_point->wall_height = ((int)(SCREEN_HEIGHT / hit_point->distance));
+	if (hit_point->distance == 0)
+		hit_point->wall_height = (int)SCREEN_HEIGHT;
+	else
+		hit_point->wall_height
+			= ((int)(SCREEN_HEIGHT / hit_point->distance));
 	hit_point->wall_max_height_pixel
 		= hit_point->wall_height / 2 + SCREEN_HEIGHT / 2;
 	if (hit_point->wall_max_height_pixel >= SCREEN_HEIGHT)

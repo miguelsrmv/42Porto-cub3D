@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:35:09 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/08 16:38:04 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/09 21:19:39 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_vector_data	*initialize_vector_data(t_map_data *map_data)
 	vector_data->map_x = map_data->start_pos[X];
 	vector_data->map_y = map_data->start_pos[Y];
 	vector_data->pos_x = map_data->start_pos[X] + 0.5;
-	vector_data->pos_y = map_data->start_pos[Y] - 0.5;
+	vector_data->pos_y = map_data->start_pos[Y] + 0.5;
 	fill_in_initial_vectors(map_data, vector_data);
 	calculate_camera_plane(vector_data, FOV);
 	return (vector_data);
