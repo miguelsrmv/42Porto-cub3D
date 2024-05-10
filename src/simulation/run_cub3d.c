@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:54:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/09 12:31:29 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/09 22:12:36 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	initialize_mlx(t_cube *cube)
 /// @brief Loads textures into memory
 void	load_textures(t_cube *cube, t_map_data *map_data)
 {
-	int	load_count;
+	int			load_count;
 
 	load_count = 0;
 	while (load_count < 3)
@@ -56,6 +56,11 @@ void	load_textures(t_cube *cube, t_map_data *map_data)
 				map_data->textr_path[load_count],
 				&map_data->texture[load_count].width,
 				&map_data->texture[load_count].height);
+		map_data->texture[load_count].addr
+			= mlx_get_data_addr(map_data->texture[load_count].img,
+				&map_data->texture[load_count].bits_per_pixel,
+				&map_data->texture[load_count].line_length,
+				&map_data->texture[load_count].endian);
 		if (map_data->texture[load_count].img == NULL)
 		{
 			while (load_count--)

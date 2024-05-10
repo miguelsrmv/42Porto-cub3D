@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/09 12:30:34 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/09 23:05:23 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -300,11 +300,9 @@ int					render_image(t_cube *cube);
 /// create_image.c
 void				create_image(t_map_data map_data,
 						t_vector_data *vector_data, t_mlx_img *img);
-void				draw_background(t_map_data map_data, t_mlx_img *img);
-void				draw_obstacles(t_map_data map_data, t_vector_data *vector_data,
-						t_mlx_img *img);
+t_target			*get_obstacles(t_map_data map_data, t_vector_data *vector_data);
 t_target			cast_ray(t_map_data map_data, t_vector_data *vector_data, int ray_angle);
-void				put_walls_on_image(t_target *target_array, t_mlx_img *img);
+int					get_texture_colour(int width, int height, t_target *target);
 
 /// camera_plane.c
 void 				normalize_vector(double *x, double *y);
