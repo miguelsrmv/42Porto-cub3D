@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:21:44 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/08 16:32:00 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/12 12:41:29 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	key_hook(int keycode, t_cube *cube)
 		turn_left(cube->vector_data);
 	else if (keycode == KEY_RIGHT_ARROW)
 		turn_right(cube->vector_data);
+ 	else if (keycode == 32)
+		print_current_perspective(cube->map_data, cube->vector_data);
 	else if (keycode == ESCAPE)
 		mlx_loop_end(cube->mlx);
 	return (0);

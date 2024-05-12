@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:39:16 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/09 10:13:28 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/12 16:19:05 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,44 @@ int	temp_colour(t_CardinalPoint direction)
 		return (16777215);
 }
 
+void	print_current_perspective(t_map_data *map, t_vector_data *vector)
+{
+	t_target	target_array[SCREEN_WIDTH];
+	int			i;
+
+	printf("\n*********************\n\n");
+	printf("Current perspective:\n");
+	i = 0;
+	while (i < SCREEN_WIDTH)
+	{
+		target_array[i] = cast_ray(*map, vector, i);
+		printf("Ray number %i hit a target on position (%i, %i). Texture: %s.\n",
+			i,
+			target_array[i].x_position,
+			target_array[i].y_position,
+			map->textr_path[target_array->wall_facing_direction]);
+			//get_direction(target_array[i].wall_facing_direction));
+/* 			target_array[i].x_hitpoint,
+			target_array[i].tile_offset,
+			map->texture[target_array[i].wall_facing_direction].width); */
+		i++;
+	}
+	return ;
+}
+
+char	*get_direction(t_CardinalPoint wall_facing_direction)
+{
+	if (wall_facing_direction == NORTH)
+		return ("North");
+	else if (wall_facing_direction == SOUTH)
+		return ("South");
+	else if (wall_facing_direction == EAST)
+		return ("East");
+	else if (wall_facing_direction == WEST)
+		return ("West");
+	else
+		return (NULL);
+}
 /* void	print_ray_data(t_target *target_array, int array_index)
 {
 	printf("Ray %04i hit at position (%i, %i): \
@@ -89,27 +127,6 @@ void	print_vector_data(t_vector_data *vector)
 		vector->vector_dir_x,
 		vector->vector_dir_y);
 	printf("\n");
-}
-
-void	print_current_perspective(t_map_data *map, t_vector_data *vector)
-{
-	t_target	target_array[SCREEN_WIDTH];
-	int			i;
-
-	printf("\n*********************\n\n");
-	printf("Current perspective:\n");
-	i = 0;
-	while (i < SCREEN_WIDTH)
-	{
-		target_array[i] = cast_ray(*map, vector, i);
-		if (i % 40 == 0)
-			printf("Ray number %i hit a target on position (%i, %i)\n",
-				i,
-				(int)target_array[i].x_position,
-				(int)target_array[i].y_position);
-		i++;
-	}
-	return ;
 }
 
 void	print_current_map(t_map_data *map_data, t_vector_data *vector)

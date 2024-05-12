@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:19:31 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/09 21:14:44 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/12 16:43:26 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 void	get_intersection(t_map_data map_data,
 			t_vector_data vector_data, t_target *hit_point)
 {
-	hit_point->x_position = vector_data.map_x;
-	hit_point->y_position = vector_data.map_y;
 	while (true)
 	{
 		if (vector_data.small_delta_dist_x < vector_data.small_delta_dist_y)
@@ -36,10 +34,11 @@ void	get_intersection(t_map_data map_data,
 		if (got_a_hit(vector_data.map_x, vector_data.map_y, map_data))
 			break ;
 	}
-	calc_tile_offset(vector_data, hit_point);
-	hit_point->x_position = vector_data.map_x;
-	hit_point->y_position = vector_data.map_y;
+	hit_point->x_position = vector_data.pos_x;
+	hit_point->y_position = vector_data.pos_y;
 	calc_wall_height(vector_data, hit_point);
+	calc_tile_offset(vector_data, hit_point,
+		map_data.texture[hit_point->wall_facing_direction]);
 }
 
 /// @brief Checks if wall was hit from NORTH or SOUTH 
@@ -59,19 +58,6 @@ void	check_wall_side(int step, t_target *hit_point, t_Coordinates side)
 		else if (step == -1)
 			hit_point->wall_facing_direction = EAST;
 	}
-}
-
-/// @brief Checks hit offset for wall for future texture drawing
-void	calc_tile_offset(t_vector_data vector_data, t_target *hit_point)
-{
-	if (hit_point->wall_facing_direction == NORTH
-		|| hit_point->wall_facing_direction == SOUTH)
-		hit_point->tile_offset = (hit_point->x_position
-				+ vector_data.small_delta_dist_x);
-	else
-		hit_point->tile_offset = (hit_point->y_position
-				+ vector_data.small_delta_dist_y);
-	hit_point->tile_offset -= (int)hit_point->tile_offset;
 }
 
 /// @brief Checks wall height and distance
@@ -97,6 +83,31 @@ void	calc_wall_height(t_vector_data vector_data, t_target *hit_point)
 		= -hit_point->wall_height / 2 + SCREEN_HEIGHT / 2;
 	if (hit_point->wall_min_height_pixel < 0)
 		hit_point->wall_min_height_pixel = 0;
+}
+
+/// @brief Checks hit offset for wall for future texture drawing
+void	calc_tile_offset(t_vector_data vector_data, t_target *hit_point,
+			t_texture texture)
+{
+	if (hit_point->wall_facing_direction == WEST
+		|| hit_point->wall_facing_direction == EAST)
+		hit_point->x_hitpoint
+			= vector_data.pos_x + hit_point->distance * vector_data.ray_dir_y;
+	else
+		hit_point->x_hitpoint
+			= vector_data.pos_y + hit_point->distance * vector_data.ray_dir_x;
+	hit_point->tile_offset
+		= hit_point->x_hitpoint - floor(hit_point->x_hitpoint);
+	hit_point->texture_x_coord
+		= (int)(hit_point ->tile_offset * (double)texture.width);
+	if (((hit_point->wall_facing_direction == WEST
+				|| hit_point->wall_facing_direction == EAST)
+			&& vector_data.ray_dir_x > 0)
+		|| ((hit_point->wall_facing_direction == SOUTH
+				|| hit_point->wall_facing_direction == NORTH)
+			&& vector_data.ray_dir_y < 0))
+		hit_point->texture_x_coord
+			= texture.width - hit_point->texture_x_coord - 1;
 }
 
 /// @brief Checks if given coordinate is a hit on a wall

@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:54:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/09 22:12:36 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/12 12:16:04 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	load_textures(t_cube *cube, t_map_data *map_data)
 	int			load_count;
 
 	load_count = 0;
-	while (load_count < 3)
+	while (load_count <= 3)
 	{
 		map_data->texture[load_count].img
 			= mlx_xpm_file_to_image(cube->mlx,

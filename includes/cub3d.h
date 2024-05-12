@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/09 23:05:23 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/12 15:01:42 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,10 +189,12 @@ typedef struct s_mlx_img
 
 typedef struct s_target
 {
-	double					x_position;
-	double					y_position;
+	int						x_position;
+	int						y_position;
 	double					distance;
+	double					x_hitpoint;
 	double					tile_offset;
+	int						texture_x_coord;
 	int						wall_height;
 	int						wall_max_height_pixel;
 	int						wall_min_height_pixel;
@@ -302,7 +304,11 @@ void				create_image(t_map_data map_data,
 						t_vector_data *vector_data, t_mlx_img *img);
 t_target			*get_obstacles(t_map_data map_data, t_vector_data *vector_data);
 t_target			cast_ray(t_map_data map_data, t_vector_data *vector_data, int ray_angle);
-int					get_texture_colour(int width, int height, t_target *target);
+
+/// textures.c
+int					get_texture_colour(t_texture *texture, double width, int height);
+void				draw_texture_collumn(t_target *target_array, int width, t_map_data map_data,
+						t_mlx_img *img);
 
 /// camera_plane.c
 void 				normalize_vector(double *x, double *y);
@@ -318,7 +324,7 @@ void				get_intersection(t_map_data map_data,
 						t_vector_data vector_data, t_target *hit_point);
 void				check_wall_side(int step, t_target *hit_point, t_Coordinates side);
 void				calc_wall_height(t_vector_data vector_data, t_target *hit_point);
-void				calc_tile_offset(t_vector_data vector_data, t_target *hit_point);
+void				calc_tile_offset(t_vector_data vector_data, t_target *hit_point, t_texture texture);
 bool				got_a_hit(int x, int y, t_map_data map_data);
 
 /// clean_memory.c
@@ -332,9 +338,11 @@ void				test_map_data(t_map_data *map_data);
 void				test_tab_data(t_map_data *map_data);
 /* void				print_ray_data(t_target *target_array, int array_index);
 void				print_vector_data(t_vector_data *vector);
-void				print_current_perspective(t_map_data *map_data, t_vector_data *vector_data);
 void				print_current_map(t_map_data *map_data, t_vector_data *vector); */
 int					temp_colour(t_CardinalPoint		 direction);
+void				print_current_perspective(t_map_data *map_data, t_vector_data *vector_data);
+char				*get_direction(t_CardinalPoint wall_facing_direction);
+
 
 /// my_pixel_put.c
 void   				my_pixel_put(t_mlx_img *img, int x, int y, int color);
