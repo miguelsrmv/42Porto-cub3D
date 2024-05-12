@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:19:31 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/12 16:43:26 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/12 17:43:14 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ void	get_intersection(t_map_data map_data,
 		if (got_a_hit(vector_data.map_x, vector_data.map_y, map_data))
 			break ;
 	}
-	hit_point->x_position = vector_data.pos_x;
-	hit_point->y_position = vector_data.pos_y;
 	calc_wall_height(vector_data, hit_point);
 	calc_tile_offset(vector_data, hit_point,
 		map_data.texture[hit_point->wall_facing_direction]);
@@ -92,10 +90,10 @@ void	calc_tile_offset(t_vector_data vector_data, t_target *hit_point,
 	if (hit_point->wall_facing_direction == WEST
 		|| hit_point->wall_facing_direction == EAST)
 		hit_point->x_hitpoint
-			= vector_data.pos_x + hit_point->distance * vector_data.ray_dir_y;
+			= vector_data.pos_y + hit_point->distance * vector_data.ray_dir_y;
 	else
 		hit_point->x_hitpoint
-			= vector_data.pos_y + hit_point->distance * vector_data.ray_dir_x;
+			= vector_data.pos_x + hit_point->distance * vector_data.ray_dir_x;
 	hit_point->tile_offset
 		= hit_point->x_hitpoint - floor(hit_point->x_hitpoint);
 	hit_point->texture_x_coord

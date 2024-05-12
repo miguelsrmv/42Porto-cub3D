@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:39:16 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/12 16:19:05 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/12 17:30:12 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,15 +78,32 @@ void	print_current_perspective(t_map_data *map, t_vector_data *vector)
 	while (i < SCREEN_WIDTH)
 	{
 		target_array[i] = cast_ray(*map, vector, i);
-		printf("Ray number %i hit a target on position (%i, %i). Texture: %s.\n",
+		printf("Ray number %i hit a target on position (%i, %i). (tile_offset %f, texture_x_coord %i)\n",
 			i,
 			target_array[i].x_position,
 			target_array[i].y_position,
-			map->textr_path[target_array->wall_facing_direction]);
-			//get_direction(target_array[i].wall_facing_direction));
-/* 			target_array[i].x_hitpoint,
 			target_array[i].tile_offset,
-			map->texture[target_array[i].wall_facing_direction].width); */
+			target_array[i].texture_x_coord);
+		i++;
+	}
+	return ;
+}
+
+void	print_current_offsets(t_map_data *map, t_vector_data *vector)
+{
+	t_target	target_array[SCREEN_WIDTH];
+	int			i;
+
+	printf("\n*********************\n\n");
+	printf("Current perspective:\n");
+	i = 0;
+	while (i < SCREEN_WIDTH)
+	{
+		target_array[i] = cast_ray(*map, vector, i);
+		printf("X_Hitpoint: %f, tile_offset: %f, Difference: %f.\n",
+			target_array[i].x_hitpoint,
+			target_array[i].tile_offset,
+			target_array[i].x_hitpoint - target_array[i].tile_offset);
 		i++;
 	}
 	return ;

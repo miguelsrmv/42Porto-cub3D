@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/12 15:01:42 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/12 16:54:12 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -342,6 +342,7 @@ void				print_current_map(t_map_data *map_data, t_vector_data *vector); */
 int					temp_colour(t_CardinalPoint		 direction);
 void				print_current_perspective(t_map_data *map_data, t_vector_data *vector_data);
 char				*get_direction(t_CardinalPoint wall_facing_direction);
+void				print_current_offsets(t_map_data *map, t_vector_data *vector);
 
 
 /// my_pixel_put.c
