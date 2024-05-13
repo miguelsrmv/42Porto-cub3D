@@ -6,7 +6,7 @@
 #    By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 09:55:46 by mde-sa--          #+#    #+#              #
-#    Updated: 2024/05/10 14:32:17 by mde-sa--         ###   ########.fr        #
+#    Updated: 2024/05/13 13:18:30 by mde-sa--         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRC		=	main.c misc/usage_check.c misc/clean_memory.c \
 			simulation/run_cub3d.c simulation/vector_init.c simulation/create_image.c \
 			simulation/hooks.c simulation/movements.c simulation/looking.c \
 			simulation/textures.c raycast/camera_plane.c raycast/compute_vector_data.c \
-			raycast/check_intersection.c misc/helper_functions.c misc/my_pixel_put.c
+			raycast/check_intersection.c misc/my_pixel_put.c
 
 LIBS 	=   -L$(LIBFTDIR) -lft
 

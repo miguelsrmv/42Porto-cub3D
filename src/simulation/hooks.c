@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:21:44 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/13 10:23:21 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/13 13:15:24 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ void	setup_keyhooks(t_cube *cube)
 }
 
 /// @brief Function for setting up minimize and escape buttons
-/// TODO: set maximize (requires changing SCREEN WIDTH AND HEIGHT)
 void	setup_buttonhooks(t_cube *cube)
 {
 	mlx_hook(cube->mlx_window, 17, 1L << 17, mlx_loop_end, cube->mlx);

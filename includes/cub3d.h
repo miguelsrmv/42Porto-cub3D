@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/13 12:19:59 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/13 13:17:10 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@
 # define SCREEN_WIDTH 1280
 # define SCREEN_HEIGHT 720
 # define FOV 0.66
-# define MOVE_SPEED 0.25
+# define MOVE_SPEED 0.5
 # define TILE_SIZE 6
-# define ROTATE_SPEED (M_PI / 128)
+# define ROTATE_SPEED (M_PI / 64)
 # define WALL_OFFSET 0.25
 
 /// Keys for minilibx
