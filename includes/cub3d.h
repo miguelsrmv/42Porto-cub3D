@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/13 10:30:10 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/13 12:19:59 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@
 # define MOVE_SPEED 0.25
 # define TILE_SIZE 6
 # define ROTATE_SPEED (M_PI / 128)
-# define WALL_OFFSET 0.1
+# define WALL_OFFSET 0.25
 
 /// Keys for minilibx
 # define KEY_ESC			65307
@@ -339,7 +339,7 @@ bool				got_a_hit(int x, int y, t_map_data map_data);
 void				exit_cub3(t_map_data *map_data,
 						char *message);
 void				clean_data(t_map_data *map_data, t_vector_data *vector_data);
-void				clean_mlx(void	*mlx, void	*mlx_window, void *mlx_img);
+void				clean_mlx(t_cube *cube);
 
 /// helper_functions.c
 void				test_map_data(t_map_data *map_data);

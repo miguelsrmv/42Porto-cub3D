@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:15:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/09 12:28:59 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/13 12:35:21 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,18 @@ void	clean_data(t_map_data *map_data, t_vector_data *vector_data)
 		free(vector_data);
 }
 
-void	clean_mlx(void	*mlx, void	*mlx_window, void *mlx_img)
+void	clean_mlx(t_cube *cube)
 {
-	mlx_destroy_image(mlx, mlx_img);
-	mlx_destroy_window(mlx, mlx_window);
-	mlx_destroy_display(mlx);
-	free(mlx);
+	int	i;
+
+	mlx_destroy_image(cube->mlx, (cube->image.img));
+	i = 0;
+	while (i < 4)
+	{
+		mlx_destroy_image(cube->mlx, cube->map_data->texture[i].img);
+		i++;
+	}
+	mlx_destroy_window(cube->mlx, cube->mlx_window);
+	mlx_destroy_display(cube->mlx);
+	free(cube->mlx);
 }
