@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 09:54:56 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/13 19:01:58 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/13 19:18:10 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	move(t_map_data *map_data, t_vector_data *vector_data,
 }
 
 /// @brief Sets movement values
+/// Strafing is FRONT_TO_SIDE_RATIO times the speed of up / down
 void	set_move_values(t_vector_data *vector_data, t_movement movement,
 		double *x_movement, double *y_movement)
 {
