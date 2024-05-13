@@ -1,4 +1,0 @@
-#1 Maximize and Resize?
-#2 src/simulation/create_image.c:/// TODO: Replace colour by textures!
-#3 src/simulation/hooks.c:/// TODO: REMOVE SPACE/ENTER/BACKSPACE functions AND #defines on cub3d.h
-#4 src/simulation/hooks.c:/// TODO: set maximize (requires changing SCREEN WIDTH AND HEIGHT)

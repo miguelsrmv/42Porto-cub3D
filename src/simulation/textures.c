@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 14:31:35 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/12 17:36:36 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/13 19:12:39 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void	draw_texture_collumn(t_target *target_array, int width,
 	while (y < target_array[width].wall_height)
 	{
 		my_pixel_put(img, width, y + target_array[width].wall_min_height_pixel,
-			get_texture_colour(&texture, target_array[width].texture_x_coord,
+			get_texture_colour(&texture,
+				texture.width - target_array[width].texture_x_coord - 1,
 				(int)text_y % texture.height));
 		text_y += scale;
 		y++;
