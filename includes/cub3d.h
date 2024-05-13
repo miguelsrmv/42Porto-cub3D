@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/13 13:17:10 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/13 19:03:11 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,9 @@
 # define SCREEN_HEIGHT 720
 # define FOV 0.66
 # define MOVE_SPEED 0.5
-# define TILE_SIZE 6
-# define ROTATE_SPEED (M_PI / 64)
+# define FRONT_TO_SIDE_RATIO 0.5
+# define TILE_SIZE 5
+# define ROTATE_SPEED (M_PI / 256)
 # define WALL_OFFSET 0.25
 
 /// Keys for minilibx
@@ -176,6 +177,9 @@ typedef struct s_vector_data
 	// Offset to allow for being centered on squares
 	double		offset_x;
 	double		offset_y;
+
+	// Distance from element right in front (for animation purposes)
+	double		front_distance;
 }		t_vector_data;
 
 typedef struct s_mlx_img

@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 09:54:56 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/08 16:24:26 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/13 19:01:58 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ void	set_move_values(t_vector_data *vector_data, t_movement movement,
 	}
 	else if (movement == LEFT)
 	{
-		*x_movement = vector_data->vector_dir_y;
-		*y_movement = -vector_data->vector_dir_x;
+		*x_movement = vector_data->vector_dir_y * FRONT_TO_SIDE_RATIO;
+		*y_movement = -vector_data->vector_dir_x * FRONT_TO_SIDE_RATIO;
 	}
 	else if (movement == RIGHT)
 	{
-		*x_movement = -vector_data->vector_dir_y;
-		*y_movement = vector_data->vector_dir_x;
+		*x_movement = -vector_data->vector_dir_y * FRONT_TO_SIDE_RATIO;
+		*y_movement = vector_data->vector_dir_x * FRONT_TO_SIDE_RATIO;
 	}
 	*x_movement *= MOVE_SPEED / TILE_SIZE;
 	*y_movement *= MOVE_SPEED / TILE_SIZE;

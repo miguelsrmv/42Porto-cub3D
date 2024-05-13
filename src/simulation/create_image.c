@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:49:51 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/13 13:05:35 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/13 14:41:20 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ t_target	*get_obstacles(t_map_data map_data, t_vector_data *vector_data)
 		target_array[i] = cast_ray(map_data, vector_data, i);
 		i++;
 	}
+	vector_data->front_distance = target_array[SCREEN_WIDTH / 2].distance;
 	return (target_array);
 }
 
