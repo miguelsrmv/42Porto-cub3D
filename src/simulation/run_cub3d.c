@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:54:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/12 12:16:04 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/13 10:27:57 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	run_cub3d(t_cube	*cube)
 {
 	initialize_mlx(cube);
 	load_textures(cube, cube->map_data);
-	mlx_loop_hook(cube->mlx, render_image, cube);
 	setup_keyhooks(cube);
 	setup_buttonhooks(cube);
+	mlx_loop_hook(cube->mlx, render_image, cube);
 	mlx_loop(cube->mlx);
 	clean_mlx(cube->mlx, cube->mlx_window, (cube->image.img));
 }
@@ -41,6 +41,13 @@ void	initialize_mlx(t_cube *cube)
 	cube->mlx = mlx;
 	cube->mlx_window = mlx_window;
 	cube->image = image;
+	cube->move_foward = false;
+	cube->move_back = false;
+	cube->move_left = false;
+	cube->move_right = false;
+	cube->look_left = false;
+	cube->look_right = false;
+	cube->escape = false;
 }
 
 /// @brief Loads textures into memory
@@ -76,6 +83,7 @@ void	load_textures(t_cube *cube, t_map_data *map_data)
 /// @brief Renders image
 int	render_image(t_cube *cube)
 {
+	execute_movement(cube);
 	create_image(*(cube->map_data), cube->vector_data, &(cube->image));
 	mlx_put_image_to_window(cube->mlx, cube->mlx_window, cube->image.img, 0, 0);
 	return (0);

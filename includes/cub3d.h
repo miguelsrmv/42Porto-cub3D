@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/12 16:54:12 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/13 10:30:10 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@
 # define SCREEN_WIDTH 1280
 # define SCREEN_HEIGHT 720
 # define FOV 0.66
-# define MOVE_SPEED 0.5
+# define MOVE_SPEED 0.25
 # define TILE_SIZE 6
-# define ROTATE_SPEED (M_PI / 64)
+# define ROTATE_SPEED (M_PI / 128)
 # define WALL_OFFSET 0.1
 
 /// Keys for minilibx
@@ -216,6 +216,14 @@ typedef struct s_cube
 	t_mlx_img		image;
 	void			*mlx;
 	void			*mlx_window;
+
+	bool			move_foward;
+	bool			move_left;
+	bool			move_right;
+	bool			move_back;
+	bool			look_left;
+	bool			look_right;
+	bool			escape;
 }	t_cube;
 
 // Function declarations
@@ -350,7 +358,9 @@ void   				my_pixel_put(t_mlx_img *img, int x, int y, int color);
 int					convert_rgb_to_int(int *RGB);
 
 /// hooks.c
-int					key_hook(int keycode, t_cube *cube);
+int					key_press_hook(int keycode, t_cube *cube);
+int					key_release_hook(int keycode, t_cube *cube);
+void				execute_movement(t_cube *cube);
 void				setup_keyhooks(t_cube *cube);
 void				setup_buttonhooks(t_cube *cube);
 
