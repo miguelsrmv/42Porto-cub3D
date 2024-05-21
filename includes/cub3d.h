@@ -6,7 +6,7 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:26 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/13 19:03:11 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/21 17:19:01 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 // Includes
 # include "../src/libft/libft.h"
-# include <float.h>
 # include <stdio.h>
 # include <fcntl.h>
 # include <errno.h>
@@ -53,9 +52,11 @@
 # define FOV 0.66
 # define MOVE_SPEED 0.5
 # define FRONT_TO_SIDE_RATIO 0.5
-# define TILE_SIZE 5
-# define ROTATE_SPEED (M_PI / 256)
+# define TILE_SIZE 10
+# define ROTATE_SPEED 0.0122718463			// M_PI / 256
 # define WALL_OFFSET 0.25
+# define DBL_MAX 1.7976931348623158e+308	// DBL_MAX
+# define DBL_MIN 2.2250738585072014e-308	// DBL_MIN
 
 /// Keys for minilibx
 # define KEY_ESC			65307
@@ -92,7 +93,7 @@ typedef enum e_Coordinates
 	X,
 }	t_Coordinates;
 
-typedef enum e_CardinalPoint		
+typedef enum e_CardinalPoint
 {
 	NORTH,
 	SOUTH,
@@ -310,55 +311,61 @@ void				initialize_mlx(t_cube *cube);
 void				load_textures(t_cube *cube, t_map_data *map_data);
 int					render_image(t_cube *cube);
 
-
 /// create_image.c
 void				create_image(t_map_data map_data,
 						t_vector_data *vector_data, t_mlx_img *img);
-t_target			*get_obstacles(t_map_data map_data, t_vector_data *vector_data);
-t_target			cast_ray(t_map_data map_data, t_vector_data *vector_data, int ray_angle);
+t_target			*get_obstacles(t_map_data map_data,
+						t_vector_data *vector_data);
+t_target			cast_ray(t_map_data map_data, t_vector_data *vector_data,
+						int ray_angle);
 
 /// textures.c
-int					get_texture_colour(t_texture *texture, double width, int height);
-void				draw_texture_collumn(t_target *target_array, int width, t_map_data map_data,
-						t_mlx_img *img);
+int					get_texture_colour(t_texture *texture, double width,
+						int height);
+void				draw_texture_collumn(t_target *target_array, int width,
+						t_map_data map_data, t_mlx_img *img);
 
 /// camera_plane.c
-void 				normalize_vector(double *x, double *y);
-void				calculate_camera_plane(t_vector_data *vector_data, double fov_angle);
+void				normalize_vector(double *x, double *y);
+void				calculate_camera_plane(t_vector_data *vector_data,
+						double fov_angle);
 
 /// compute_vector_data.c
-void				compute_vector_data(t_vector_data *vector_data, int ray_number);
+void				compute_vector_data(t_vector_data *vector_data,
+						int ray_number);
 void				calculate_small_delta(t_vector_data *vector_data);
 void				calculate_big_delta(t_vector_data *vector_data);
 
 /// check_intersections.c
 void				get_intersection(t_map_data map_data,
 						t_vector_data vector_data, t_target *hit_point);
-void				check_wall_side(int step, t_target *hit_point, t_Coordinates side);
-void				calc_wall_height(t_vector_data vector_data, t_target *hit_point);
-void				calc_tile_offset(t_vector_data vector_data, t_target *hit_point, t_texture texture);
+void				check_wall_side(int step, t_target *hit_point,
+						t_Coordinates side);
+void				calc_wall_height(t_vector_data vector_data,
+						t_target *hit_point);
+void				calc_tile_offset(t_vector_data vector_data,
+						t_target *hit_point, t_texture texture);
 bool				got_a_hit(int x, int y, t_map_data map_data);
 
 /// clean_memory.c
 void				exit_cub3(t_map_data *map_data,
 						char *message);
-void				clean_data(t_map_data *map_data, t_vector_data *vector_data);
+void				clean_data(t_map_data *map_data,
+						t_vector_data *vector_data);
 void				clean_mlx(t_cube *cube);
 
 /// helper_functions.c
 void				test_map_data(t_map_data *map_data);
 void				test_tab_data(t_map_data *map_data);
-/* void				print_ray_data(t_target *target_array, int array_index);
-void				print_vector_data(t_vector_data *vector);
-void				print_current_map(t_map_data *map_data, t_vector_data *vector); */
-int					temp_colour(t_CardinalPoint		 direction);
-void				print_current_perspective(t_map_data *map_data, t_vector_data *vector_data);
+int					temp_colour(t_CardinalPoint direction);
+void				print_current_perspective(t_map_data *map_data,
+						t_vector_data *vector_data);
 char				*get_direction(t_CardinalPoint wall_facing_direction);
-void				print_current_offsets(t_map_data *map, t_vector_data *vector);
-
+void				print_current_offsets(t_map_data *map,
+						t_vector_data *vector);
 
 /// my_pixel_put.c
-void   				my_pixel_put(t_mlx_img *img, int x, int y, int color);
+void				my_pixel_put(t_mlx_img *img, int x, int y, int color);
 int					convert_rgb_to_int(int *RGB);
 
 /// hooks.c
@@ -369,9 +376,11 @@ void				setup_keyhooks(t_cube *cube);
 void				setup_buttonhooks(t_cube *cube);
 
 /// movements.c
-void				move(t_map_data *map_data, t_vector_data *vector_data, t_movement movement);
-void				set_move_values(t_vector_data *vector_data, t_movement movement,
-						double *x_movement, double *y_movement);
+void				move(t_map_data *map_data, t_vector_data *vector_data,
+						t_movement movement);
+void				set_move_values(t_vector_data *vector_data,
+						t_movement movement, double *x_movement,
+						double *y_movement);
 void				set_offset_values(double x_movement, double y_movement,
 						double *x_offset, double *y_offset);
 

@@ -6,13 +6,13 @@
 /*   By: mde-sa-- <mde-sa--@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 09:55:13 by mde-sa--          #+#    #+#             */
-/*   Updated: 2024/05/13 19:17:55 by mde-sa--         ###   ########.fr       */
+/*   Updated: 2024/05/20 15:26:36 by mde-sa--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-/// @brief Looks ROTATE_SPEED angles (radians) p something to the left
+/// @brief Looks ROTATE_SPEED angles (radians) + something to the left
 /// Rotation speed depends on distance to target
 void	turn_left(t_vector_data *vector_data)
 {
